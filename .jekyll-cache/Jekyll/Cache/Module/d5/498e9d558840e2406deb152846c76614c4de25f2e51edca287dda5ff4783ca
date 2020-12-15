@@ -1,0 +1,17 @@
+I"ë
+
+
+<img
+  
+    src="https://placehold.it/128x128"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+  alt="<firstname> <lastname>"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+:ET
