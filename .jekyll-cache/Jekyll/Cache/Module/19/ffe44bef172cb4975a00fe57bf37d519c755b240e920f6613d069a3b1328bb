@@ -1,4 +1,4 @@
-I"$1
+I"*1
 
 
 
@@ -217,7 +217,7 @@ writeHead가 호출되고 setHeader가 호출되지 않은 경우, 내부적으�
 
 <h3 id="참고사이트">참고사이트</h3>
 
-<p><a href="https://www.w3schools.com/nodejs/nodejs_http.asp">https://www.w3schools.com/nodejs/nodejs_http.asp</a>
+<p><a href="https://www.w3schools.com/nodejs/nodejs_http.asp">https://www.w3schools.com/nodejs/nodejs_http.asp</a><br />
 <a href="http://zetcode.com/javascript/http/">http://zetcode.com/javascript/http/</a></p>
 
   

@@ -108,5 +108,5 @@ writeHead가 호출되고 setHeader가 호출되지 않은 경우, 내부적으�
 
 ### 참고사이트
 
-[https://www.w3schools.com/nodejs/nodejs_http.asp](https://www.w3schools.com/nodejs/nodejs_http.asp)
+[https://www.w3schools.com/nodejs/nodejs_http.asp](https://www.w3schools.com/nodejs/nodejs_http.asp)<br/>
 [http://zetcode.com/javascript/http/](http://zetcode.com/javascript/http/)
