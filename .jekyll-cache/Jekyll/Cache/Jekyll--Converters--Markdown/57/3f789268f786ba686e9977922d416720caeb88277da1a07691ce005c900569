@@ -1,0 +1,99 @@
+I"+'
+<h2 id="타입스크립트란">타입스크립트란?</h2>
+
+<ul>
+  <li>Microsoft가 개발한 프로그래밍 언어</li>
+  <li>정적 타입 시스템(static type system)을 도입한 자바스크립트</li>
+  <li>자바스크립트로 컴파일되는, 자바스크립트 타입이 있는 상위집합(superset)</li>
+  <li>.ts 확장자를 .js로 컴파일하여 사용</li>
+  <li>타입 검사기를 통해 프로그램 실행 전에 확인 - 런타임이 아닌 컴파일 환경에서 에러를 잡을 수 있음</li>
+</ul>
+
+<blockquote>
+  <p><a href="zetawiki.com/wiki/%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9,_%EC%A7%84%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9,_%EC%83%81%EC%9C%84%EC%A7%91%ED%95%A9,_%EC%A7%84%EC%83%81%EC%9C%84%EC%A7%91%ED%95%A9,_%ED%8F%AC%ED%95%A8%EA%B4%80%EA%B3%84">슈퍼셋이란?</a></p>
+</blockquote>
+
+<h3 id="타입스크립트-설치">타입스크립트 설치</h3>
+
+<p>VSCode는 타입스크립트 지원 기능이 내장되어 있어 별도의 설정 없이도 .ts, tsconfig.json 등의 타입스크립트 파일을 인식할 수 있다. 단, 컴파일러는 설치되어 있지 않기 때문에 별도로 설치해야 한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">yarn</span> <span class="nx">add</span> <span class="o">--</span><span class="nx">dev</span> <span class="nx">typescript</span>
+</code></pre></div></div>
+
+<p>tsconfig.json 파일을 생성하기 위해 아래 명령어를 입력한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">yarn</span> <span class="nx">run</span> <span class="nx">tsc</span> <span class="o">--</span><span class="nx">init</span>
+</code></pre></div></div>
+
+<p>tsconfig.json 의 compilerOptions를 설정한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">compilerOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">sourceMap</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// 소스맵(*.map) 파일 생성 여부</span>
+    <span class="dl">"</span><span class="s2">jsx</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>  <span class="c1">// Resolve: Cannot use JSX unless '--jsx' flag is provided</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>.js 파일 확장자를 .ts / .tsx 로 변경한다.</p>
+
+<h4 id="예제">예제</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.tsx</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">StrictMode</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">App</span> <span class="nx">firstName</span><span class="o">=</span><span class="dl">"</span><span class="s2">hyuna</span><span class="dl">"</span> <span class="nx">lastName</span><span class="o">=</span><span class="dl">"</span><span class="s2">lee</span><span class="dl">"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/React.StrictMode&gt;</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.tsx</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nl">firstName</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">lastName</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">firstName</span><span class="p">}</span> <span class="p">{</span><span class="nx">lastName</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//tsconfig.json</span>
+<span class="p">{</span>
+  <span class="dl">"</span><span class="s2">compilerOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">target</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">es5</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">module</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">esnext</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">strict</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">esModuleInterop</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">skipLibCheck</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">forceConsistentCasingInFileNames</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lib</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">dom</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dom.iterable</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">esnext</span><span class="dl">"</span><span class="p">],</span>
+    <span class="dl">"</span><span class="s2">allowJs</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">allowSyntheticDefaultImports</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">moduleResolution</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">resolveJsonModule</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">isolatedModules</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">noEmit</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">jsx</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">include</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

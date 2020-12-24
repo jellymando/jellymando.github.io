@@ -1,0 +1,225 @@
+I"*1
+
+
+
+
+
+<article id="post-nodejs-create-server" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        HTTP 모듈 (1: createServer)
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2020-12-18T00:00:00+09:00">18 Dec 2020</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/nodejs/" class="flip-title">Node.js</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    
+<h2 id="nodejs">Node.js</h2>
+
+<p>비동기 이벤트 기반 JavaScript 런타임인 ​​Node.js는 확장 가능한 네트워크 애플리케이션을 빌드하도록 설계되었습니다.<br />
+HTTP는 TCP/IP를 기반으로 하는 프로토콜입니다.<br />
+Node.js에는 HTTP라는 내장 모듈이있어 Node.js가 HTTP (Hyper Text Transfer Protocol)를 통해 데이터를 전송할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">http</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">hostname</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="nx">hostname</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Server running at http://</span><span class="p">${</span><span class="nx">hostname</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">/`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="server-객체">server 객체</h2>
+
+<ul>
+  <li>http 모듈의 createServer() 메서드를 사용하면 server 객체를 생성할 수 있습니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">server 객체의 메서드</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">listen(port[, callback]))</td>
+      <td style="text-align: left">서버를 실행합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">close()</td>
+      <td style="text-align: left">서버를 종료합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>server 객체는 EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할 수 있습니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">server 객체의 이벤트</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">request</td>
+      <td style="text-align: left">클라이언트가 요청할 때 발생하는 이벤트입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">connection</td>
+      <td style="text-align: left">클라이언트가 접속할 때 발생하는 이벤트입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">close</td>
+      <td style="text-align: left">서버가 종료될 때 발생하는 이벤트입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">checkContinue</td>
+      <td style="text-align: left">클라이언트가 지속적인 연결을 하고 있을 때 발생하는 이벤트입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">upgrade</td>
+      <td style="text-align: left">클라이언트가 HTTP 업그레이드를 요청할 때 발생하는 이벤트입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">clientError</td>
+      <td style="text-align: left">클라이언트에서 오류가 발생할 때 발생하는 이벤트입니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//모듈을 추출합니다.</span>
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">http</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">//server 객체를 생성합니다.</span>
+<span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">();</span>
+
+<span class="c1">//server 객체에 이벤트를 연결합니다.</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Request On</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">connection</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Connection On</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">close</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Close On</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">//listen() 메서드를 실행합니다.</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">1016</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="response-객체">response 객체</h2>
+
+<ul>
+  <li>클라이언트에 웹 페이지를 제공하기 위해 response 객체를 사용합니다.</li>
+</ul>
+
+<p>response 객체는 request 이벤트 리스너의 두 번째 매개 변수로 전달되는 객체입니다.<br />
+HTTP 모듈을 포함하려면 다음 require() 메소드를 사용하십시오.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">response 객체의 메서드</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">writeHead(statusCode, object)</td>
+      <td style="text-align: left">응답 헤더를 작성합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">end([data], [encoding])</td>
+      <td style="text-align: left">응답 본문을 작성합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">http</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//웹 서버를 생성하고 모듈을 추출합니다.</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/html</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text/html</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="c1">//writeHead는 한 번만 호출되어야 하며 end()가 호출되기 전에 호출되어야 함. 상태 코드는 404와 같은 3자리 HTTP 상태 코드입니다.</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">write</span><span class="p">();</span>
+    <span class="c1">//이것은 응답 본문의 청크를 보냅니다. 이 방법은 신체의 연속적인 부분을 제공하기 위해 여러 번 호출 될 수 있습니다.</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;h1&gt;Hello Web Server with Node.js&lt;/h1&gt;</span><span class="dl">"</span><span class="p">);</span>
+    <span class="c1">//데이터가 로드되었음을 서버에 알림</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">1016</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//웹 서버를 실행합니다.</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Server Running at localhost:1016</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p class="note">헤더가 setHeader로 설정되면 헤더는 writeHead로 전달된 모든 헤더와 병합되며, 헤더는 writeHead로 우선 순위가 지정됩니다.
+writeHead가 호출되고 setHeader가 호출되지 않은 경우, 내부적으로 캐싱하지 않고 제공된 헤더 값을 네트워크 채널에 직접 쓰며, 헤더의 getHeader는 예상 결과를 산출하지 못합니다.
+향후 검색 및 수정 가능성이 있는 경우 response.setHeader()를 사용합니다.</p>
+
+<h3 id="참고사이트">참고사이트</h3>
+
+<p><a href="https://www.w3schools.com/nodejs/nodejs_http.asp">https://www.w3schools.com/nodejs/nodejs_http.asp</a><br />
+<a href="http://zetcode.com/javascript/http/">http://zetcode.com/javascript/http/</a></p>
+
+  
+</article>
+:ET
