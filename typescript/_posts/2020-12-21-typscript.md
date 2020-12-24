@@ -50,8 +50,8 @@ tsconfig.json 의 compilerOptions를 설정한다.
 
 ```js
 //index.tsx
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 import App from "./App";
 
 ReactDOM.render(
@@ -64,7 +64,7 @@ ReactDOM.render(
 
 ```js
 //App.tsx
-import * as React from "react";
+import React from "react";
 
 interface Props {
   firstName: string;

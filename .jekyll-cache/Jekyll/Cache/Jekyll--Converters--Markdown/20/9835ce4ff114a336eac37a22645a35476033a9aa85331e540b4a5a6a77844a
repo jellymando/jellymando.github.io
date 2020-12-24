@@ -1,64 +1,4 @@
-I"�*
-
-
-
-
-
-<article id="post-typescript-typscript" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      
-        1 : 타입스크립트란? & 기본 설치
-      
-    </h1>
-
-    <div class="post-date">
-      
-      <time datetime="2020-12-21T00:00:00+09:00">21 Dec 2020</time>
-      
-      
-      
-      
-      
-
-
-
-
-
-
-
-
-
-in <a href="/typescript/" class="flip-title">TypeScript</a>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    
-    
-
-    
-
-
-
-  <div class="hr pb0"></div>
-
-
-  </header>
-
-  
-    
+I"�'
 <h2 id="타입스크립트란">타입스크립트란?</h2>
 
 <ul>
@@ -103,8 +43,8 @@ in <a href="/typescript/" class="flip-title">TypeScript</a>
 <h4 id="예제">예제</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.tsx</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
@@ -116,7 +56,7 @@ in <a href="/typescript/" class="flip-title">TypeScript</a>
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.tsx</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
   <span class="nl">firstName</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
@@ -159,7 +99,4 @@ in <a href="/typescript/" class="flip-title">TypeScript</a>
   <span class="dl">"</span><span class="s2">include</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
-  
-</article>
 :ET
