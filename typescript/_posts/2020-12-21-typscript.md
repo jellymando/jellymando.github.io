@@ -36,10 +36,13 @@ tsconfig.json 의 compilerOptions를 설정한다.
 {
   "compilerOptions": {
     "sourceMap": true,  // 소스맵(*.map) 파일 생성 여부
-    "jsx": "react"  // Resolve: Cannot use JSX unless '--jsx' flag is provided
+    "jsx": "react", // Resolve: Cannot use JSX unless '--jsx' flag is provided
+    "esModuleInterop": true // import * as => import
   }
 }
 ```
+
+[esModuleInterop](https://www.zerocho.com/category/TypeScript/post/5bab2086103eac558e45cdd7)
 
 .js 파일 확장자를 .ts / .tsx 로 변경한다.
 
