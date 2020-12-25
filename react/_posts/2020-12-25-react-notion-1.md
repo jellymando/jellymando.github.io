@@ -85,7 +85,7 @@ function App() {
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-<img src="/assets/img/_posts/2020-12-25-react-01.jpg">
+<img src="https://jellymando.github.io/assets/img/_posts/2020-12-25-react-01.jpg">
 
 ## 이벤트 처리
 
