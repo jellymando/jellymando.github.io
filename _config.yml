@@ -51,7 +51,7 @@ menu:
   - title: Javascript
     url: /javascript/
   - title: Node.js
-    url: /nodejs/
+    url: /node/
   - title: TypeScript
     url: /typescript/
   - title: React
