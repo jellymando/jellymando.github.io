@@ -1,0 +1,106 @@
+I"�'
+<h2 id="접근성이란">접근성이란?</h2>
+
+<p>사용자가 신체적 불편함이나 장애 여부와 상관없이 웹에 접근할 수 있도록 고려하는 것으로 img태그에 대한 대체 텍스트, 건너뛰기 링크, 레이블 제공 등으로 접근성을 높일 수 있다.</p>
+
+<h2 id="시맨틱-html">시맨틱 HTML</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Table</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">table</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Columns</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/table</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Columns</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">World</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;Table /&gt;</code>의 출력 결과는 다음과 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">table</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">World</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/table</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>렌더링 된 HTML이 유효하려면 <code class="language-plaintext highlighter-rouge">&lt;Columns /&gt;</code>가 여러 <code class="language-plaintext highlighter-rouge">&lt;td&gt;</code> 엘리먼트만 반환해야 합니다. <code class="language-plaintext highlighter-rouge">&lt;Columns /&gt;</code>의 render() 안에 부모 div로 자식들을 감싼다면 렌더링 된 HTML은 유효하지 않습니다. Fragments는 이 문제를 해결해줍니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Columns</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">Fragment</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">World</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/React.Fragment</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>올바른 <code class="language-plaintext highlighter-rouge">&lt;Table /&gt;</code>의 출력 결과는 아래와 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">table</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">World</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/table</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>배열의 각 항목을 매핑할 때에도 사용할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Glossary</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">dl</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="c1">// 항목을 매핑할 때 Fragment는 반드시 `key` 프로퍼티가 있어야 합니다.</span>
+        <span class="o">&lt;</span><span class="nx">Fragment</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">dt</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">term</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/dt</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">dd</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/dd</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/Fragment</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/dl</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>단축 문법 : 만약, Fragment 태그에 어떤 props도 필요하지 않고, 사용하고 있는 도구에서 지원한다면, 아래와 같이 짧게 줄여 쓸 수 있습니다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;&gt;</span>
+  <span class="o">&lt;</span><span class="nx">dt</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">term</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/dt</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">dd</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/dd</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h2 id="포커스-컨트롤--마우스와-포인트-이벤트">포커스 컨트롤 / 마우스와 포인트 이벤트</h2>
+
+<p>React에서 포커스를 지정하려면, DOM 엘리먼트에 ref를 사용할 수 있습니다.</p>
+
+<p>이를 사용해 JSX 컴포넌트 클래스 안에서 엘리먼트에 대한 ref를 먼저 생성합니다.</p>
+
+<p><a href="https://blex.me/@yoyounn18/react-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%9E%91%EB%8F%99-%EC%9B%90%EB%A6%AC-react%EB%8A%94-%EC%99%9C-%EB%B9%A0%EB%A5%B4%EB%A9%B0-%EA%B0%81%EA%B4%91%EB%B0%9B%EB%8A%94-%EA%B8%B0%EC%88%A0%EC%9D%B8%EA%B0%80">React 소개 및 작동 원리</a><br />
+<a href="https://reactjs.org/docs/hello-world.html">React 공식 문서 - Hello World</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+:ET
