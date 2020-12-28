@@ -1,0 +1,91 @@
+I"�
+<h2 id="사용자-등록">사용자 등록</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nb">global</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="nx">사용자</span> <span class="nx">이름</span>
+<span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nb">global</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span> <span class="nx">사용자</span> <span class="nx">이메일</span>
+<span class="c1">// 프로젝트마다 다른 계정을 사용해야 할 경우</span>
+<span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nx">local</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="nx">사용자</span> <span class="nx">이름</span>
+<span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nx">local</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span> <span class="nx">사용자</span> <span class="nx">이메일</span>
+</code></pre></div></div>
+
+<h2 id="저장소-연결">저장소 연결</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">remote</span> <span class="nx">add</span> <span class="nx">origin</span> <span class="nx">깃허브</span> <span class="nx">주소</span>
+<span class="nx">git</span> <span class="nx">remote</span> <span class="o">-</span><span class="nx">v</span>
+</code></pre></div></div>
+
+<h2 id="저장소-연결-삭제">저장소 연결 삭제</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">remote</span> <span class="nx">remove</span> <span class="nx">깃허브</span> <span class="nx">주소</span>
+</code></pre></div></div>
+
+<h2 id="저장소에-업로드">저장소에 업로드</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">init</span>
+<span class="nx">git</span> <span class="nx">add</span> <span class="p">.</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">커밋 내용</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span> <span class="nx">origin</span> <span class="nx">master</span>
+<span class="c1">// git push -u origin master</span>
+<span class="c1">// -u를 쓰면 앞으로 자동으로 위 브런치로 push 하겠다는 뜻</span>
+</code></pre></div></div>
+
+<h2 id="push-도움말">push 도움말</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">push</span> <span class="o">--</span><span class="nx">help</span>
+</code></pre></div></div>
+
+<h2 id="특정-폴더파일-제외하고-커밋">특정 폴더/파일 제외하고 커밋</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">touch</span> <span class="p">.</span><span class="nx">gitignore</span>
+<span class="nx">ls</span> <span class="o">-</span><span class="nx">a</span>
+<span class="nx">vi</span> <span class="p">.</span><span class="nx">gitignore</span>
+<span class="nx">i</span> <span class="o">&gt;</span> <span class="nx">제외할</span> <span class="nx">폴더</span><span class="o">/</span><span class="nx">파일명</span> <span class="nx">입력</span> <span class="p">(</span><span class="nx">ex</span><span class="p">.</span> <span class="nx">download</span><span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nx">esc</span> <span class="o">&gt;</span> <span class="p">:</span><span class="nx">wq</span><span class="o">!</span>
+<span class="nx">git</span> <span class="nx">add</span> <span class="p">.</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">커밋 내용</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+
+<h2 id="저장소에-이미-올린-폴더파일-삭제">저장소에 이미 올린 폴더/파일 삭제</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">rm</span> <span class="o">-</span><span class="nx">r</span> <span class="nx">폴더</span><span class="o">/</span><span class="nx">파일명</span> <span class="p">(</span><span class="nx">ex</span><span class="p">.</span> <span class="nx">js</span><span class="o">/</span><span class="nx">bin</span><span class="p">)</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">커밋 내용</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+
+<h2 id="특정-branch-업데이트-내용-pull">특정 branch 업데이트 내용 pull</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">pull</span> <span class="nx">origin</span> <span class="nx">브랜치이름</span>
+</code></pre></div></div>
+
+<h2 id="마지막-pull-취소">마지막 pull 취소</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">reset</span> <span class="o">--</span><span class="nx">keep</span> <span class="nx">HEAD</span><span class="p">@{</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="branch-조회">branch 조회</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">branch</span>
+<span class="c1">// 원격 브랜치를 포함한 모든 브랜치 목록</span>
+<span class="nx">git</span> <span class="nx">branch</span> <span class="o">-</span><span class="nx">a</span>
+</code></pre></div></div>
+
+<h2 id="branch-만들기">branch 만들기</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">checkout</span> <span class="o">-</span><span class="nx">b</span> <span class="nx">브랜치이름</span>
+</code></pre></div></div>
+
+<h2 id="branch-전환하기">branch 전환하기</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">checkout</span> <span class="nx">브랜치이름</span>
+</code></pre></div></div>
+
+<h2 id="branch-삭제하기">branch 삭제하기</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">branch</span> <span class="o">-</span><span class="nx">d</span> <span class="nx">브랜치이름</span>
+</code></pre></div></div>
+
+<h2 id="branch-이름-변경하기">branch 이름 변경하기</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">branch</span> <span class="o">-</span><span class="nx">m</span> <span class="nx">변경전_branch_name</span> <span class="nx">새로운_branch_name</span>
+</code></pre></div></div>
+:ET
