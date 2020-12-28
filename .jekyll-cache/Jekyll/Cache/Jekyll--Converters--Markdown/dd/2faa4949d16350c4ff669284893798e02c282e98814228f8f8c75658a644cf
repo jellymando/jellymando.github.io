@@ -1,0 +1,44 @@
+I"�
+<p>Git 2.23 부터 checkout의 기능이 switch와 restore로 분리되었다.</p>
+
+<ul>
+  <li><strong>checkout</strong> : Switch branches or restore working tree files</li>
+  <li><strong>switch</strong>: Switch branches</li>
+  <li><strong>restore</strong>: Restore working tree files</li>
+</ul>
+
+<p><br />
+<a href="https://blog.outsider.ne.kr/1505">참고사이트</a>
+<br /></p>
+
+<h2 id="switch">switch</h2>
+
+<p>branch를 변경한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="k">switch</span> <span class="nx">develop</span>
+</code></pre></div></div>
+
+<p><br />
+branch를 생성하고 해당 브런치로 변경한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="k">switch</span> <span class="o">-</span><span class="nx">c</span> <span class="k">new</span><span class="o">-</span><span class="nx">branch</span>
+</code></pre></div></div>
+
+<p><br />
+<a href="https://git-scm.com/docs/git-switch">Git 공식 문서 - switch</a></p>
+
+<h2 id="restore">restore</h2>
+
+<p>작업중인 파일을 복원한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">restore</span> <span class="nx">hello</span><span class="p">.</span><span class="nx">c</span>
+</code></pre></div></div>
+
+<p>색인에서 HEAD의 버전과 일치하도록 파일을 복원 (git-reset[1]을 사용하는 것과 동일함)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">restore</span> <span class="o">--</span><span class="nx">staged</span> <span class="nx">hello</span><span class="p">.</span><span class="nx">c</span>
+</code></pre></div></div>
+
+<p><br />
+<a href="https://git-scm.com/docs/git-restore">Git 공식 문서 - restore</a></p>
+:ET
