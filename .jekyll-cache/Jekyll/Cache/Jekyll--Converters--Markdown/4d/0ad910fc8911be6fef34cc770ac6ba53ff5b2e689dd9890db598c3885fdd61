@@ -1,0 +1,112 @@
+I"�	
+<h2 id="-동등-연산자--equality-operator">== (동등 연산자 : Equality operator)</h2>
+
+<ul>
+  <li>피연산자가 서로 다른 타입이면 타입을 강제로 변환하여 비교한다.</li>
+  <li>변환한 내용이 같은 경우 참(true)을 반환한다.</li>
+</ul>
+
+<h2 id="-일치-연산자--identity-operator">=== (일치 연산자 : Identity operator)</h2>
+
+<ul>
+  <li>피연산자의 자료형까지 일치하는지 비교한다.</li>
+  <li>변환하지 않아도 내용이 같은 경우 참(true)을 반환한다.</li>
+</ul>
+
+<p><br /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>x</td>
+      <td>y</td>
+      <td>==</td>
+      <td>===</td>
+    </tr>
+    <tr>
+      <td>undefined</td>
+      <td>undefined</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>null</td>
+      <td>null</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>‘foo’</td>
+      <td>‘foo’</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>+0</td>
+      <td>-0</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>false</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>””</td>
+      <td>false</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>””</td>
+      <td>0</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>‘0’</td>
+      <td>0</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>[1, 2]</td>
+      <td>‘1, 2’</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>‘foo’</td>
+      <td>new String(‘foo’)</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>undefined</td>
+      <td>null</td>
+      <td>true</td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>undefined</td>
+      <td><span style="color:red;">false</span></td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>null</td>
+      <td><span style="color:red;">false</span></td>
+      <td><span style="color:red;">false</span></td>
+    </tr>
+  </tbody>
+</table>
+:ET
