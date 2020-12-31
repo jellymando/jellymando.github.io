@@ -1,5 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-29T13:59:23+09:00</updated><id>/feed.xml</id><title type="html">고양이발</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
-</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">동등연산자 == 와 일치 연산자 === 의 차이🤨</title><link href="/javascript/2020-12-29-equality-operator/" rel="alternate" type="text/html" title="동등연산자 == 와 일치 연산자 === 의 차이🤨" /><published>2020-12-29T00:00:00+09:00</published><updated>2020-12-29T13:59:23+09:00</updated><id>/javascript/equality-operator</id><content type="html" xml:base="/javascript/2020-12-29-equality-operator/">&lt;h2 id=&quot;-동등-연산자--equality-operator&quot;&gt;== (동등 연산자 : Equality operator)&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2020-12-31T15:34:17+09:00</updated><id>/feed.xml</id><title type="html">고양이발</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">[Express] html에서 로드할 수 있는 파일 경로 설정</title><link href="/node/2020-12-31-express-static/" rel="alternate" type="text/html" title="[Express] html에서 로드할 수 있는 파일 경로 설정" /><published>2020-12-31T00:00:00+09:00</published><updated>2020-12-31T15:34:16+09:00</updated><id>/node/express-static</id><content type="html" xml:base="/node/2020-12-31-express-static/">&lt;h2 id=&quot;expressstatic&quot;&gt;express.static&lt;/h2&gt;
+
+&lt;p&gt;Express에서 이미지, CSS 파일 및 JavaScript 파일과 같은 정적 파일을 제공하려 한다.&lt;/p&gt;
+
+&lt;p&gt;public 폴더를 express.static 미들웨어 함수에 전달하면 폴더 속 파일을 제공할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+/public 을 생략한 경로로 파일을 로드할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;ex) /public/index.js =&amp;gt; /index.js&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3000/images/kitten.jpg&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3000/css/style.css&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3000/js/app.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3000/images/bg.png&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3000/hello.html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;a href=&quot;https://infodbbase.tistory.com/41&quot;&gt;html 파일에서 외부 js 파일 로드하기&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://expressjs.com/ko/starter/static-files.html&quot;&gt;Express에서 정적 파일 제공&lt;/a&gt;&lt;/p&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="node" /></entry><entry><title type="html">동등연산자 == 와 일치 연산자 === 의 차이🤨</title><link href="/javascript/2020-12-29-equality-operator/" rel="alternate" type="text/html" title="동등연산자 == 와 일치 연산자 === 의 차이🤨" /><published>2020-12-29T00:00:00+09:00</published><updated>2020-12-29T14:00:45+09:00</updated><id>/javascript/equality-operator</id><content type="html" xml:base="/javascript/2020-12-29-equality-operator/">&lt;h2 id=&quot;-동등-연산자--equality-operator&quot;&gt;== (동등 연산자 : Equality operator)&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;피연산자가 서로 다른 타입이면 타입을 강제로 변환하여 비교한다.&lt;/li&gt;
@@ -1136,93 +1159,4 @@ writeHead가 호출되고 setHeader가 호출되지 않은 경우, 내부적으�
 &lt;h3 id=&quot;참고사이트&quot;&gt;참고사이트&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.w3schools.com/nodejs/nodejs_http.asp&quot;&gt;https://www.w3schools.com/nodejs/nodejs_http.asp&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://zetcode.com/javascript/http/&quot;&gt;http://zetcode.com/javascript/http/&lt;/a&gt;&lt;/p&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="node" /></entry><entry><title type="html">Introducing Hydejack 9</title><link href="/example/2020-07-03-introducing-hydejack-9/" rel="alternate" type="text/html" title="Introducing Hydejack 9" /><published>2020-07-03T00:00:00+09:00</published><updated>2020-12-15T15:17:00+09:00</updated><id>/example/introducing-hydejack-9</id><content type="html" xml:base="/example/2020-07-03-introducing-hydejack-9/">&lt;p class=&quot;lead&quot;&gt;Version 9 is the most complete version of Hydejack yet.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#linking-in-style&quot;&gt;Modernized&lt;/a&gt; &lt;a href=&quot;#whats-in-the-cards&quot;&gt;design&lt;/a&gt;, &lt;a href=&quot;#ready-for-the-big-screen&quot;&gt;big headlines&lt;/a&gt;, big new features: &lt;a href=&quot;#built-in-search&quot;&gt;Built-In Search&lt;/a&gt;, &lt;a href=&quot;#sticky-table-of-contents&quot;&gt;Sticky Table of Contents&lt;/a&gt;, and &lt;a href=&quot;#auto-hiding-navbar&quot;&gt;Auto-Hiding Navbar&lt;/a&gt;. That &lt;a href=&quot;#and-much-more&quot;&gt;and more&lt;/a&gt; is Hydejack 9.&lt;/p&gt;
-
-&lt;ul class=&quot;large-only&quot; id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#linking-in-style&quot; id=&quot;markdown-toc-linking-in-style&quot;&gt;Linking in Style&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#ready-for-the-big-screen&quot; id=&quot;markdown-toc-ready-for-the-big-screen&quot;&gt;Ready for the Big Screen&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#whats-in-the-cards&quot; id=&quot;markdown-toc-whats-in-the-cards&quot;&gt;What’s in the Cards?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#built-in-search&quot; id=&quot;markdown-toc-built-in-search&quot;&gt;Built-In Search&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#auto-hiding-navbar&quot; id=&quot;markdown-toc-auto-hiding-navbar&quot;&gt;Auto-Hiding Navbar&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#sticky-table-of-contents&quot; id=&quot;markdown-toc-sticky-table-of-contents&quot;&gt;Sticky Table of Contents&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#and-much-more&quot; id=&quot;markdown-toc-and-much-more&quot;&gt;…and much more&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#even-more-to-come&quot; id=&quot;markdown-toc-even-more-to-come&quot;&gt;Even More to Come&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#get-it-now&quot; id=&quot;markdown-toc-get-it-now&quot;&gt;Get It Now&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;linking-in-style&quot;&gt;Linking in Style&lt;/h2&gt;
-
-&lt;p&gt;Ever since the introduction of Dark Mode, link styles have been a bit of an issue. Specifically, finding an accent color that worked on both light and dark backgrounds was the problem. With Hydejack 9, the &lt;a href=&quot;#linking-in-style&quot;&gt;link style&lt;/a&gt; has been revamped so that legibility is no longer tied to the choice of accent_color, giving you much more freedom in creating a unique design flavor for your site.&lt;/p&gt;
-
-&lt;h2 id=&quot;ready-for-the-big-screen&quot;&gt;Ready for the Big Screen&lt;/h2&gt;
-
-&lt;p&gt;The theme on which Hydejack is based was designed for a different era of the web. Hydejack has inherited many of its limitations, but over time I’ve made adjustments, such as centering the content column for better reading ergonomics.&lt;/p&gt;
-
-&lt;p&gt;With version 9, Hydejack takes full advantage of large displays. Whether it’s design indulgences such as oversized headlines, or quality of life improvements such as a floating table of contents, Hydejack now finds use for all that extra screen real estate&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;whats-in-the-cards&quot;&gt;What’s in the Cards?&lt;/h2&gt;
-
-&lt;p&gt;Hydejack 9 now lets you use content cards for both projects and posts. 
-The cards have been redesigned with a new hover style and drop shadows and they retain their unique transition-to-next-page animations, which now also work on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog&lt;/code&gt; layout. The new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grid&lt;/code&gt; layout lets you do that.&lt;/p&gt;
-
-&lt;p&gt;Good images are key to making the most out of content cards. For that reason, a &lt;a href=&quot;/docs/basics/#adding-images&quot;&gt;chapter on images&lt;/a&gt; has been added to the documentation.&lt;/p&gt;
-
-&lt;h2 id=&quot;built-in-search&quot;&gt;Built-In Search&lt;/h2&gt;
-
-&lt;p&gt;Hydejack now has Built-In Search. It even works offline. I’ve been prototyping many approaches and eventually settled on a fully client-side, off-the-main thread solution that perfectly fits the use case of personal sites and shows surprisingly good results&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;p&gt;The new search UI is custom made for Hydejack and shows beautiful previews of your posts and pages, right on top of your regular content.&lt;/p&gt;
-
-&lt;p&gt;Together with the Auto-Hiding Navbar, your entire content library is now only a couple of keystrokes away.&lt;/p&gt;
-
-&lt;h2 id=&quot;auto-hiding-navbar&quot;&gt;Auto-Hiding Navbar&lt;/h2&gt;
-
-&lt;p&gt;A navbar that’s there when you need it, and disappears when you don’t. Simple as that.&lt;/p&gt;
-
-&lt;h2 id=&quot;sticky-table-of-contents&quot;&gt;Sticky Table of Contents&lt;/h2&gt;
-
-&lt;p&gt;Already a staple on so many sites on the web, this pattern is now also available in Hydejack. 
-What’s unique about it is that it simply picks up the table of contents already created by kramdown’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{:toc}&lt;/code&gt; tag and transparently upgrades it to a fully dynamic version.&lt;/p&gt;
-
-&lt;h2 id=&quot;and-much-more&quot;&gt;…and much more&lt;/h2&gt;
-
-&lt;p&gt;Other noteworthy changes include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for Jekyll 4&lt;/li&gt;
-  &lt;li&gt;Choice between MathJax and KaTeX for math rendering&lt;/li&gt;
-  &lt;li&gt;Use of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-include-cache&lt;/code&gt; for drastically improved page building speeds&lt;/li&gt;
-  &lt;li&gt;New variables configuration file — adjust content width, sidebar width, font size, etc…&lt;/li&gt;
-  &lt;li&gt;…and the option to disable grouping projects by year.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Read the the &lt;a href=&quot;/CHANGELOG/&quot; class=&quot;heading flip-title&quot;&gt;CHANGELOG&lt;/a&gt; for the full scope of features and improvements made in Hydejack 9.
-Maybe just glance at it to confirm that it is indeed a pretty long list.&lt;/p&gt;
-
-&lt;h2 id=&quot;even-more-to-come&quot;&gt;Even More to Come&lt;/h2&gt;
-
-&lt;p&gt;New features for 9.1 are already lined up. Code block headers and code line highlights for even better technical blogging, as well as download buttons on the resume page for PDF, vCard, and Resume JSON are just around the corner.&lt;/p&gt;
-
-&lt;h2 id=&quot;get-it-now&quot;&gt;Get It Now&lt;/h2&gt;
-&lt;p&gt;The Free Version of Hydejack is now availabe on &lt;a href=&quot;https://rubygems.org/gems/jekyll-theme-hydejack&quot;&gt;RubyGems&lt;/a&gt;
-and for the first time also on &lt;a href=&quot;https://github.com/hydecorp/hydejack/packages&quot;&gt;GitHub Packages&lt;/a&gt;. 
-The source code is available on &lt;a href=&quot;https://github.com/hydecorp/hydejack&quot;&gt;GitHub&lt;/a&gt; as always.&lt;/p&gt;
-
-&lt;p&gt;The PRO Version is scheduled to release on July 7th on Gumroad. Pre-Orders are open now:&lt;/p&gt;
-
-&lt;div class=&quot;gumroad-product-embed&quot; data-gumroad-product-id=&quot;nuOluY&quot;&gt;&lt;a href=&quot;https://gumroad.com/l/nuOluY&quot;&gt;Loading…&lt;/a&gt;&lt;/div&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;If you are a fan of the old two-column layout, or don’t like modern design tropes such as mega headlines, Hydejack lets you revert these changes on a case-by-case basis via configuration options. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-
-      &lt;p&gt;Search was mainly tested for English and German. Please let me know about issues in other languages. 
-  While I’ve tried to find a multi-language solution, most showed drastically worse  results for the English base case.
-  If you’re technically inclined, you can adopt the code located in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/js/search-worker.js&lt;/code&gt; to your needs. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="example" /><summary type="html">Version 9 is the most complete version of Hydejack yet.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/img/blog/hydejack-9.jpg" /><media:content medium="image" url="/assets/img/blog/hydejack-9.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;a href=&quot;http://zetcode.com/javascript/http/&quot;&gt;http://zetcode.com/javascript/http/&lt;/a&gt;&lt;/p&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="node" /></entry></feed>
