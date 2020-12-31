@@ -1,0 +1,90 @@
+I"m
+
+
+
+
+
+<article id="post-node-express-static" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        [Express] html에서 로드할 수 있는 파일 경로 설정
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2020-12-31T00:00:00+09:00">31 Dec 2020</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/node/" class="flip-title">Node.js</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    
+<h2 id="expressstatic">express.static</h2>
+
+<p>Express에서 이미지, CSS 파일 및 JavaScript 파일과 같은 정적 파일을 제공하려 한다.</p>
+
+<p>public 폴더를 express.static 미들웨어 함수에 전달하면 디렉토리의 절대 경로를 사용하여 폴더 속 파일을 제공할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="dl">"</span><span class="s2">/static</span><span class="dl">"</span><span class="p">,</span> <span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/public</span><span class="dl">"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><br />
+이제 /static 경로 접두부를 통해 public 디렉토리에 포함된 파일을 로드할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:3000/static/images/kitten.jpg</span>
+<span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:3000/static/css/style.css</span>
+<span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:3000/static/js/app.js</span>
+<span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:3000/static/images/bg.png</span>
+<span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:3000/static/hello.html</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/static/js/script.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><br />
+<a href="https://infodbbase.tistory.com/41">html 파일에서 외부 js 파일 로드하기</a><br />
+<a href="https://expressjs.com/ko/starter/static-files.html">Express에서 정적 파일 제공</a></p>
+
+  
+</article>
+:ET
