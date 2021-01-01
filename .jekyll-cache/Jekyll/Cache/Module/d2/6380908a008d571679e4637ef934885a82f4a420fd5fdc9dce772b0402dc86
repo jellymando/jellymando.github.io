@@ -1,0 +1,74 @@
+I"S
+
+
+
+
+
+<article id="post-css-selectbox-center" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        셀렉트 박스 텍스트 가운데 정렬
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2020-01-01T00:00:00+09:00">01 Jan 2020</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/css/" class="flip-title">CSS</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">select</span> <span class="p">{</span>
+   <span class="nx">text</span><span class="o">-</span><span class="nx">align</span><span class="o">-</span><span class="nx">last</span><span class="p">:</span> <span class="nx">center</span><span class="p">;</span>
+   <span class="nx">text</span><span class="o">-</span><span class="nx">align</span><span class="p">:</span> <span class="nx">center</span><span class="p">;</span>
+   <span class="o">-</span><span class="nx">ms</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">align</span><span class="o">-</span><span class="nx">last</span><span class="p">:</span> <span class="nx">center</span><span class="p">;</span>
+   <span class="o">-</span><span class="nx">moz</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">align</span><span class="o">-</span><span class="nx">last</span><span class="p">:</span> <span class="nx">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcacmSz%2FbtqC8IWBPNh%2FlDKIbPAXge3JiTncGRzoE0%2Fimg.png" /></p>
+
+  
+</article>
+:ET
