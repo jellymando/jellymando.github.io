@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-01T23:09:15+09:00</updated><id>/feed.xml</id><title type="html">고양이발</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2021-01-03T20:45:41+09:00</updated><id>/feed.xml</id><title type="html">고양이발</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
 </subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">[Express] html에서 로드할 수 있는 파일 경로 설정</title><link href="/node/2020-12-31-express-static/" rel="alternate" type="text/html" title="[Express] html에서 로드할 수 있는 파일 경로 설정" /><published>2020-12-31T00:00:00+09:00</published><updated>2020-12-31T16:21:53+09:00</updated><id>/node/express-static</id><content type="html" xml:base="/node/2020-12-31-express-static/">&lt;h2 id=&quot;expressstatic&quot;&gt;express.static&lt;/h2&gt;
 
 &lt;p&gt;Express에서 이미지, CSS 파일 및 JavaScript 파일과 같은 정적 파일을 제공하려 한다.&lt;/p&gt;
@@ -132,47 +132,7 @@
       &lt;td&gt;&lt;span style=&quot;color:red;&quot;&gt;false&lt;/span&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="javascript" /></entry><entry><title type="html">Git checkout 👉 switch &amp;amp; restore</title><link href="/git/2020-12-28-git-switch/" rel="alternate" type="text/html" title="Git checkout 👉 switch &amp;amp; restore" /><published>2020-12-28T00:00:00+09:00</published><updated>2020-12-28T15:54:13+09:00</updated><id>/git/git-switch</id><content type="html" xml:base="/git/2020-12-28-git-switch/">&lt;p&gt;Git 2.23 부터 checkout의 기능이 switch와 restore로 분리되었다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;checkout&lt;/strong&gt; : Switch branches or restore working tree files&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;switch&lt;/strong&gt;: Switch branches&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;restore&lt;/strong&gt;: Restore working tree files&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://blog.outsider.ne.kr/1505&quot;&gt;참고사이트&lt;/a&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;switch&quot;&gt;switch&lt;/h2&gt;
-
-&lt;p&gt;branch를 변경한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;develop&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;branch를 생성하고 해당 브런치로 변경한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://git-scm.com/docs/git-switch&quot;&gt;Git 공식 문서 - switch&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;restore&quot;&gt;restore&lt;/h2&gt;
-
-&lt;p&gt;작업중인 파일을 복원한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;restore&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;색인에서 HEAD의 버전과 일치하도록 파일을 복원 (git-reset[1]을 사용하는 것과 동일함)&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;restore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;staged&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://git-scm.com/docs/git-restore&quot;&gt;Git 공식 문서 - restore&lt;/a&gt;&lt;/p&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="git" /></entry><entry><title type="html">🤴왕초보의 git/github 개척기</title><link href="/git/2020-12-28-git-basic/" rel="alternate" type="text/html" title="🤴왕초보의 git/github 개척기" /><published>2020-12-28T00:00:00+09:00</published><updated>2020-12-28T15:54:13+09:00</updated><id>/git/git-basic</id><content type="html" xml:base="/git/2020-12-28-git-basic/">&lt;h2 id=&quot;사용자-등록&quot;&gt;사용자 등록&lt;/h2&gt;
+&lt;/table&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="javascript" /></entry><entry><title type="html">🤴왕초보의 git/github 개척기</title><link href="/git/2020-12-28-git-basic/" rel="alternate" type="text/html" title="🤴왕초보의 git/github 개척기" /><published>2020-12-28T00:00:00+09:00</published><updated>2020-12-28T15:54:13+09:00</updated><id>/git/git-basic</id><content type="html" xml:base="/git/2020-12-28-git-basic/">&lt;h2 id=&quot;사용자-등록&quot;&gt;사용자 등록&lt;/h2&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;사용자&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;이름&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;사용자&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;이메일&lt;/span&gt;
@@ -260,7 +220,47 @@
 &lt;h2 id=&quot;branch-이름-변경하기&quot;&gt;branch 이름 변경하기&lt;/h2&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;변경전_branch_name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;새로운_branch_name&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="git" /></entry><entry><title type="html">[React 스터디] 2 : 접근성</title><link href="/react/2020-12-27-accessibility/" rel="alternate" type="text/html" title="[React 스터디] 2 : 접근성" /><published>2020-12-27T00:00:00+09:00</published><updated>2020-12-27T13:42:44+09:00</updated><id>/react/accessibility</id><content type="html" xml:base="/react/2020-12-27-accessibility/">&lt;h2 id=&quot;접근성이란&quot;&gt;접근성이란?&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="git" /></entry><entry><title type="html">Git checkout 👉 switch &amp;amp; restore</title><link href="/git/2020-12-28-git-switch/" rel="alternate" type="text/html" title="Git checkout 👉 switch &amp;amp; restore" /><published>2020-12-28T00:00:00+09:00</published><updated>2020-12-28T15:54:13+09:00</updated><id>/git/git-switch</id><content type="html" xml:base="/git/2020-12-28-git-switch/">&lt;p&gt;Git 2.23 부터 checkout의 기능이 switch와 restore로 분리되었다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;checkout&lt;/strong&gt; : Switch branches or restore working tree files&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;switch&lt;/strong&gt;: Switch branches&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;restore&lt;/strong&gt;: Restore working tree files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;a href=&quot;https://blog.outsider.ne.kr/1505&quot;&gt;참고사이트&lt;/a&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;switch&quot;&gt;switch&lt;/h2&gt;
+
+&lt;p&gt;branch를 변경한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;develop&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;branch를 생성하고 해당 브런치로 변경한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;a href=&quot;https://git-scm.com/docs/git-switch&quot;&gt;Git 공식 문서 - switch&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;restore&quot;&gt;restore&lt;/h2&gt;
+
+&lt;p&gt;작업중인 파일을 복원한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;restore&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;색인에서 HEAD의 버전과 일치하도록 파일을 복원 (git-reset[1]을 사용하는 것과 동일함)&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;restore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;staged&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;a href=&quot;https://git-scm.com/docs/git-restore&quot;&gt;Git 공식 문서 - restore&lt;/a&gt;&lt;/p&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><category term="git" /></entry><entry><title type="html">[React 스터디] 2 : 접근성</title><link href="/react/2020-12-27-accessibility/" rel="alternate" type="text/html" title="[React 스터디] 2 : 접근성" /><published>2020-12-27T00:00:00+09:00</published><updated>2020-12-27T13:42:44+09:00</updated><id>/react/accessibility</id><content type="html" xml:base="/react/2020-12-27-accessibility/">&lt;h2 id=&quot;접근성이란&quot;&gt;접근성이란?&lt;/h2&gt;
 
 &lt;p&gt;사용자가 신체적 불편함이나 장애 여부와 상관없이 웹에 접근할 수 있도록 고려하는 것으로 img태그에 대한 대체 텍스트, 건너뛰기 링크, 레이블 제공 등으로 접근성을 높일 수 있다.&lt;/p&gt;
 
