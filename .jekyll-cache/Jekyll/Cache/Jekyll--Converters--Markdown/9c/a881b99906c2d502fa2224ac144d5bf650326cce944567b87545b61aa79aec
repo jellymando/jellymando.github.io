@@ -1,0 +1,136 @@
+I"�<
+<h2 id="번들링">번들링</h2>
+
+<p>대부분 React 앱들은 Webpack, Rollup 또는 Browserify 같은 툴을 사용하여 여러 파일을 하나로 병합한 “번들된” 파일을 웹 페이지에 포함하여 한 번에 전체 앱을 로드할 수 있습니다.</p>
+
+<p>번들이 거대해지는 것을 방지하기 위한 좋은 해결방법은 번들을 “나누는” 것입니다.</p>
+
+<p>앱에 코드 분할을 도입하는 가장 좋은 방법은 동적 import() 문법을 사용하는 방법입니다.</p>
+
+<h4 id="before">before</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">add</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./math</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">26</span><span class="p">));</span>
+
+<span class="c1">// math.js</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="after">after</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./math</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">math</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">26</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="suspense">Suspense</h2>
+
+<p>Suspense를 사용하면 컴포넌트가 렌더링되기 전까지 기다릴 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 이것은 프라미스가 아닙니다. Suspense 통합에서 만들어낸 특별한 객체입니다.</span>
+<span class="kd">const</span> <span class="nx">resource</span> <span class="o">=</span> <span class="nx">fetchProfileData</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">ProfilePage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Suspense</span> <span class="nx">fallback</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Loading</span> <span class="nx">profile</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h1&gt;}</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ProfileDetails</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Suspense</span> <span class="nx">fallback</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Loading</span> <span class="nx">posts</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/h1&gt;}</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">ProfileTimeline</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/Suspense</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Suspense</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">ProfileDetails</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 아직 로딩이 완료되지 않았더라도, 사용자 정보 읽기를 시도합니다</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">resource</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">read</span><span class="p">();</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">ProfileTimeline</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 아직 로딩이 완료되지 않았더라도, 게시글 읽기를 시도합니다</span>
+  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">resource</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">read</span><span class="p">();</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>      <span class="p">))}</span>
+    <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br />
+화면 상에 <code class="language-plaintext highlighter-rouge">&lt;ProfilePage&gt;</code>를 렌더링할 때에 아래와 같은 일들이 벌어집니다.</p>
+
+<ol>
+  <li>fetchProfileData() 요청을 발동시킵니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;ProfilePage&gt;</code>의 렌더링을 시도합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;ProfileDetails&gt;</code>의 렌더링을 시도합니다. resource.user.read()를 호출합니다. 아직 불러온 데이터가 아무 것도 없으므로 다른 컴포넌트의 렌더링을 시도합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;ProfileTimeline&gt;</code>의 렌더링을 시도합니다. resource.posts.read()를 호출합니다. 또 한번, 아직 데이터가 없으므로 다른 컴포넌트의 렌더링을 시도합니다.</li>
+  <li>렌더링을 시도할 컴포넌트가 남아있지 않습니다. <code class="language-plaintext highlighter-rouge">&lt;ProfileDetails&gt;</code>가 정지된 상태이므로, React는 트리 상에서 <code class="language-plaintext highlighter-rouge">&lt;ProfielDetails&gt;</code> 위에 존재하는 것 중 가장 가까운 <code class="language-plaintext highlighter-rouge">&lt;Suspense&gt;</code> Fallback을 찾습니다. 그것은 <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code>Loading profile…<code class="language-plaintext highlighter-rouge">&lt;/h1&gt;</code>입니다. 일단, 지금으로서는 할 일이 다 끝났습니다.</li>
+</ol>
+
+<h2 id="reactlazy">React.lazy</h2>
+
+<p>React.lazy 함수를 사용하면 동적 import를 사용해서 컴포넌트를 렌더링 할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Suspense</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">OtherComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./OtherComponent</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">AnotherComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./AnotherComponent</span><span class="dl">"</span><span class="p">));</span>
+
+<span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Suspense</span> <span class="nx">fallback</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/div&gt;}</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">section</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">OtherComponent</span> <span class="o">/&gt;</span>
+          <span class="o">&lt;</span><span class="nx">AnotherComponent</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/Suspense</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br />
+lazy 컴포넌트는 Suspense 컴포넌트 하위에서 렌더링되어야 하며, 하나의 Suspense 컴포넌트로 여러 lazy 컴포넌트를 감쌀 수도 있습니다.</p>
+
+<h2 id="비동기식-반응-라우터">비동기식 반응 라우터</h2>
+
+<p>특정 Route에 있을 때만 컴포넌트를 로드할 수 있습니다.</p>
+
+<p>다른 컴포넌트와 함께 사용할 때 특정 Route에 있을 때만 로드되도록 컴포넌트를 포장할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Suspense</span><span class="p">,</span> <span class="nx">lazy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span> <span class="k">as</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Switch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">FunComponent</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./FunComponent</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">TerribleComponent</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./TerribleComponent</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">TestComponent</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./TestComponent</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">LoadingMessage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">I'm loading...</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Suspense</span> <span class="nx">fallback</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">LoadingMessage</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/fun</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">FunComponent</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>
+      <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/terrible</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">TerribleComponent</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>
+      <span class="o">&lt;</span><span class="nx">Route</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">TestComponent</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Switch</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Suspense</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+:ET
