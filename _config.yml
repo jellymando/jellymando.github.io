@@ -66,6 +66,8 @@ menu:
     url: /jquery/
   - title: MySQL
     url: /mysql/
+  - title: MongoDB
+    url: /mongodb/
   - title: 기타
     url: /etc/
 
