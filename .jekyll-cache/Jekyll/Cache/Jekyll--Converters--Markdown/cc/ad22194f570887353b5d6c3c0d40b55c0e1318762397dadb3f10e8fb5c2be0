@@ -1,0 +1,35 @@
+I"k
+<h2 id="-jquery-172를-350로-업그레이드-하는-여정">🚃 jQuery 1.7.2를 3.5.0로 업그레이드 하는 여정</h2>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>jQuery 파일을 1.12.4로 바꾸고 Migrate 1.4.1를 추가한다.</p>
+
+    <p><a href="https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/">jQuery 1.12.4 다운로드</a><br />
+<a href="https://code.jquery.com/jquery/#jquery-migrate-all">jQuery migrate 1.4.1 다운로드</a>
+<br /><br /></p>
+  </li>
+  <li>
+    <p>Migrate warning messages에 따라 에러를 잡는다.</p>
+
+    <p><a href="https://github.com/jquery/jquery-migrate/blob/1.x-stable/warnings.md">Migrate 1.x warning messages</a><br />
+<a href="https://jquery.com/upgrade-guide/1.9/">jQuery Core 1.9 Upgrade Guide</a>
+<br /><br /></p>
+  </li>
+  <li>
+    <p>jQuery 1.12.4를 3.5.0으로 업그레이드 한다.</p>
+
+    <p><a href="https://jquery.com/download/">jQuery 3.5.1 다운로드</a>
+<a href="https://github.com/jquery/jquery-migrate/#download">jQuery migrate 3.3.2 다운로드</a></p>
+  </li>
+  <li>
+    <p>jQuery Migrate 3.3.2로 에러를 잡는다.</p>
+  </li>
+</ol>
+
+<p><a href="https://blog.jquery.com/2016/05/19/jquery-migrate-1-4-1-released-and-the-path-to-jquery-3-0/">jQuery Migrate 1.4.1 released, and the path to jQuery 3.0</a><br /></p>
+
+<p><a href="https://jquery.com/upgrade-guide/">jQuery Core Upgrade Guides</a></p>
+:ET

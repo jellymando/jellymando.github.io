@@ -1,6 +1,0 @@
-I"
-<h2 id="mongoose-설치">Mongoose 설치</h2>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">mongoose</span>
-</code></pre></div></div>
-:ET
