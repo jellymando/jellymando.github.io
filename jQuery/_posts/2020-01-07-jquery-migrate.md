@@ -99,3 +99,5 @@ var obj = JSON.parse('{ "name": "John" }');
 `.on()` 및 `.trigger()` 메서드는 모든 이벤트 유형에 대해 이벤트 핸들러를 설정하거나 이벤트를 생성할 수 있으므로 shortcut 메서드 대신 사용해야 합니다.
 
 이 메시지는 `blur, focus, focusin, focusout, resize, scroll, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, change, select, submit, keydown, keypress, keyup, and contextmenu` 를 포함한 다른 이벤트에도 적용됩니다.
+
+`.click(fn)` 대신 `.on("click", fn)` 사용 / `.click()` 대신 `.trigger("click")` 사용합니다.
