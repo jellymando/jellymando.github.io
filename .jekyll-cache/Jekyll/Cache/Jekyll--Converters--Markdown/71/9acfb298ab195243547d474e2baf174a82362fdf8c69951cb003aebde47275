@@ -1,0 +1,21 @@
+I"w
+<h2 id="fancytree">Fancytree</h2>
+
+<p>jQuery 라이브러리인 dynatree.js migrate 하면서 정리</p>
+
+<p>하지만 모르겠다 ㅡㅡ</p>
+
+<h4 id="treenoderootnode">treeNode.rootNode</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">treeNode</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#tree</span><span class="dl">"</span><span class="p">).</span><span class="nx">fancytree</span><span class="p">({</span>
+    <span class="c1">// ...</span>
+    <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">data</span><span class="p">){</span>
+    <span class="nx">treeNode</span><span class="p">.</span><span class="nx">rootNode</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">tree</span><span class="p">.</span><span class="nx">rootNode</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="메서드"><a href="https://wwwendt.de/tech/fancytree/doc/jsdoc/FancytreeNode.html">메서드</a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">treeNode.rootNode.addChildren().setActive()</code></p>
+:ET
