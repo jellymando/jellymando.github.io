@@ -30,7 +30,8 @@ sitemap: false
 4. Migrate warning messages에 따라 에러를 잡는다.
 
    [Migrate 3.x warning messages](https://github.com/jquery/jquery-migrate/blob/master/warnings.md)<br/>
-   [jQuery Core 3.0 Upgrade Guide](https://jquery.com/upgrade-guide/3.0/)
+   [jQuery Core 3.0 Upgrade Guide](https://jquery.com/upgrade-guide/3.0/)<br/>
+   [jQuery Core 3.5 Upgrade Guide](https://jquery.com/upgrade-guide/3.5/)
    <br/><br/>
 
 ## 🗒 수정사항 노트
@@ -101,3 +102,18 @@ var obj = JSON.parse('{ "name": "John" }');
 이 메시지는 `blur, focus, focusin, focusout, resize, scroll, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, change, select, submit, keydown, keypress, keyup, and contextmenu` 를 포함한 다른 이벤트에도 적용됩니다.
 
 `.click(fn)` 대신 `.on("click", fn)` 사용 / `.click()` 대신 `.trigger("click")` 사용합니다.
+
+<br/>
+- **jQuery.isFunction() has been deprecated**
+
+jQuery 3.3부터 `jQuery.isFunction()` 은 더 이상 사용되지 않습니다. 대신 `typeof x === "function"` 을 사용할 수 있습니다.
+
+```js
+var fn = function () {};
+
+// old
+jQuery.isFunction(fn);
+
+// new
+typeof fn === "function";
+```
