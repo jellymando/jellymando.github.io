@@ -66,6 +66,18 @@ module.exports = function (app) {
 };
 ```
 
+## body-parser 설치
+
+```js
+npm install body-parser
+```
+
+```js
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+```
+
 ## ejs 설치
 
 ```js
@@ -92,6 +104,10 @@ app.engine("html", require("ejs").renderFile);
 var express = require("express");
 var app = express();
 var router = require("./router/main")(app);
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
