@@ -1,0 +1,212 @@
+I"DA
+
+
+
+
+
+<article id="post-react-redux-notion" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        REACT가 REDUX를 만나면..💏
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2020-01-24T00:00:00+09:00">24 Jan 2020</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/react/" class="flip-title">React</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    
+<h2 id="redux-설치">Redux 설치</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">yarn</span> <span class="nx">add</span> <span class="p">@</span><span class="nd">reduxjs</span><span class="sr">/toolki</span><span class="err">t
+</span><span class="nx">yarn</span> <span class="nx">add</span> <span class="nx">react</span><span class="o">-</span><span class="nx">redux</span>
+</code></pre></div></div>
+
+<h2 id="action-정의">action 정의</h2>
+
+<blockquote>
+  <p>어떤 변화가 일어나야 하는지 설명하는 객체</p>
+</blockquote>
+
+<p>액션 유형과 타입을 반환하는 함수를 담은 파일을 만든다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">INCREASE</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">INCREASE</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">DECREASE</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DECREASE</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">increase</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">INCREASE</span><span class="dl">"</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">decrease</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DECREASE</span><span class="dl">"</span> <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="reducer-정의">Reducer 정의</h2>
+
+<blockquote>
+  <p>action 객체를 받았을 때, 데이터를 어떻게 처리할지 정의하는 객체</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">INCREASE</span><span class="p">,</span> <span class="nx">DECREASE</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../action/count</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">counterReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nx">INCREASE</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">};</span>
+    <span class="k">case</span> <span class="nx">DECREASE</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">};</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="store-적용">store 적용</h2>
+
+<p>createStore로 store를 생성하고 Provider로 컴포넌트를 감싸 store를 전달한다.</p>
+
+<p>store.subscribe로 state를 구독하여 상태가 변할 때마다 리렌더링한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">counterReducer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./reducer/counter</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">counterReducer</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">render</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/Provider&gt;</span><span class="err">,
+</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">store</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<span class="nx">render</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="class형">class형</h2>
+
+<p>connect를 통해 값과 함수를 props로 전달한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">increase</span><span class="p">,</span> <span class="nx">decrease</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../action/count</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">num</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">num</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">onIncrease</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">increase</span><span class="p">()),</span>
+    <span class="na">onDecrease</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">decrease</span><span class="p">()),</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">Counter</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Counter</span><span class="p">);</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="함수형">함수형</h2>
+
+<p>useSelector, useDispatch로 값과 함수를 전달한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useCallback</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useSelector</span><span class="p">,</span> <span class="nx">useDispatch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">actions</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../action/count</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Counter</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">useDispatch</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">useSelector</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">increase</span><span class="p">());</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">]);</span>
+
+  <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">decrease</span><span class="p">());</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">num</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br />
+<a href="https://redux.js.org/introduction/getting-started">Redux 공식문서</a><br />
+<a href="https://velog.io/@eomttt/Redux-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%95%A8%EC%88%98%ED%98%95-Class-%ED%98%95">Redux 적용하기 (함수형, Class 형)</a></p>
+
+  
+</article>
+:ET

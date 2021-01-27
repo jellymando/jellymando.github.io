@@ -1,0 +1,168 @@
+I"#2
+
+
+
+
+
+<article id="post-node-express-html-render" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        Node Express 설치 및 html 라우팅하기🔥
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2021-01-09T00:00:00+09:00">09 Jan 2021</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/node/" class="flip-title">Node.js</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    
+<h2 id="express-설치">Express 설치</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">express</span> <span class="o">--</span><span class="nx">save</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><a href="https://expressjs.com/ko/starter/installing.html">Express를 임시로 설치하고 종속 항목 목록에 추가하지 않으려면, 다음과 같이 –save 옵션을 생략하십시오.</a></p>
+</blockquote>
+
+<h2 id="express-서버-생성">Express 서버 생성</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// server.js</span>
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Express server has started on port 3000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="router-생성">Router 생성</h2>
+
+<p>라우팅은 애플리케이션 엔드 포인트(URI)의 정의, 그리고 URI가 클라이언트 요청에 응답하는 방식을 말합니다.</p>
+
+<h4 id="기본적인-라우트의-모습">기본적인 라우트의 모습</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><br />
+라우팅할 html 파일을 생성합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Page</span> <span class="nx">Title</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">Heading</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">paragraph</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><br />
+router 폴더를 만들고 그 안에 main.js를 생성합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="dl">"</span><span class="s2">index.html</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="body-parser-설치">body-parser 설치</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">body</span><span class="o">-</span><span class="nx">parser</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">body-parser</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</code></pre></div></div>
+
+<h2 id="ejs-설치">ejs 설치</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">ejs</span>
+</code></pre></div></div>
+
+<h2 id="serverjs-업데이트">server.js 업데이트</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 라우터 모듈인 main.js를 불러와서 app 에 전달해줍니다.</span>
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./router/main</span><span class="dl">"</span><span class="p">)(</span><span class="nx">app</span><span class="p">);</span>
+
+<span class="c1">// 서버가 읽을 수 있도록 html 파일의 위치를 정의해줍니다.</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">,</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// 서버가 html을 렌더링 할 때, ejs 엔진을 사용하도록 설정합니다.</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">view engine</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ejs</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">engine</span><span class="p">(</span><span class="dl">"</span><span class="s2">html</span><span class="dl">"</span><span class="p">,</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">ejs</span><span class="dl">"</span><span class="p">).</span><span class="nx">renderFile</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="최종-serverjs">최종 server.js</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./router/main</span><span class="dl">"</span><span class="p">)(</span><span class="nx">app</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">body-parser</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">views</span><span class="dl">"</span><span class="p">,</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/views</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">view engine</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ejs</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">engine</span><span class="p">(</span><span class="dl">"</span><span class="s2">html</span><span class="dl">"</span><span class="p">,</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">ejs</span><span class="dl">"</span><span class="p">).</span><span class="nx">renderFile</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Express server has started on port 3000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+  
+</article>
+:ET

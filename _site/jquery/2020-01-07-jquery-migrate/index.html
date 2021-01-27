@@ -54,7 +54,7 @@ Powered by Hydejack v9.0.4 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="jQuery Migrate로 버전 업그레이드🐡" />
 <script type="application/ld+json">
-{"headline":"jQuery Migrate로 버전 업그레이드🐡","dateModified":"2021-01-16T14:30:37+09:00","datePublished":"2020-01-07T00:00:00+09:00","author":{"@type":"Person","name":"<firstname> <lastname>"},"mainEntityOfPage":{"@type":"WebPage","@id":"/jquery/2020-01-07-jquery-migrate/"},"description":"Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.","url":"/jquery/2020-01-07-jquery-migrate/","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"},"name":"<firstname> <lastname>"},"@context":"https://schema.org"}</script>
+{"datePublished":"2020-01-07T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"/jquery/2020-01-07-jquery-migrate/"},"author":{"@type":"Person","name":"<firstname> <lastname>"},"description":"Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.","url":"/jquery/2020-01-07-jquery-migrate/","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"},"name":"<firstname> <lastname>"},"headline":"jQuery Migrate로 버전 업그레이드🐡","dateModified":"2021-01-21T18:59:52+09:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -324,7 +324,8 @@ in <a href="/jquery/" class="flip-title">jQuery</a>
     <p>Migrate warning messages에 따라 에러를 잡는다.</p>
 
     <p><a href="https://github.com/jquery/jquery-migrate/blob/master/warnings.md">Migrate 3.x warning messages</a><br />
-<a href="https://jquery.com/upgrade-guide/3.0/">jQuery Core 3.0 Upgrade Guide</a>
+<a href="https://jquery.com/upgrade-guide/3.0/">jQuery Core 3.0 Upgrade Guide</a><br />
+<a href="https://jquery.com/upgrade-guide/3.5/">jQuery Core 3.5 Upgrade Guide</a>
 <br /><br /></p>
   </li>
 </ol>
@@ -416,6 +417,22 @@ in <a href="/jquery/" class="flip-title">jQuery</a>
 <p>이 메시지는 <code class="language-plaintext highlighter-rouge">blur, focus, focusin, focusout, resize, scroll, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, change, select, submit, keydown, keypress, keyup, and contextmenu</code> 를 포함한 다른 이벤트에도 적용됩니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">.click(fn)</code> 대신 <code class="language-plaintext highlighter-rouge">.on("click", fn)</code> 사용 / <code class="language-plaintext highlighter-rouge">.click()</code> 대신 <code class="language-plaintext highlighter-rouge">.trigger("click")</code> 사용합니다.</p>
+
+<p><br /></p>
+<ul>
+  <li><strong>jQuery.isFunction() has been deprecated</strong></li>
+</ul>
+
+<p>jQuery 3.3부터 <code class="language-plaintext highlighter-rouge">jQuery.isFunction()</code> 은 더 이상 사용되지 않습니다. 대신 <code class="language-plaintext highlighter-rouge">typeof x === "function"</code> 을 사용할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+
+<span class="c1">// old</span>
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+
+<span class="c1">// new</span>
+<span class="k">typeof</span> <span class="nx">fn</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
 
   
 </article>
@@ -541,7 +558,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/node/2021-01-09-express-mongodb/" class="flip-title"><span>Node Express 설치 및 html 라우팅하기🔥</span></a>  <time class="faded fine" datetime="2021-01-09T00:00:00+09:00">09 Jan 2021</time></li>                        <li class="h4">  <a href="/mongodb/2021-01-09-mongodb-start/" class="flip-title"><span>MongoDB 설치하기</span></a>  <time class="faded fine" datetime="2021-01-09T00:00:00+09:00">09 Jan 2021</time></li>                        <li class="h4">  <a href="/node/2021-01-03-data-cookie/" class="flip-title"><span>HTTP 모듈 (3: 데이터 추출과 쿠키 추출)</span></a>  <time class="faded fine" datetime="2021-01-03T00:00:00+09:00">03 Jan 2021</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/node/2021-01-09-express-html-render/" class="flip-title"><span>Node Express 설치 및 html 라우팅하기🔥</span></a>  <time class="faded fine" datetime="2021-01-09T00:00:00+09:00">09 Jan 2021</time></li>                        <li class="h4">  <a href="/mongodb/2021-01-09-mongodb-start/" class="flip-title"><span>MongoDB 설치하기</span></a>  <time class="faded fine" datetime="2021-01-09T00:00:00+09:00">09 Jan 2021</time></li>                        <li class="h4">  <a href="/node/2021-01-03-data-cookie/" class="flip-title"><span>HTTP 모듈 (3: 데이터 추출과 쿠키 추출)</span></a>  <time class="faded fine" datetime="2021-01-03T00:00:00+09:00">03 Jan 2021</time></li>            </ul></aside>
 
   
 
