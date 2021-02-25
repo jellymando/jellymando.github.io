@@ -28,5 +28,8 @@ function handleUnload()
 window.addEventListener('unload', handleUnload);
 ~~~
 
-<br>
+<br/>
 unload할 때, `document.readyState` 가 complete면 새로고침으로 판단한다.
+
+<br/>
+[onUnload 이벤트에서 새로고침과 창 닫힘 구분](https://globalhost.interdol.com/156)
