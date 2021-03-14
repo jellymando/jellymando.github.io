@@ -68,6 +68,8 @@ menu:
     url: /mysql/
   - title: MongoDB
     url: /mongodb/
+  - title: OS
+    url: /os/
   - title: 기타
     url: /etc/
 
