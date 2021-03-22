@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "$(window).on("load", fn) 순서"
+title: "window onload가 먼저 실행되는 이슈"
 sitemap: false
 ---
 
