@@ -23,8 +23,9 @@ sitemap: false
 
 3. jQuery 파일을 3.5.1로 바꾸고 Migrate 3.3.2를 추가한다.
 
-   [jQuery 3.5.1 다운로드](https://jquery.com/download/)<br/>
-   [jQuery migrate 3.3.2 다운로드](https://github.com/jquery/jquery-migrate/#download)
+   [jQuery 3.5.1 다운로드](https://blog.jquery.com/2020/05/04/jquery-3-5-1-released-fixing-a-regression/)<br/>
+   [jQuery migrate 3.3.2 다운로드](https://github.com/jquery/jquery-migrate/#download)<br/>
+   [jQuery 가장 최신 버전 다운로드](https://jquery.com/download/)
    <br/><br/>
 
 4. Migrate warning messages에 따라 에러를 잡는다.
