@@ -9,6 +9,7 @@ sitemap: false
 ## 🚃 jQuery 1.7.2를 3.5.0로 업그레이드 하는 여정
 
 <br/>
+
 1. jQuery 파일을 1.12.4로 바꾸고 Migrate 1.4.1를 추가한다.
 
 [jQuery 1.12.4 다운로드](https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/)<br/>
