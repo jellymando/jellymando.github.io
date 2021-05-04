@@ -55,6 +55,7 @@ sitemap: false
 
 checked, selected 속성에 대해 .removeAttr()를 사용하면 명명된 해당 속성을 false로 설정할 수 있었습니다.
 3.0부터는 `.removeAttr("checked")` 대신 `.prop("checked", false)` 를 사용합니다.
+checked, selected, disabled, readonly 등에 적용됩니다.
 
 <br/>
 - **.toggleClass( Boolean )**
