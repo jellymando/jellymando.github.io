@@ -31,3 +31,8 @@ canvas.height = 600;
 canvas.style.width = "800px";
 canvas.style.height = "600px";
 ```
+
+<br/>
+
+[캔버스 리사이즈 시 주의할 점](https://ohgyun.com/323)<br/>
+[캔버스(Canvas) 기본 사용법](https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
