@@ -150,7 +150,8 @@ module: {
       test: /\.jfif$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        // 파일명 앞에 img/ 처럼 경로를 붙이면 그 경로에 생성된다.
+        name: 'img/[name].[ext]'
       }
     },
     { test: /\.tsx?$/, loader: "ts-loader" }
