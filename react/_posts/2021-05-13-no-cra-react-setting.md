@@ -193,3 +193,19 @@ webpack-dev-server로 하면 not found module 에러가 계속 나서 찾다가 
 
 [[React] CRA 없이 리액트 환경 만들기](https://baeharam.netlify.app/posts/react/React-CRA-%EC%97%86%EC%9D%B4-%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0) <br/>
 [웹팩(Webpack) 기본 설정법 (Entry/Output/Loader/Plugins)](https://www.daleseo.com/webpack-config/)
+
+### 에러 체크
+
+- `index.html`에 js library 참조하니 build 에러. `index.js`에서 import or require.
+
+- css 파일에서 `@import` 사용하면 build 에러. `index.html`에서 직접 폰트 참조.
+
+- build 폴더에 img, js, html 한꺼번에 들어옴 ➡️ `webpack.config.js`에서 파일명 앞에 경로
+
+```js
+options: {
+        // 파일명 앞에 img/ 처럼 경로를 붙이면 그 경로에 생성된다.
+        name: 'img/[name].[ext]'
+      }
+      ~~~
+```
