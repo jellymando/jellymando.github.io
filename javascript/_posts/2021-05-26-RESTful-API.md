@@ -10,6 +10,7 @@ sitemap: false
 
 **Re**presentational **S**tate **T**ransfer의 약자로,
 
+- 대표적인 상태 전달
 - 네트워크 상에서 Client와 Server 사이의 통신 방식
 - URI(<u>Uniform Resource Identifier</u>)를 통해 웹의 자원(<u>Resource</u>)을 명시
 - HTTP Method(POST, GET, PUT, DELETE)를 통해 Resource에 대한 CRUD를 처리하도록 설계된 아키텍쳐
