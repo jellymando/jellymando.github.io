@@ -57,7 +57,7 @@ items.forEach(function (item) {
 
 ## map()
 
-배열의 각 요소에 대해 callback을 실행하고 실행결과를 모은 새 배열을 리턴합니다.
+배열의 각 요소에 대해 callback을 실행하고 실행결과를 모은 새로운 배열을 리턴합니다.
 
 중간에 return 할 수 없음
 
@@ -72,3 +72,5 @@ console.log(rr); // [undefined, undefined]
 // tiger
 // [undefined, undefined]
 ```
+
+[[JavaScript] for vs. forEach vs. map](https://m.blog.naver.com/wideeyed/221877912230)
