@@ -72,6 +72,8 @@ menu:
     url: /mongodb/
   - title: OS
     url: /os/
+  - title: Network
+    url: /network/
   - title: 기타
     url: /etc/
 
