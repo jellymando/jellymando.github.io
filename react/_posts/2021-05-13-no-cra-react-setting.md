@@ -45,6 +45,8 @@ yarn add react react-dom
 ```js
 yarn add --dev typescript
 
+npm install -D ts-node
+
 yarn run tsc --init
 ```
 
