@@ -45,6 +45,8 @@ yarn add react react-dom
 ```js
 yarn add --dev typescript
 
+npm install -D ts-node
+
 yarn run tsc --init
 ```
 
@@ -90,7 +92,29 @@ yarn add -D babel-loader css-loader style-loader file-loader ts-loader
 yarn add -D html-webpack-plugin clean-webpack-plugin
 ```
 
-yarn run dev
+### src 경로에 index.tsx, App.tsx 생성
+
+#### index.tsx
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+#### App.tsx
+
+```js
+import React from "react";
+
+const App = () => {
+  return <div></div>;
+};
+
+export default App;
+```
 
 ### 웹팩 설정
 
@@ -119,11 +143,11 @@ resolve: {
 - **output** : 웹팩의 번들링 결과물에 대한 옵션. 번들링 결과를 path 경로에 filename으로 묶어낸다. entry 설정은 항상 프로젝트 디렉터리 내부이기 때문에 상대 경로로 하는 반면에, output 설정은 항상 프로젝트 디렉터리 내부라는 보장이 없으므로 절대 경로로 한다. path 모듈을 사용하기 위해서 설정 파일의 module.exports 위에 선언해주자.
 
 ```js
-const path = require('path');
+const { resolve } = require('path');
 
 output: {
-  filename: 'build.js',
-  path: path.resolve(__dirname, 'build/js'),
+  path: resolve(__dirname, 'build'),
+  filename: 'js/build.js',
 }
 ```
 
@@ -162,10 +186,14 @@ module: {
 - **plugins** : 웹팩을 실행할 때 마다 기존에 있던 번들 파일을 먼저 깔끔히 지우고 싶은 경우에는 clean-webpack-plugin 플러그인을 사용
 
 ```js
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      minify: false, // index.html minify 여부
     }),
   ],
 ```
@@ -209,3 +237,19 @@ options: {
       }
       ~~~
 ```
+
+- build 후 license.txt 파일이 생성된다면
+
+```js
+npm install --save-dev terser-webpack-plugin
+```
+
+```js
+const TerserPlugin = require('terser-webpack-plugin');
+
+    optimization: {
+        minimizer: [new TerserPlugin({ extractComments: false })],
+    },
+```
+
+[How to prevent the creation of a LICENSE.txt file?](https://github.com/webpack-contrib/terser-webpack-plugin/issues/229#issuecomment-761294644)

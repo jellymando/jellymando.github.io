@@ -425,3 +425,13 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://jellymando.github.io/
+
+# 검색 기능
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: [search.html, index.html, tags.html]
+    categories: []
+    tags: []
