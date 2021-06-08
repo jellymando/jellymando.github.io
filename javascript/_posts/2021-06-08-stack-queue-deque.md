@@ -32,6 +32,8 @@ sitemap: false
 - 역추적을 해야할 때 (ex. 문서 작업 시 실행 취소, 방문기록 뒤로 가기)
 - 괄호 검사, 역순 문자열 만들기, 후위 표기법으로의 변환
 
+---
+
 ## 큐 (Queue)
 
 <img src="/assets/img/blog/stack-queue-deque_02.png">
@@ -56,9 +58,13 @@ sitemap: false
 - 너비 우선 탐색(BFS, Breadth-First Search) 구현
 - 은행 업무, 콜센터 대기
 
+---
+
 ## 덱 (Deque)
 
-<img src="/assets/img/blog/stack-queue-deque_03.png">
+<br/>
+
+<img src="/assets/img/blog/stack-queue-deque_03.png"><br/>
 
 - Deque (Double Ended Queue)
 - 스택과 큐의 연산을 합쳐놓은 것이다.
