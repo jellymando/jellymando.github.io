@@ -10,7 +10,7 @@ sitemap: false
 
 터치이벤트로 발생하는 x, y좌표는 `e.touches[0].clientX`, `e.touches[0].clientY` 이다.
 
-`Element.getBoundingClientRect()`는 윈도우(window)룰 기준으로 엘리먼트의 위치를 구하는 메서드이다.
+`Element.getBoundingClientRect()`는 window를 기준으로 엘리먼트의 위치를 구하는 메서드이다.
 
 mouse/touch event대로 그리면 이 위치 좌표가 더해져서 그려지기 때문에 위치값을 빼주어야 한다.
 
