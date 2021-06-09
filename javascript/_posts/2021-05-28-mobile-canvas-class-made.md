@@ -48,6 +48,12 @@ touchstart나 mousedown 이벤트가 발생하면 isDrawing을 true로 바꾸고
 
 position 파라미터를 받아 실제로 canvas에 그림을 그린다.
 
+그린 좌표를 position 배열에 집어넣는다.
+
+## drawEnd
+
+isDrawing을 true로 바꾸고, position 배열을 figures 배열에 집어넣고 스토리지에 저장한다.
+
 ## redraw
 
 새로고침 시 스토리지에 drawOn과 figures 값이 있다면 이전에 그렸던 내역을 다시 그린다.
@@ -65,6 +71,8 @@ if (e.target === this.canvas) {
   e.preventDefault();
 }
 ```
+
+<br/>
 
 - 터치한 좌표와 실제로 그려지는 좌표에 차이가 나는 이슈
 
