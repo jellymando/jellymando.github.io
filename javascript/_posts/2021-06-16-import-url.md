@@ -29,4 +29,13 @@ resolve: {
   }
 ```
 
+`resolve.modules`는 모듈을 해석 할 때 어떤 디렉토리를 검색해야 하는지 웹팩에 알려준다.
+
+위 코드처럼 디렉토리가 여러개면 src를 먼저 검색한다.
+
 `"src"`가 아닌 `"/src"`로 하면 에러 나니 조심.
+
+<br/>
+
+[리액트 절대 경로 사용하기](https://www.imkh.dev/react-absolute-path/)<br/>
+[resolve.modules](https://webpack.js.org/configuration/resolve/#resolvemodules)
