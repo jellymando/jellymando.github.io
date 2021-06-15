@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "절대 경로로 import 하기"
+title: "[Webpack] 절대 경로로 import 하기"
 sitemap: false
 ---
 
