@@ -171,7 +171,7 @@ module: {
       ]
     },
     {
-      test: /\.jfif$/,
+      test: /\.(png|jpg|jpeg|gif)$/,
       loader: 'file-loader',
       options: {
         // 파일명 앞에 img/ 처럼 경로를 붙이면 그 경로에 생성된다.
