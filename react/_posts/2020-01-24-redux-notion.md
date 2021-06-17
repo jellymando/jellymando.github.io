@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "REACT가 REDUX를 만나면..💏"
+title: "React에서 Redux 사용하기"
 sitemap: false
 ---
 
