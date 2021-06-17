@@ -57,8 +57,12 @@ tsconfig.json 설정
   "compilerOptions": {
     "sourceMap": true,  // 소스맵(*.map) 파일 생성 여부
     "jsx": "react", // Resolve: Cannot use JSX unless '--jsx' flag is provided
-    "esModuleInterop": true // import * as => import
-  }
+    "esModuleInterop": true, // import * as => import
+    "declaration": true, // .d.ts 파일 생성
+    "outDir": "./build", // 결과물을 저장할 디렉토리 설정
+    "baseUrl": "src" // 절대경로 설정
+  },
+  "includes": ["src"] // 절대경로 설정
 }
 ```
 
@@ -135,6 +139,7 @@ module.exports = {
 ```js
 resolve: {
   extensions: [".ts", ".tsx", ".js", ".jsx"],
+    modules: [resolve(__dirname, "src"), "node_modules"], // 절대경로로 모듈을 불러왔을 때 어떤 디렉토리를 검색해야 하는지 설정
 }
 ```
 
@@ -152,6 +157,14 @@ output: {
 ```
 
 > 참고로 \_\_dirname은 NodeJS에서 현재 프로젝트 디렉터리를 의미합니다. npx webpack을 실행하면 프로젝트 최상위 디렉터리에 build.js 파일이 생성되었음을 확인할 수 있습니다.
+
+- **externals** : 특정 import 패키지의 번들링을 방지하고 대신 런타임에 이러한 외부 종속성을 검색
+
+npm 라이브러리를 사용하는 프로젝트에서 라이브러리의 react 컴포넌트를 import하지 못하는 에러 때문에 추가하였다.
+
+```js
+  externals: ["react", "react-dom"],
+```
 
 - **module.rules** : Loader 추가
 
