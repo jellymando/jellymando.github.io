@@ -36,3 +36,7 @@ useEffect(() => {
 ```
 
 `Ref` 생성 후 `.current` 에 `setTimeout` 값을 넣어 사용한다.
+
+<br/>
+
+[[React] setTimeout, clearTimeout](https://j3sung.tistory.com/647)
