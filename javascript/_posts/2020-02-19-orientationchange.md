@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "디바이스 방향 바뀌는 것 감지 🔁"
+title: "[orientationchange] 디바이스 방향 바뀌는 것 감지 🔁"
 sitemap: false
 ---
 
@@ -15,6 +15,9 @@ screen.addEventListener("orientationchange", function () {
 ```
 
 `screen.orientation` 이 아닌 `window.orientation` 사용
+
+**세로모드** : `window.orientation = 0`
+**가로모드** : `window.orientation = 90 || -90`
 
 <br/>
 [orientationchange](https://developer.mozilla.org/ko/docs/Web/API/Window/orientationchange_event)
