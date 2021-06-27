@@ -211,6 +211,8 @@ plugins: [
   ],
 ```
 
+> `HtmlWebpackPlugin` template을 설정하지 않으면 `webpack serve`를 해도 리액트 코드가 `$root`에 들어가지 않는다!!
+
 - **mode** : production - 빌드 / development - dev <u>(생략..)</u>
 
 ### package.json에 스크립트 입력
