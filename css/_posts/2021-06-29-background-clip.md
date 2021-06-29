@@ -41,7 +41,7 @@ p {
 }
 ```
 
-<img src="https://jellymando.github.io/assets/img/_posts/2020-12-25-react-01.jpg">
+<img src="https://jellymando.github.io/assets/img/_posts/2021-06-29-background-clip.jpg">
 
 <br/>
 
