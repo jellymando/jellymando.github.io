@@ -36,4 +36,4 @@ sitemap: false
 </ul>
 ```
 
-<img src="https://jellymando.github.io/assets/img/_posts/2021-05-12-nth-last-child.png">
+<img src="/assets/img/blog/2021-05-12-nth-last-child.png">
