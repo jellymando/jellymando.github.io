@@ -44,12 +44,13 @@ sitemap: false
 output: {
     path: resolve(__dirname, "dist"),
     filename: "index.js",
-    libraryTarget: "commonjs2",
+    libraryTarget: "umd",
   },
 ```
 
-output에 `libraryTarget: "commonjs2"` 추가하였다.
+output에 `libraryTarget: "umd"`를 추가하였다.
 
+> libraryTarget을 umd로 설정하면 모듈은 `<script>` 로드 뿐만 아니라 모든 방식의 로더에서 사용할 수 있다.
 > 위 설정을 추가하지 않았을 때 해당 모듈을 사용하면 class가 빈 객체로 들어온다. (~ is not a constructor 에러)
 
 ### npm 로그인
