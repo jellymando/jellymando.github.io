@@ -26,7 +26,8 @@ const Button = () => (
 );
 ```
 
-[화살표 함수 - JavaScript | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions)에 따르면 화살표 함수의 경우 return문을 작성하지 않아도 소괄호 `()` 로 감싸진 부분이 return 된다.
+[화살표 함수 - JavaScript | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+에 따르면 화살표 함수의 경우 return문을 작성하지 않아도 소괄호 `()` 로 감싸진 부분이 return 된다.
 
 #### {}
 
