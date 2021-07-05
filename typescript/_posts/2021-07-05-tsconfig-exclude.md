@@ -20,3 +20,8 @@ Webpack을 빌드하면서 jest test를 건너 뛰고 싶었다.
 <br/>
 
 다시 빌드하면 `*.test.ts`, `*.test.tsx` 파일은 건너뛰고 빌드한다.
+
+<br/>
+
+[How to exclude files ending in '.spec.ts' in tsconfig.json](https://stackoverflow.com/questions/48449107/how-to-exclude-files-ending-in-spec-ts-in-tsconfig-json)<br/>
+[Intro to the TSConfig Reference](https://www.typescriptlang.org/tsconfig#include)
