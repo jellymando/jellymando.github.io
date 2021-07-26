@@ -70,8 +70,8 @@ menu:
     url: /mysql/
   - title: MongoDB
     url: /mongodb/
-  - title: OS
-    url: /os/
+  - title: CS
+    url: /cs/
   - title: Network
     url: /network/
   - title: 기타
