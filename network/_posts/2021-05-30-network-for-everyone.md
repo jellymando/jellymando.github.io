@@ -45,7 +45,7 @@ sitemap: false
 - 데이터를 수신할 때 각 계층에서 헤더나 트레일러를 제거해 나가는 것을 **역캡슐화**라고 한다.
 - 송신 측의 데이터 링크 계층에서 만들어진 데이터가 전기 신호로 변환되어 수신 측에 전송된다.
 
-<img src="/assets/img/blog/network-capsulation.png">
+<img src="/assets/img/blog/network-capsulation_01.png">
 
 <br/>
 
