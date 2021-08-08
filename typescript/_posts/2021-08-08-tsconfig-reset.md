@@ -10,10 +10,18 @@ sitemap: false
 
 타입스크립트 사용 버전을 workspace로 바꿔도 동일 현상 지속.
 
-가장 바깥 경로에 `.env` 파일을 생성하고 아래 코드 추가 후 저장하면 해결됨
+가장 바깥 경로에 `.env` 파일을 생성하고 아래 코드 추가 후 저장해도 똑같음.
 
 ```js
 DISABLE_NEW_JSX_TRANSFORM: true;
+```
+
+<br/>
+
+결국 `tsconfig.json` 바뀌게 냅두고 `@types/react` 인스톨.
+
+```js
+npm i --save-dev @types/react
 ```
 
 <br/>
