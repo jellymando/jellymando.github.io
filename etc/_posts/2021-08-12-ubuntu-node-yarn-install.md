@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ubuntu에 git, node.js, yarn 설치하기"
+title: "[ubuntu] git, node.js, yarn 설치하기"
 sitemap: false
 ---
 
@@ -25,6 +25,8 @@ sudo apt-get update
 sudo apt-get install -y build-essential
 sudo apt-get install curl
 ```
+
+<br/>
 
 [이 링크](https://github.com/nodesource/distributions#installation-instructions)에서 node 버전 확인 후 아래 명령어에서 원하는 버전 입력
 
