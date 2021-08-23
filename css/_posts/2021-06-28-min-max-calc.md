@@ -10,6 +10,10 @@ css `min()` / `max()` 안에서 vw / vh 단위 혹은 산술연산자를 사용�
 
 `min()` / `max()`를 `calc()`로 감싸주면 해결된다.
 
+```css
+padding-top: calc(max(20vh, 100px));
+```
+
 <br/>
 
 [SASS: Incompatible units: 'vw' and 'px'](https://stackoverflow.com/questions/54090345/sass-incompatible-units-vw-and-px)
