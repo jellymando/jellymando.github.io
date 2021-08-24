@@ -24,8 +24,7 @@ title: 고양이발
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description: >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  개발하면서 배운점+느낀점을 정리하는 블로그입니다.😀
 
 # A shorter description for the sidebar.
 tagline: Front-end Study
