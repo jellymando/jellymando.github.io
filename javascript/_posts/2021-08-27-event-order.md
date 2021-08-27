@@ -24,13 +24,39 @@ sitemap: false
 
 <img src="/assets/img/blog/2021-08-27-event-order_01.png">
 
+### 메모리 구조 예시
+
+```js
+function Animal() {}
+// stores `new Animal()` instance on memory address 0x001232
+// tiger has 0x001232 as value in stack
+const tiger = new Animal();
+// stores `new Object()` instance on memory address 0x000001
+// `lion` has 0x000001 as value on stack
+let lion = {
+  strength: "Very Strong",
+};
+```
+
+tiger와 lion은 참조형 타입이다.
+
+코드가 실행되다 `Animal()`의 인스턴스를 생성하면 Heap의 메모리 주소 어딘가에 저장된다.
+
+변수 tiger는 스택에 쌓이게 되고 그 value로 `Animal()`의 Heap 메모리 주소를 갖게 된다.
+
+즉, tiger 변수에 접근하면 value가 가리키고 있는 Heap 메모리 주소로 이동하고 거기에 저장된 value를 꺼내오는 것이다.
+
+<br/>
+
+<img src="/assets/img/blog/2021-08-27-event-order_02.png">
+
 ## 동작 구조
 
 - Web APIs : 브라우저에서 제공하는 API
 
 - 이벤트 루프(Event Loop) : 콜 스택이 비어 있을 때 콜백 큐의 첫 번째 콜백을 넘겨준다.
 
-<img src="/assets/img/blog/2021-08-27-event-order_02.png">
+<img src="/assets/img/blog/2021-08-27-event-order_03.png">
 
 ## 동작 순서
 
@@ -60,7 +86,7 @@ sitemap: false
 
 ## 콜 스택 동작 예제
 
-<img src="/assets/img/blog/2021-08-27-event-order_03.png">
+<img src="/assets/img/blog/2021-08-27-event-order_04.png">
 
 <br/>
 
@@ -74,7 +100,7 @@ sitemap: false
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_04.png">
+<img src="/assets/img/blog/2021-08-27-event-order_05.png">
 
 <br/>
 
@@ -111,7 +137,7 @@ alert("C");
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_05.png">
+<img src="/assets/img/blog/2021-08-27-event-order_06.png">
 
 <br/>
 
@@ -134,4 +160,5 @@ javascript 엔진이 먼저 코드를 실행 후 비동기로 동작하는 setTi
 
 [[javascript] 4. 자바스크립트 실행 순서](https://doitnow-man.tistory.com/m/128)<br/>
 [자바스크립트의 동작원리: 엔진, 런타임, 호출 스택](https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/)<br/>
-[자바스크립트 런타임 : 콜 스택과 메모리 힙](https://soldonii.tistory.com/53)
+[자바스크립트 런타임 : 콜 스택과 메모리 힙](https://soldonii.tistory.com/53)<br/>
+[JS 메모리 구조](https://velog.io/@code-bebop/JS-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B5%AC%EC%A1%B0)
