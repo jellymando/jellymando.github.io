@@ -82,7 +82,7 @@ sudo vi /etc/xrdp/xrdp.ini
 
 - AWS 인스턴스 인바운드 규칙에 위 port와 5910 포트 추가한다.
 
-<img src="/assets/img/blog/2021-06-29-background-clip.png">
+<img src="/assets/img/blog/2021-08-19-AWS-Route53-domain_04.png">
 
 <br/>
 
