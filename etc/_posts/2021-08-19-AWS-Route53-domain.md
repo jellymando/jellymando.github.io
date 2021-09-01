@@ -61,8 +61,16 @@ sitemap: false
 SSH 서버 터미널에 접속해 앱 경로에서 아래 명령어를 입력한다.
 
 ```bash
-iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port <앱 포트>
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port <앱 포트>
 ```
+
+<br/>
+
+그리고 중요한 것은 **우분투 서버에서는 로컬 아이피로 앱을 실행**해야 한다는 것이다.
+
+로컬 IP로 앱을 실행하면, 탄력적 IP로 앱 서버에 접근 가능하다.
+
+재부팅 시에는 포트 리다이렉트 작업을 다시 해줘야 하는 것 같다.
 
 - 이제 모든 구축이 끝났다. 실제 도메인 및 라우팅이 되려면 대략 하루에서 하루 반나절 걸리는 것 같다. Good job~👍
 
