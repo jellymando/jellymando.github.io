@@ -22,6 +22,7 @@ sitemap: false
 - 로그인 정보 같이 유저가 굳이 다시 서버에 다시 요청하기에는 비효율적인 정보를 key-value 형식의 데이터 파일로 로컬에 저장
 - 이름, 값 만료기간(지정 가능), 경로 정보 등으로 구성
 - 로그인 정보를 저장할 경우 보안성이 낮아진다.
+- 쿠키에 대한 정보를 매 헤더에 추가하여 보내기 때문에 트랙픽을 발생시킨다.
 - 최대 300개 저장 가능
 - ex) 자동 로그인, 팝업 다시보지 않기, 장바구니
 
@@ -34,15 +35,24 @@ sitemap: false
 1. 클라이언트의 브라우저는 이후 서버에 같은 요청을 할 때 전달받은 쿠키를 자동으로 요청 헤더에 추가하여 보냄
 1. 서버에서는 쿠키의 정보를 변경할 필요가 있을 때 쿠키를 업데이트 하여 HTTP 헤더에 포함시켜 응답
 
+| 종류               | 특징                                                                                                                                                                        |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Session Cookie     | 보통 만료시간을 설정하고 메모리에만 저장되며 브라우저 종료 시 삭제                                                                                                          |
+| Persistent Cookie  | 장기간 유지되는 쿠키(예를 들어 Max-Age 1년). 파일로 저장되어 브라우저 종료와 관계없이 사용                                                                                  |
+| Secure Cookie      | HTTPS에서만 사용, 쿠키 정보가 암호화 되어 전송                                                                                                                              |
+| Third-Party Cookie | 방문한 도메인과 다른 도메인의 쿠키. 보통 광고 배너 등을 관리할 때 유입 경로를 추적하기 위해 사용 (ex. 11번가에서 봤던 상품이 뉴스 사이트에서 계속 따라다니며 노출되는 경우) |
+
 ## 세션 (Session)
 
 - 쿠키를 기반하고 있지만, 데이터를 로컬에 저장하는 쿠키와 달리 세션은 서버 측에서 관리
-- 클라이언트가 서버에 접속하면 서버는 유니크한 sessionid를 저장하며 클라이언트가 브라우저를 종료할 때까지 인증상태를 유지
+- 클라이언트가 서버에 접속하면 서버는 유니크한 sessionid를 저장하며 클라이언트가 브라우저를 종료하거나 유효시간이 지날 때까지 인증상태를 유지
 - 클라이언트가 쿠키를 헤더에 담아 요청하면 서버에서는 요청 헤더의 sessionid 값을 저장된 세션저장소에서 찾아보고 유효한지 확인 후 요청을 처리하고 응답
 
 <br/>
 
 <img src="/assets/img/blog/2021-09-03-cookie-session-cache_02.png">
+
+<br/>
 
 #### 쿠키와 세션의 차이
 
@@ -61,4 +71,5 @@ sitemap: false
 [[WEB] 쿠키, 세션이란?](https://chrisjune-13837.medium.com/web-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98%EC%9D%B4%EB%9E%80-aa6bcb327582)<br/>
 [쿠키와 세션 개념](https://interconnection.tistory.com/74)<br/>
 [[HTTP] 쿠키/세션/캐시의 차이점은?](https://ryusae.tistory.com/7)<br/>
-[쿠키(cookie), 세션(session) 과 캐시(cache) - 네트워크 study3](https://velog.io/@kimtaeeeny/%EC%BF%A0%ED%82%A4cookie-%EC%84%B8%EC%85%98session-%EA%B3%BC-%EC%BA%90%EC%8B%9Ccache-FE-study9)
+[쿠키(cookie), 세션(session) 과 캐시(cache) - 네트워크 study3](https://velog.io/@kimtaeeeny/%EC%BF%A0%ED%82%A4cookie-%EC%84%B8%EC%85%98session-%EA%B3%BC-%EC%BA%90%EC%8B%9Ccache-FE-study9)<br/>
+[쿠키(Cookie) 그리고 세션(Session)](https://nesoy.github.io/articles/2017-03/Session-Cookie)
