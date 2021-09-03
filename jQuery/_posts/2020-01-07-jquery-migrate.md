@@ -76,6 +76,11 @@ checked, selected, disabled, readonly 등에 적용됩니다.
 `.live()` 및 `.die()` 는 1.7부터 더 이상 지원되지 않으며 대신 `.on()` 나 `.delegate()` 을 사용합니다.
 
 <br/>
+- **.andSelf() removed**
+
+`.andSelf()`는 1.8부터 더 이상 사용되지 않으며 대신 `.addBack()` 을 사용합니다.
+
+<br/>
 - **.size() removed**
 
 `.size()`는 1.8부터 더 이상 사용되지 않으며 대신 `.length` 을 사용합니다.
