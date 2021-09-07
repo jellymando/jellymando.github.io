@@ -138,13 +138,15 @@ REST API는 분명한 URI를 만들어 통신을 해야 하기 때문에 혼동�
 
 RESTful API는 URI를 사용하여 행위를 표현하지 않을 것을 권고한다.
 
-URI가 가지는 의미는 철저히 어떤 리소스인지, 그리고 리소스의 계층 구조에 대한 것 뿐이어야한다.
+URI가 가지는 의미는 철저히 어떤 리소스인지, 그리고 리소스의 계층 구조에 대한 것 뿐이어야 한다.
 
 ```js
 POST /users/2/delete
 ```
 
 ### 4. HTTP 메소드를 사용하여 어떤 행위인지 표현하자.
+
+<br/>
 
 | Method |           의미            |
 | ------ | :-----------------------: |
@@ -154,9 +156,11 @@ POST /users/2/delete
 | PUT    |    리소스를 대체한다.     |
 | PATCH  | 리소스의 일부를 수정한다. |
 
-> **PUT과 PATCH의 차이** > <img src="/assets/img/blog/RESTful_API_05.png">
-> PUT은 유저 리소스를 대체하는 것이기 때문에 name을 ethan으로 수정할 때 리소스 전체를 보내야 한다.
-> <img src="/assets/img/blog/RESTful_API_06.png">
+<br/>
+
+> **PUT과 PATCH의 차이**<br/> <img src="/assets/img/blog/RESTful_API_05.png"><br/>
+> PUT은 유저 리소스를 대체하는 것이기 때문에 name을 ethan으로 수정할 때 리소스 전체를 보내야 한다.<br/>  
+> <img src="/assets/img/blog/RESTful_API_06.png"><br/>
 > PATCH는 유저 리소스를 수정하는 것이기 때문에 수정하고 싶은 사항만 보내면 된다.
 
 ### 5. 밑줄(\_) 대신 하이픈(-)을 사용하자.
@@ -167,9 +171,11 @@ POST /users/2/delete
 
 URI 경로에 대문자 사용은 피하도록 한다.
 
-> RESTful 하지 못한 경우
-> ex) CRUD 기능을 모두 POST로만 처리하는 API
+> RESTful 하지 못한 경우<br/>
+> ex) CRUD 기능을 모두 POST로만 처리하는 API<br/>
 > ex) endpoint에 resource, id 외의 정보가 들어가는 경우 (students/updateName)
+
+## 참고사이트
 
 [[Session] RESTful API 란? / Path parameters / Query string
 ](https://velog.io/@haileeyu21/Session-RESTful-API-%EB%9E%80-Path-parameters-Query-string)<br/>
