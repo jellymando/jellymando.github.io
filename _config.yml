@@ -53,6 +53,8 @@ menu:
     url: /node/
   - title: TypeScript
     url: /typescript/
+  - title: Nextjs
+    url: /nextjs/
   - title: React
     url: /react/
   - title: Git
