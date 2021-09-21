@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CRA 없이 리액트 환경 만들기"
+title: "✅CRA 없이 리액트 환경 만들기"
 sitemap: false
 ---
 
@@ -134,7 +134,7 @@ module.exports = {
 };
 ```
 
-- **resolve** : 웹팩이 모듈을 처리하는 방식 정의하는 것으로 확장자를 생략하고도 인식하게 만든다.
+- **resolve** : 웹팩이 모듈을 처리하는 방식을 정의하는 것으로 확장자를 생략하고도 인식하게 만든다.
 
 ```js
 resolve: {
