@@ -67,7 +67,7 @@ const stay = () => {
 
 <br/>
 
-> async/await 함수의 목적은 사용하는 여러 promise의 동작을 동기스럽게 사용할 수 있게 하고, 어떠한 동작을 여러 promise의 그룹에서 간단하게 동작하게 하는 것이다.
+async/await 함수의 목적은 사용하는 여러 promise의 동작을 동기스럽게 사용할 수 있게 하고, 어떠한 동작을 여러 promise의 그룹에서 간단하게 동작하게 하는 것이다.
 
 만약 Promise를 사용하지 않고 바로 setTimeout을 호출하면 await이 먹히지 않는다.
 
