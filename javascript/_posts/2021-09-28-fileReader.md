@@ -82,6 +82,6 @@ const handleImportChange = (e) => {
 
 ## 참고사이트
 
+[input type="file"](https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input/file)<br/>
 [FileReader.onload](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload)<br/>
-[FileReader](https://developer.mozilla.org/ko/docs/Web/API/FileReader)<br/>
-[FileReader.onload](https://developer.mozilla.org/ko/docs/Web/API/FileReader/onload)<br/>
+[FileReader](https://developer.mozilla.org/ko/docs/Web/API/FileReader)
