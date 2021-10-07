@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "자바스크립트 동작 원리, 메모리 구조, 동작 순서"
+title: "자바스크립트 동작 원리, 메모리 구조, 이벤트 루프"
 sitemap: false
 ---
 
