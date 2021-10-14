@@ -50,6 +50,7 @@ Virtual DOM의 장점은 DOM을 최소한으로 조작하여 작업을 처리할
 
 ## 참고사이트
 
+[(번역) DOM은 정확히 무엇일까?](https://wit.nts-corp.com/2019/02/14/5522)<br/>
 [Virtual DOM과 Internals](https://ko.reactjs.org/docs/faq-internals.html)<br/>
 [문서객체모델 DOM이란? 자바스크립트가 HTML을 다루기 위한 문서모델](https://oursmalljoy.com/%EB%AC%B8%EC%84%9C%EA%B0%9D%EC%B2%B4%EB%AA%A8%EB%8D%B8-dom%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0/)
 
