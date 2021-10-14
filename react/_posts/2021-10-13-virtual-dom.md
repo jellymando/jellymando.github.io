@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "✅Virtual DOM이란?"
+title: "✅Virtual DOM이란? Diffing Algorithm"
 sitemap: false
 ---
 
@@ -47,6 +47,79 @@ Virtual DOM의 장점은 DOM을 최소한으로 조작하여 작업을 처리할
 1. 데이터를 업데이트하면 전체 UI를 Virtual DOM에 리렌더링
 1. 이전 Virtual DOM에 있던 내용과 현재 내용을 비교
 1. **바뀐 부분만 실제 DOM에 적용**
+
+## 비교 알고리즘 (Diffing Algorithm)
+
+state나 props가 갱신되면 `render()` 함수는 새로운 React 엘리먼트 트리를 반환한다.
+
+하나의 트리를 다른 트리로 변환하기 위한 최소한의 연산 수를 구하는 알고리즘은 n개의 엘리먼트가 있는 트리에 대해 O(n3)의 복잡도를 가진다.
+
+React에 이 알고리즘을 적용한다면, 1000개의 엘리먼트를 그리기 위해 10억 번의 비교 연산을 수행해야 한다.
+
+대신 React는 두 가지 가정을 기반하여 O(n) 복잡도의 휴리스틱 알고리즘을 구현한다.
+
+1. 서로 다른 타입의 두 엘리먼트는 서로 다른 트리를 만들어낸다.
+1. 개발자가 key prop을 통해, 여러 렌더링 사이에서 어떤 자식 엘리먼트가 변경되지 않아야 할지 표시해 줄 수 있다.
+
+#### 엘리먼트의 타입이 다른 경우
+
+두 루트 엘리먼트의 타입이 다르면, React는 이전 트리를 버리고 완전히 새로운 트리를 구축한다.
+
+`<a>`에서 `<img>`로, `<Article>`에서 `<Comment>`로, 혹은 `<Button>`에서 `<div>`로 바뀌는 것 모두 트리 전체를 재구축하는 경우이다.
+
+트리를 버릴 때 이전 DOM 노드들은 모두 파괴되며 루트 엘리먼트 아래의 모든 컴포넌트도 언마운트되고 그 state도 사라진다.
+
+예를 들어 아래와 같이 변경되었을 때, 이전 Counter는 사라지고 새로 마운트된다.
+
+```jsx
+<div>
+  <Counter />
+</div>
+
+<span>
+  <Counter />
+</span>
+```
+
+#### Keys
+
+리스트의 맨 앞에 엘리먼트를 추가하는 경우 성능이 좋지 않다.
+
+아래처럼 리스트가 변경되면 React는 ul의 모든 자식을 변경하며 이는 매우 비효율적이다.
+
+```html
+<ul>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+
+<ul>
+  <li>Connecticut</li>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+```
+
+이러한 문제를 해결하기 위해, React는 key 속성을 지원한다.
+
+React는 key를 통해 기존 트리와 이후 트리의 자식들이 일치하는지 확인한다.
+
+```html
+<ul>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+
+<ul>
+  <li key="2014">Connecticut</li>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+```
+
+이제 React는 '2014' key를 가진 엘리먼트가 새로 추가되었고, '2015'와 '2016' key를 가진 엘리먼트는 그저 이동만 하면 된다.
+
+해당 key는 오로지 형제 사이에서만 유일하면 되고, 전역에서 유일할 필요는 없다.
 
 ## 참고사이트
 
