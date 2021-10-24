@@ -1,16 +1,22 @@
 ---
 layout: post
-title: "inline과 inline-block의 차이, 여백 없애기"
+title: "block과 inline-block, inline 요소의 차이"
 sitemap: false
 ---
 
 {:toc .large-only}
 
+## block
+
+- 새로운 줄에서 시작하고, 좌우 양쪽으로 최대한 늘어나 가능한 모든 너비를 차지
+- width와 height를 지정할 수 있다.
+- padding, margin을 지정하면 공간을 점유한다.
+
 ## inline
 
 - text 크기만큼만 점유한다.
-- width와 height를 지정할 수 없다.
-- <u>padding, margin을 지정하면 시각적으로는 적용되지만, height 공간을 점유하지 못한다.</u>
+- **width와 height를 지정할 수 없다.**
+- <u>padding, margin을 지정하면 좌우로는 적용되지만, 상하에는 적용되지 않는다.</u>
   - padding을 사용하여 height가 100px인 것처럼 나와도, 부모의 height에 영향을 주지 못한다.
   - 공간을 점유하지 못해 상하 요소와 겹침이 발생한다.
 - line-height를 적용할 수 없다. (부모 요소에 적용됨)
@@ -38,5 +44,6 @@ sitemap: false
 
 ## 참고사이트
 
+[블록 레벨 요소](https://developer.mozilla.org/ko/docs/Web/HTML/Block-level_elements)
 [[CSS] display - block과 inline 그리고 inline-block](https://seungwoohong.tistory.com/23)<br/>
 [[CSS] inline 속성일 때, 4px의 여백에 대하여](https://norux.me/63)
