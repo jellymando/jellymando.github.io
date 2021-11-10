@@ -18,7 +18,7 @@ HTTP의 Connectionless, Stateless 특성 때문에 세션을 이용한 서버 �
 
 ex) [아임포트 Access Token 사용법](https://docs.iamport.kr/tech/access-token)
 
-## JWT
+### JWT
 
 - JWT은 Json Web Token의 약자로 웹표준 방식이다.
 
@@ -28,17 +28,26 @@ ex) [아임포트 Access Token 사용법](https://docs.iamport.kr/tech/access-to
 
 - HTTP 요청 헤더나 URL 파라미터로 전달할 수 있다.
 
-- 토큰이 검증되었다는 것을 증명해주는 signature를 포함한다.
+- JWT 형식은 아래 3가지로 구성된다.
+    - Header : 토큰의 암호화 알고리즘
+    - Payload : 전송하려는 데이터 (JSON 형식)
+    - Signature : <u>Header + Payload + 알고리즘에 따라 secret key 또는 public key</u>를 base64 방식으로 인코딩하여 `.`으로 합친다.
 
-## 인증 절차
+- [JWT.io](https://jwt.io/?_ga=2.163251572.952146497.1636521097-1933711542.1636521097&_gl=1*1ys1crh*rollup_ga*MTkzMzcxMTU0Mi4xNjM2NTIxMDk3*rollup_ga_F1G3E656YZ*MTYzNjUyMTA5Ny4xLjAuMTYzNjUyMTA5Ny42MA..)에서 JWT 서명을 인코딩/디코딩 해볼 수 있다.
+
+#### 참고사이트
+[k8s 인증 완벽이해 #2 - HTTP Authentication](https://coffeewhale.com/kubernetes/authentication/http-auth/2020/05/03/auth02/)<br/>
+[Validate JSON Web Tokens](https://auth0.com/docs/security/tokens/json-web-tokens/validate-json-web-tokens)
+
+## 토큰 인증 절차
 
 1. 사용자 로그인
-2. 서버에서 계정 정보를 읽어 사용자를 확인한 후, 사용자의 고유 ID값을 부여하여 기타 정보와 함께 Payload 에 집어넣습니다.
+2. 서버에서 계정 정보를 읽어 사용자를 확인한 후, 사용자의 고유 ID값을 부여하여 기타 정보와 함께 Payload에 넣는다.
 3. JWT 토큰의 유효기간을 설정한다.
 4. 암호화할 Secret key를 이용해 Access Token을 발급한다.
 5. 사용자는 Access Token을 받아 저장 후, 인증이 필요한 요청마다 토큰을 헤더에 실어 보낸다.
 6. 서버에서는 해당 토큰의 Verify Signature를 Secret key로 복호화한 후, 조작 여부, 유효기간을 확인
-7. 검증이 완료되었을 경우, Payload를 디코딩 하여 사용자의 ID에 맞는 데이터를 가져온다.
+7. 검증이 완료되면 Payload를 디코딩하여 사용자의 ID에 맞는 데이터를 가져온다.
 
 ## AccessToken의 만료 기한
 
@@ -50,7 +59,7 @@ JWT는 토큰의 만료 기한을 설정할 수 있다.
 
 ## Access Token과 Sliding Sessions
 
-세션을 지속적으로 이용하는 유저에게 자동으로 만료 기한을 연장시켜주는 방법이다.
+슬라이딩 세션은 세션을 지속적으로 이용하는 유저에게 자동으로 만료 기한을 연장시켜주는 방법이다.
 
 주로 유효한 AccessToken을 가진 클라이언트의 요청에 대해 서버가 새로운 AccessToken을 발급하는 방식을 사용한다.
 
