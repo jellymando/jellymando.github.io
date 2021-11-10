@@ -30,6 +30,16 @@ ex) [아임포트 Access Token 사용법](https://docs.iamport.kr/tech/access-to
 
 - 토큰이 검증되었다는 것을 증명해주는 signature를 포함한다.
 
+## 인증 절차
+
+1. 사용자 로그인
+2. 서버에서 계정 정보를 읽어 사용자를 확인한 후, 사용자의 고유 ID값을 부여하여 기타 정보와 함께 Payload 에 집어넣습니다.
+3. JWT 토큰의 유효기간을 설정한다.
+4. 암호화할 Secret key를 이용해 Access Token을 발급한다.
+5. 사용자는 Access Token을 받아 저장 후, 인증이 필요한 요청마다 토큰을 헤더에 실어 보낸다.
+6. 서버에서는 해당 토큰의 Verify Signature를 Secret key로 복호화한 후, 조작 여부, 유효기간을 확인
+7. 검증이 완료되었을 경우, Payload를 디코딩 하여 사용자의 ID에 맞는 데이터를 가져온다.
+
 ## AccessToken의 만료 기한
 
 JWT는 토큰의 만료 기한을 설정할 수 있다.
@@ -65,4 +75,5 @@ RefreshToken를 사용하면 I/O 작업이 필요하며, 이는 I/O 작업이 �
 [Refresh Token과 Sliding Sessions를 활용한 JWT의 보안 전략](https://blog.ull.im/engineering/2019/02/07/jwt-strategy.html)<br/>
 [Secure JWT and Slinding Sessions](https://www.hahwul.com/2021/05/05/sliding-sessions/)<br/>
 [[JWT] 토큰(Token) 기반 인증에 대한 소개](https://velopert.com/2350)<br/>
-[[Node.js / JWT] Express.js 서버에서 JWT 기반 회원인증 시스템 구현하기](https://velopert.com/2448)
+[[Node.js / JWT] Express.js 서버에서 JWT 기반 회원인증 시스템 구현하기](https://velopert.com/2448)<br/>
+[Cookie, Session, Token 의 차이점](https://tofusand-dev.tistory.com/89)
