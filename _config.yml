@@ -51,8 +51,6 @@ menu:
     url: /javascript/
   - title: TypeScript
     url: /typescript/
-  - title: Nextjs
-    url: /nextjs/
   - title: React
     url: /react/
   - title: css
@@ -61,6 +59,8 @@ menu:
     url: /html/
   - title: Node.js
     url: /node/
+  - title: Next.js
+    url: /nextjs/
   - title: Webpack
     url: /webpack/
   - title: Git
