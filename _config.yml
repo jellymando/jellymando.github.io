@@ -53,7 +53,7 @@ menu:
     url: /typescript/
   - title: React
     url: /react/
-  - title: css
+  - title: CSS
     url: /css/
   - title: HTML
     url: /html/
@@ -65,10 +65,10 @@ menu:
     url: /webpack/
   - title: Git
     url: /git/
-  - title: CS
-    url: /cs/
   - title: Network
     url: /network/
+  - title: CS
+    url: /cs/
   - title: MongoDB
     url: /mongodb/
   - title: JQuery
