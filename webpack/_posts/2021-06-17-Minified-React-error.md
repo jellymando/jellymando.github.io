@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Webpack] Minified React error #321"
+title: "[Error] Minified React error #321"
 sitemap: false
 ---
 

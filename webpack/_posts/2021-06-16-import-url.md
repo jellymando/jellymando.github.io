@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Webpack] 절대 경로로 import 하기"
+title: "모듈의 절대 경로 설정하기"
 sitemap: false
 ---
 

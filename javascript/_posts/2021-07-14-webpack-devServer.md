@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Webpack] server ip 설정하기"
+title: "Webpack Server IP 설정하기"
 sitemap: false
 ---
 

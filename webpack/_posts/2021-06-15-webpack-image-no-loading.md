@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Webpack] 이미지가 빌드되지 않는 이슈"
+title: "이미지가 빌드되지 않는 이슈"
 sitemap: false
 ---
 

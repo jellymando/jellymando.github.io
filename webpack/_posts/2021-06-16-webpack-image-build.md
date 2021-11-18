@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Webpack] 라이브러리에 이미지 파일 생성되지 않음"
+title: "[url-loader] 이미지 파일 base64 URL로 변환하기"
 sitemap: false
 ---
 
