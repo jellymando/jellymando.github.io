@@ -3,14 +3,14 @@
 layout: list
 
 # The title of the tag's page.
-title: jQuery
+title: WEBPACK
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: jQuery
+slug: webpack
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  갓이쿼리
+  Webpack은 팀에서 한명만 알면 된다고 했다..
 
 # (Optional) You can disable grouping posts by date.
 # no_groups: true
