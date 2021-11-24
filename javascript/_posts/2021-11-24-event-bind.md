@@ -50,7 +50,7 @@ addEventListener 핸들러 내부의 `this`는 이벤트를 바인딩한 DOM 요
 
 arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 스코프의 `this`를 가리킨다.
 
-**그.러.나** <u>arrow function은 함수 자체의 `this` 바인딩을 갖지 않는다.</u>
+<u>arrow function은 함수 자체의 `this` 바인딩을 갖지 않는다.</u>
 
 ```html
 <button id="el">클릭해라</button>
@@ -58,7 +58,24 @@ arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 �
   const button = document.getElementById("el");
 
   button.addEventListener("click", () => {
-    console.log("addEventListener", this); // window
+    console.log(this); // window
+  });
+</script>
+```
+
+이 경우에는 `e.currentTarget`을 통해 button 요소에 접근할 수 있다.
+
+```html
+<button id="el">클릭해라</button>
+<script>
+  const button = document.getElementById("el");
+
+  function handleClick() {
+    console.log("handleClick", this);
+  }
+
+  button.addEventListener("click", (e) => {
+    console.log(e.currentTarget); // button 요소
   });
 </script>
 ```
