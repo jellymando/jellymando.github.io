@@ -21,7 +21,7 @@ sitemap: false
 
 일반 함수 내부의 `this`는 전역 객체를 가리키기 때문이다.
 
-단, <u>이벤트 핸들러를 호출할 때 `this`를 인수로 전달하면 이벤트를 바인딩한 DOM 요소를 가리킨다.</u>
+단, <u>이벤트 핸들러를 호출할 때 this를 인수로 전달하면 이벤트를 바인딩한 DOM 요소를 가리킨다.</u>
 
 ```html
 <button onclick="handleClick(this)">Click me</button>
@@ -50,7 +50,7 @@ addEventListener 핸들러 내부의 `this`는 이벤트를 바인딩한 DOM 요
 
 arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 스코프의 `this`를 가리킨다.
 
-<u>arrow function은 함수 자체의 `this` 바인딩을 갖지 않는다.</u>
+<u>arrow function은 함수 자체의 this 바인딩을 갖지 않는다.</u>
 
 ```html
 <button id="el">클릭해라</button>
