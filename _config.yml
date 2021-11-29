@@ -65,18 +65,16 @@ menu:
     url: /webpack/
   - title: Git
     url: /git/
-  - title: Network
-    url: /network/
-  - title: CS
-    url: /cs/
   - title: Backend
     url: /backend/
+  - title: Network
+    url: /network/
   - title: JQuery
     url: /jquery/
   - title: WebRTC
     url: /webrtc/
-  - title: MySQL
-    url: /mysql/
+  - title: CS
+    url: /cs/
   - title: 기타
     url: /etc/
 
