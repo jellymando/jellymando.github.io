@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MongoDB 설치하기"
+title: "[MongoDB] 설치하기"
 sitemap: false
 ---
 

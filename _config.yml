@@ -69,8 +69,8 @@ menu:
     url: /network/
   - title: CS
     url: /cs/
-  - title: MongoDB
-    url: /mongodb/
+  - title: Backend
+    url: /backend/
   - title: JQuery
     url: /jquery/
   - title: WebRTC

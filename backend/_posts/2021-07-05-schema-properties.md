@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Schema 스키마 타입 제외 속성들"
+title: "[MongoDB] Schema 스키마 타입 제외 속성들"
 sitemap: false
 ---
 
