@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Firebase] 시작하기"
+title: "[Firebase] 프로젝트 만들기"
 sitemap: false
 ---
 
@@ -33,13 +33,6 @@ sitemap: false
 1. 컬렉션 ID 입력 (상위집합)
 1. 문서 ID 입력 (하위집합)
 1. 필드 이름/타입 입력
-
-## React 앱에 연동
-
-1. firebase 모듈 설치 `npm install firebase`
-1. 리액트 앱에서 `firebase.js` 파일 생성
-1. firebase의 프로젝트 설정 페이지 하단의 [내 앱] - [SDK 설정 및 구성] 항목의 SDK 코드 복사
-1. 3에서 복사한 코드를 2의 파일에 붙여넣기
 
 ## 참고사이트
 
