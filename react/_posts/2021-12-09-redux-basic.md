@@ -18,44 +18,44 @@ sitemap: false
 
 이 외에 작업에 대한 추가 정보를 payload 등의 추가 필드에 입력하기도 한다.
 
-~~~js
+```js
 const addTodoAction = {
-  type: 'todos/todoAdded',
-  payload: 'Buy milk'
-}
-~~~
+  type: "todos/todoAdded",
+  payload: "Buy milk",
+};
+```
 
 ### Action Creator
 
 파라미터를 받아와서 액션 객체를 반환하는 함수
 
-~~~js
-const addTodo = text => {
+```js
+const addTodo = (text) => {
   return {
-    type: 'todos/todoAdded',
-    payload: text
-  }
-}
-~~~
+    type: "todos/todoAdded",
+    payload: text,
+  };
+};
+```
 
 ### Reducer
 
-state와 action을 인자로 받아 상태를 업데이트하고 새로운 상태를 반환하는 함수이다.
+**state와 action을 인자로 받아 상태를 업데이트하고 새로운 상태를 반환**하는 함수이다.
 
 수신된 액션 type에 따라 이벤트를 처리하는 이벤트 리스너로 생각할 수 있다.
 
-~~~js
+```js
 function counter(state, action) {
   switch (action.type) {
-    case 'INCREASE':
+    case "INCREASE":
       return state + 1;
-    case 'DECREASE':
+    case "DECREASE":
       return state - 1;
     default:
       return state;
   }
 }
-~~~
+```
 
 ### Store
 
@@ -63,36 +63,36 @@ function counter(state, action) {
 
 스토어 안에는 현재 앱 상태와 리듀서가 들어있고, 추가적으로 몇가지 내장 함수들이 있다.
 
-~~~js
-import { configureStore } from '@reduxjs/toolkit'
+```js
+import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({ reducer: counterReducer })
+const store = configureStore({ reducer: counterReducer });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 0}
-~~~
+```
 
 ### Dispatch
 
-store의 내장 메서드로 액션을 인자로 받아 리듀서로 전달하여 액션을 발생시킨다.
+store의 내장 메서드로 **액션을 인자로 받아 리듀서 함수에 전달하여 액션을 발생시킨다.**
 
-~~~js
-store.dispatch({ type: 'counter/increment' })
+```js
+store.dispatch({ type: "counter/increment" });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 1}
 
 const increment = () => {
   return {
-    type: 'counter/increment'
-  }
-}
+    type: "counter/increment",
+  };
+};
 
-store.dispatch(increment())
+store.dispatch(increment());
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 2}
-~~~
+```
 
 ## 참고사이트
 
