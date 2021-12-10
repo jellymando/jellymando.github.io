@@ -61,7 +61,9 @@ function counter(state, action) {
 
 리덕스에서는 애플리케이션당 하나의 store 객체를 만들게 된다.
 
-스토어 안에는 현재 앱 상태와 리듀서가 들어있고, 추가적으로 몇가지 내장 함수들이 있다.
+스토어는 `configureStore()` 메서드에 리듀서를 전달하여 생성한다.
+
+스토어 안에는 상태와 리듀서가 들어있고, 추가적으로 몇가지 내장 함수들이 있다.
 
 ```js
 import { configureStore } from "@reduxjs/toolkit";
@@ -74,7 +76,9 @@ console.log(store.getState());
 
 ### Dispatch
 
-store의 내장 메서드로 **액션을 인자로 받아 리듀서 함수에 전달하여 액션을 발생시킨다.**
+스토어의 내장 메서드로 **상태를 업데이트하는 유일한 방법**
+
+**`store.dispatch()` 메서드에 액션을 전달하면 리듀서 함수를 통해 상태를 업데이트한다.**
 
 ```js
 store.dispatch({ type: "counter/increment" });
