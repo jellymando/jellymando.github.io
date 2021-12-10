@@ -98,7 +98,47 @@ console.log(store.getState());
 // {value: 2}
 ```
 
+## 불변성
+
+javascript에서 객체 타입은 가변성 데이터이지만, 리덕스의 상태값에서는 **불변성**을 유지해야 한다.
+
+리덕스에서 불변성을 유지해야 하는 이유는 상태가 변화되었는지를 감지할 떄, 객체를 깊이 비교하지 않는 [shallow equality](https://redux.js.org/faq/immutable-data#how-redux-uses-shallow-checking) 검사를 하기 때문이다.
+
+불변성을 가진 데이터는 임의로 변경할 수 있는 데이터보다 추론하기가 더 쉽기 때문에 앱의 성능을 향상시키고 프로그래밍 및 디버깅을 단순화할 수 있다.
+
+setState를 통해 상태를 업데이트할 때, **기존 객체나 배열은 수정하지 않고 복사본을 만들어 수정해야 한다.**
+
+배열을 업데이트 하는 경우 직접 push하지 않고 `concat()` 등을 사용하여 새로운 배열을 만들어 교체한다.
+
+> `concat()` 메서드는 인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 **새 배열**을 반환합니다.
+
+```js
+const arr = ["a", "b"];
+// Create a new copy of arr, with "c" appended to the end
+const arr2 = arr.concat("c");
+```
+
+객체를 업데이트 하는 경우 스프레드 연산자로 기존 객체를 복사하여 새로운 객체를 만들어 업데이트한다.
+
+```js
+const obj = {
+  a: {
+    c: 3,
+  },
+  b: 2,
+};
+
+const obj2 = {
+  ...obj,
+  a: {
+    ...obj.a,
+    c: 42,
+  },
+};
+```
+
 ## 참고사이트
 
 [Redux Essentials, Part 1: Redux Overview and Concepts](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)<br/>
-[1. 리덕스에서 사용되는 키워드 숙지하기](https://react.vlpt.us/redux/01-keywords.html)
+[1. 리덕스에서 사용되는 키워드 숙지하기](https://react.vlpt.us/redux/01-keywords.html)<br/>
+[Immutability](https://redux.js.org/tutorials/essentials/part-1-overview-concepts#immutability)
