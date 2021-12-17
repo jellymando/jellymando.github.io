@@ -108,6 +108,7 @@ const throttle = (func, delay) => {
 #### 이벤트 리스너 핸들러로 바로 사용하기
 
 `addEventListener`에 debounce나 throttle 함수를 바로 전달하면 먹히지 않는데, 이벤트가 발생할 때마다 `timeoutId`가 `null`로 초기화되기 때문이다!
+
 `let timeoutId = null`을 `addEventListener` 바깥으로 빼주어야 한다.
 
 ```js
@@ -136,8 +137,4 @@ setTimeout(func.bind(null, ...args), delay)
 setTimeout(() => {
   func(...args)
 }, delay)
-```
-
-```
-
 ```
