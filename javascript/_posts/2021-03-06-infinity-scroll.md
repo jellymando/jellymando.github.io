@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '무한 스크롤 구현하기 : scrollTop, scrollHeight, throttle, debounce'
+title: "무한 스크롤 구현하기 : scrollTop, scrollHeight, throttle, debounce"
 sitemap: false
 ---
 
@@ -43,13 +43,13 @@ scrollingElement 속성은 HTML body 요소가 있고 스크롤 가능한 경우
 
 ```js
 const onScroll = (e) => {
-  const { scrollTop, clientHeight, scrollHeight } = e.target.scrollingElement
+  const { scrollTop, clientHeight, scrollHeight } = e.target.scrollingElement;
   if (scrollTop + clientHeight >= scrollHeight) {
-    console.log('끝까지 스크롤 했습니다.')
+    console.log("끝까지 스크롤 했습니다.");
   }
-}
+};
 
-document.addEventListener('scroll', onScroll)
+document.addEventListener("scroll", onScroll);
 ```
 
 But, 이유는 모르겠지만 끝까지 내려도 scrollTop 더하기 clientHeight가 scrollHeight가 되지 않는 경우도 가끔 있는데..
@@ -71,14 +71,14 @@ scroll 이벤트를 걸면 스크롤 할 때마다 무수히 많은 쿼리가 �
 
 ```js
 const debounce = (func, delay) => {
-  let timeoutId = null
+  let timeoutId = null;
   return function (...args) {
-    clearTimeout(timeoutId)
+    clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
-      func(...args)
-    }, delay)
-  }
-}
+      func(...args);
+    }, delay);
+  };
+};
 ```
 
 이벤트가 계속 발생해도 앞에서 발생한 setTimeout 값을 clearTimeout 하기 때문에 결국 맨 마지막에 발생한 이벤트만 실행하게 됩니다.
@@ -90,16 +90,16 @@ const debounce = (func, delay) => {
 
 ```js
 const throttle = (func, delay) => {
-  let timeoutId = null
+  let timeoutId = null;
   return function (...args) {
     if (!timeoutId) {
       timeoutId = setTimeout(() => {
-        timeoutId = null
-        func(...args)
-      }, delay)
+        timeoutId = null;
+        func(...args);
+      }, delay);
     }
-  }
-}
+  };
+};
 ```
 
 [쓰로틀링과 디바운싱](https://www.zerocho.com/category/JavaScript/post/59a8e9cb15ac0000182794fa)<br/>
@@ -112,15 +112,15 @@ const throttle = (func, delay) => {
 `let timeoutId = null`을 `addEventListener` 바깥으로 빼주어야 한다.
 
 ```js
-let timeoutId = null
-document.addEventListener('mousemove', ({ target }) => {
+let timeoutId = null;
+document.addEventListener("mousemove", ({ target }) => {
   if (!timeoutId) {
     timeoutId = setTimeout(() => {
-      console.log('mousemove target', target)
-      timeoutId = null
-    }, 300)
+      console.log("mousemove target", target);
+      timeoutId = null;
+    }, 300);
   }
-})
+});
 ```
 
 #### 에러 노트
@@ -128,13 +128,13 @@ document.addEventListener('mousemove', ({ target }) => {
 setTimeout 함수 안에 함수를 실행시키는 방법
 
 ```js
-setTimeout(func.bind(null, ...args), delay)
+setTimeout(func.bind(null, ...args), delay);
 ```
 
 혹은
 
 ```js
 setTimeout(() => {
-  func(...args)
-}, delay)
+  func(...args);
+}, delay);
 ```

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '이벤트를 등록하는 방식, 이벤트 핸들러 내부의 this'
+title: "이벤트를 등록하는 방식, 이벤트 핸들러 내부의 this"
 sitemap: false
 ---
 
@@ -12,7 +12,7 @@ sitemap: false
 <button onclick="handleClick()">Click me</button>
 <script>
   function handleClick() {
-    console.log(this) // window
+    console.log(this); // window
   }
 </script>
 ```
@@ -27,8 +27,8 @@ sitemap: false
 <button onclick="handleClick(this)">Click me</button>
 <script>
   function handleClick(button) {
-    console.log(button) // 이벤트를 바인딩한 button 요소
-    console.log(this) // window
+    console.log(button); // 이벤트를 바인딩한 button 요소
+    console.log(this); // window
   }
 </script>
 ```
@@ -40,11 +40,11 @@ addEventListener 핸들러 내부의 `this`는 이벤트를 바인딩한 DOM 요
 ```html
 <button id="el">클릭해라</button>
 <script>
-  const button = document.getElementById('el')
+  const button = document.getElementById("el");
 
-  button.addEventListener('click', function () {
-    console.log(this) // 이벤트를 바인딩한 button 요소
-  })
+  button.addEventListener("click", function () {
+    console.log(this); // 이벤트를 바인딩한 button 요소
+  });
 </script>
 ```
 
@@ -55,11 +55,11 @@ arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 �
 ```html
 <button id="el">클릭해라</button>
 <script>
-  const button = document.getElementById('el')
+  const button = document.getElementById("el");
 
-  button.addEventListener('click', () => {
-    console.log(this) // window
-  })
+  button.addEventListener("click", () => {
+    console.log(this); // window
+  });
 </script>
 ```
 
@@ -68,15 +68,15 @@ arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 �
 ```html
 <button id="el">클릭해라</button>
 <script>
-  const button = document.getElementById('el')
+  const button = document.getElementById("el");
 
   function handleClick() {
-    console.log('handleClick', this)
+    console.log("handleClick", this);
   }
 
-  button.addEventListener('click', (e) => {
-    console.log(e.currentTarget) // button 요소
-  })
+  button.addEventListener("click", (e) => {
+    console.log(e.currentTarget); // button 요소
+  });
 </script>
 ```
 
@@ -89,23 +89,23 @@ arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 �
 ```html
 <div id="div1">Click me!</div>
 <script>
-  document.getElementById('div1').onclick = function (e) {
-    alert('do process #1')
-  }
-  document.getElementById('div1').onclick = function (e) {
-    alert('do process #2')
-  }
+  document.getElementById("div1").onclick = function (e) {
+    alert("do process #1");
+  };
+  document.getElementById("div1").onclick = function (e) {
+    alert("do process #2");
+  };
 </script>
 <!-- 위 코드의 경우 클릭을 해보면 #2만 출력된다. -->
 
 <div id="div2">Click me!</div>
 <script>
-  document.getElementById('div2').addEventListener('click', function (e) {
-    alert('do process #1')
-  })
-  document.getElementById('div2').addEventListener('click', function (e) {
-    alert('do process #2')
-  })
+  document.getElementById("div2").addEventListener("click", function (e) {
+    alert("do process #1");
+  });
+  document.getElementById("div2").addEventListener("click", function (e) {
+    alert("do process #2");
+  });
 </script>
 <!-- 위 코드의 경우 클릭을 해보면 #1과 #2 모두 출력된다. -->
 ```
