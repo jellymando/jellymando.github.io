@@ -96,7 +96,7 @@ arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 �
     alert("do process #2");
   };
 </script>
-<!-- 위 코드의 경우 클릭을 해보면 #2만 출력된다. -->
+<!-- 위 코드의 경우 #2만 출력된다. -->
 
 <div id="div2">Click me!</div>
 <script>
@@ -107,7 +107,7 @@ arrow function으로 정의한 이벤트 핸들러 내부의 `this`는 상위 �
     alert("do process #2");
   });
 </script>
-<!-- 위 코드의 경우 클릭을 해보면 #1과 #2 모두 출력된다. -->
+<!-- 위 코드의 경우 #1과 #2 모두 출력된다. -->
 ```
 
 - JavaScript 모듈 또는 다른 라이브러리와 확장이 용이하기 때문에 모질라 등 개발자 포럼에서 addEventListener 사용을 더 추천하고 있다!
