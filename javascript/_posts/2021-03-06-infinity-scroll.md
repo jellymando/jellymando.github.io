@@ -15,6 +15,7 @@ sitemap: false
 **요소의 상단에서 맨 위에 보이는 콘텐츠까지의 거리**를 측정 한 것입니다.
 
 요소의 콘텐츠가 수직 스크롤바를 생성하지 않는 경우 해당 scrollTop값은 0입니다.
+
 <br/>
 
 - Element.clientHeight
@@ -22,6 +23,7 @@ sitemap: false
 요소의 내부 높이 (픽셀 단위)입니다.
 
 패딩은 포함되지만 테두리, 여백 및 가로 스크롤 막대 (있는 경우)는 제외됩니다.
+
 <br/>
 
 - Element.scrollHeight
@@ -29,6 +31,7 @@ sitemap: false
 화면에 보이지 않는 내용을 포함하는 요소의 내용의 높이를 측정합니다.
 
 <img src="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight/scrollheight.png">
+
 <br/>
 
 - Document.scrollingElement
@@ -57,6 +60,7 @@ But, 이유는 모르겠지만 끝까지 내려도 scrollTop 더하기 clientHei
 `Meth.ceil(scrollTop)` 으로 scrollTop을 반올림 해주면 응급처치가 될 것 같습니다.
 
 <br/>
+
 [요소가 완전히 스크롤되었는지 확인](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#problems_and_solutions)
 
 ### 2. 성능 향상 - debounce / throttle
@@ -82,6 +86,7 @@ const debounce = (func, delay) => {
 ```
 
 이벤트가 계속 발생해도 앞에서 발생한 setTimeout 값을 clearTimeout 하기 때문에 결국 맨 마지막에 발생한 이벤트만 실행하게 됩니다.
+
 <br/>
 
 - throttle
