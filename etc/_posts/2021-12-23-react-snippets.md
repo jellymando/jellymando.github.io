@@ -51,6 +51,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 
 하지만 함수형 컴포넌트 단축어가 `rfcp` 인게 맘에 들지 않아서.. (단순한 개인취향)
 
+`rcredux` 단축어를 사용하면 react와 redux를 같이 불러올 수 있어서 매우 편리하다.
+
 ## Simple React Snippets
 
 다음으로 다운로드 수가 많았던 스니펫이다.
@@ -93,11 +95,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(component)
 
 전체적으로 ES7 React/Redux/GraphQL/React-Native snippets와 단축어가 다르다.
 
-`imrse`는 없고, redux 부분도 처음 스니펫은 `redux`, `rcredux`인 것에 반해 React/Redux/react-router Snippets은 `imconnect`, `container`와 같이 redux라는 단어가 생략되어 있다.
+`imrse`는 없고, redux 부분도 앞 스니펫은 `redux`, `rcredux`인 것에 반해 React/Redux/react-router Snippets은 `imconnect`, `container`와 같이 redux라는 단어가 생략되어 있다.
 
-앞으로 주로 React, Redux만 사용할 것 같기 때문에 불필요한 단축어가 없는 후자를 선택했다.
+단축어 `rcc`, `rsc`가 그동안 써왔던 단축어라 익숙했다.
 
-그리고 클래스형/함수형 컴포넌트의 단축어 `rcc`, `rsc`가 그동안 써왔던 단축어이기 때문에 고른 이유가 가장 크다.
+하지만 react와 redux를 같이 세팅해주는 단축어가 없어서 `rcc`, `container` 단축어를 두 번 입력해야 하는 큰 번거로움이 있다.
+
+때문에 결국 ES7 React/Redux/GraphQL/React-Native snippets를 사용하게 되었다.
+
+완벽하게 마음에 드는 스니펫은 찾기 힘든 것 같다..😢
 
 ## 참고사이트
 
