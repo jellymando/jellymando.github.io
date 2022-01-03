@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "styled-components에서 keyframes 작성하기"
+title: 'styled-components에서 keyframes 작성하기'
 sitemap: false
 ---
 
@@ -9,6 +9,29 @@ sitemap: false
 `styled.div` 대신에 `keyframes`을 사용한다.
 
 ```js
+import styled, { keyframes } from 'styled-components'
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
+const FadeInButton = styled.button`
+  animation: 1s ${fadeIn} ease-out;
+`
+```
+
+<br/>
+
+스타일 규칙을 부분적으로 작성하는 경우 `css`를 붙여 사용해야 한다.
+
+```js
+import styled, { css, keyframes } from 'styled-components'
+
 const pulse = keyframes`
   0% {
     opacity: 0;
@@ -16,21 +39,17 @@ const pulse = keyframes`
   100% {
     opacity: 1;
   }
-`;
+`
 
 const animation = (props) =>
   css`
     ${pulse} ${props.animationLength} infinite alternate;
-  `;
+  `
 
 const PulseButton = styled.button`
   animation: ${animation};
-`;
+`
 ```
-
-<br/>
-
-또한 `props`로 전달받았을 때는 `css` 를 붙여줘야 한다고 한다.
 
 <br/>
 
