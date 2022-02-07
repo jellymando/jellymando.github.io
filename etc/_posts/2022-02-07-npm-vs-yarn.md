@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'npm vs yarn ?'
+title: 'npm vs yarn ? yarn install 버전 에러 해결'
 sitemap: false
 ---
 
@@ -44,4 +44,5 @@ yarn config set ignore-engines true
 
 [[#.NPM] NPM vs YARN의 차이점을 알아보자](https://developer0809.tistory.com/128)<br/>
 [[개발상식] npm과 yarn](https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-npm%EA%B3%BC-yarn)<br/>
+[The engine "node" is incompatible with this module](https://stackoverflow.com/questions/56617209/the-engine-node-is-incompatible-with-this-module)<br/>
 [yarn에서 package.json 의 engines 설정 무시하기](https://velog.io/@bang9dev/yarn%EC%97%90%EC%84%9C-package.json-%EC%9D%98-engines-%EC%84%A4%EC%A0%95-%EB%AC%B4%EC%8B%9C%ED%95%98%EA%B8%B0)
