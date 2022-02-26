@@ -21,11 +21,11 @@ npm-scripts를 동시에 실행하는지, 순서를 보장하여 실행할지 �
 - `run-p`
 
   - `npm-run-all -p` 의 약어
-  - 주어진 npm-scripts를 <u>**병렬로**</u> 실행
+  - 주어진 npm-scripts를 <u>병렬로</u> 실행
 
 - `run-s`
   - `npm-run-all -s` 의 약어
-  - 주어진 npm-scripts를 <u>**순차적으로**</u> 실행
+  - 주어진 npm-scripts를 <u>순차적으로</u> 실행
 
 ### 사용
 
