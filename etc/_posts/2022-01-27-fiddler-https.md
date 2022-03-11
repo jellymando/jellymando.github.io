@@ -16,7 +16,7 @@ Fiddler를 켜면 https 페이지가 아래와 같이 연결되지 않았다.
 
 Fiddler에서 https 인증서를 새로 발급받는다.
 
-(Options - HTTPS - Actions - Reset All Certificates)
+(Tools - Options - HTTPS - Actions - Reset All Certificates)
 
 <img src="/assets/img/blog/2022-01-27-fiddler-https_02.png">
 
