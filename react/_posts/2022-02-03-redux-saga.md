@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Redux-Saga] 미들웨어 만들고 스토어에 연결하기'
+title: "[Redux-Saga] 미들웨어 만들고 스토어에 연결하기"
 sitemap: false
 ---
 
@@ -25,7 +25,7 @@ Saga를 실행하려면 아래 작업이 필요하다.
 ```js
 // sagas.js
 export function* helloSaga() {
-  console.log('Hello Sagas!')
+  console.log("Hello Sagas!");
 }
 ```
 
@@ -33,17 +33,17 @@ export function* helloSaga() {
 
 ```js
 // main.js
-import { createStore, applyMiddleware } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from "redux-saga";
 
 // ...
-import { helloSaga } from './sagas'
+import { helloSaga } from "./sagas";
 
-const sagaMiddleware = createSagaMiddleware()
-const store = createStore(reducer, applyMiddleware(sagaMiddleware))
-sagaMiddleware.run(helloSaga)
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(helloSaga);
 
-const action = (type) => store.dispatch({ type })
+const action = (type) => store.dispatch({ type });
 ```
 
 - 앞에서 만든 Saga를 import 한다.
@@ -53,5 +53,4 @@ const action = (type) => store.dispatch({ type })
 
 ## 참고사이트
 
-[10. redux-saga](https://react.vlpt.us/redux-middleware/10-redux-saga.html)<br/>
-[Redux-Saga: 제너레이터와 이펙트](https://meetup.toast.com/posts/140)
+[튜토리얼](https://mskims.github.io/redux-saga-in-korean/introduction/BeginnerTutorial.html)
