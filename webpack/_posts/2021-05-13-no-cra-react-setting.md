@@ -6,6 +6,8 @@ sitemap: false
 
 {:toc .large-only}
 
+## 모듈 설치
+
 ### 폴더 생성 및 초기화
 
 프로젝트 폴더를 만들고 yarn을 초기화하여 package.json 파일을 생성해준다.
@@ -96,6 +98,8 @@ yarn add -D babel-loader css-loader style-loader file-loader ts-loader
 yarn add -D html-webpack-plugin clean-webpack-plugin
 ```
 
+## index 파일 생성
+
 ### src 경로에 index.tsx, App.tsx 생성
 
 #### index.tsx
@@ -120,9 +124,9 @@ const App = () => {
 export default App;
 ```
 
-### 바벨 설정
+## 바벨 설정
 
-루트 경로에 babel.config.json 파일을 만들고 설정
+루트 경로에 babel.config.json 파일을 만들고 아래와 같이 presets 옵션을 설정한다.
 
 ```js
 {
@@ -133,19 +137,37 @@ export default App;
 }
 ```
 
-### 웹팩 설정
+## 웹팩 설정
 
-루트 경로에 webpack.config.js 파일을 만들고 설정
+개발용과 빌드용 파일을 각각 만들어준다.
+
+루트 경로에 webpack.config.js, webpack.config.dev.js 파일을 만들어 각각 설정한다.
 
 - **entry** : 모듈의 의존성이 시작되는 부분으로 웹팩은 이 entry 속성에 명시된 파일을 기준으로 의존성 트리를 만들어 하나의 번들 파일을 만든다.
+
+### dev
 
 ```js
 module.exports = {
   entry: {
-    main: "./src/index.js"
+    main: "./index.js"
   }
 };
 ```
+
+루트의 index 파일(DOM을 그려주는 파일)을 기준으로 한다.
+
+### build
+
+```js
+module.exports = {
+  entry: {
+    main: "./src/index.tsx"
+  }
+};
+```
+
+모듈들을 내보내는 파일(라이브러리로 만들 파일)을 기준으로 한다.
 
 - **resolve** : 웹팩이 모듈을 처리하는 방식을 정의하는 것으로 확장자를 생략하고도 인식하게 만든다.
 
@@ -160,16 +182,19 @@ resolve: {
 
 - **output** : 웹팩의 번들링 결과물에 대한 옵션. 번들링 결과를 path 경로에 filename으로 묶어낸다. entry 설정은 항상 프로젝트 디렉터리 내부이기 때문에 상대 경로로 하는 반면에, output 설정은 항상 프로젝트 디렉터리 내부라는 보장이 없으므로 절대 경로로 한다. path 모듈을 사용하기 위해서 설정 파일의 module.exports 위에 선언해주자.
 
+### build
+
 ```js
 const { resolve } = require('path');
 
 output: {
-  path: resolve(__dirname, 'build'),
-  filename: 'js/build.js',
+  path: resolve(__dirname, 'dist'),
+  filename: "index.js",
+  libraryTarget: "umd"
 }
 ```
 
-> 참고로 \_\_dirname은 NodeJS에서 현재 프로젝트 디렉터리를 의미합니다. npx webpack을 실행하면 프로젝트 최상위 디렉터리에 build.js 파일이 생성되었음을 확인할 수 있습니다.
+> 참고로 \_\_dirname은 NodeJS에서 현재 프로젝트 디렉터리를 의미합니다. npx webpack을 실행하면 프로젝트 최상위 디렉터리에 index.js 파일이 생성되었음을 확인할 수 있다.
 
 - **externals** : 특정 import 패키지의 번들링을 방지하고 대신 런타임에 이러한 외부 종속성을 검색
 
@@ -211,12 +236,12 @@ module: {
 
 - **plugins** : 웹팩을 실행할 때 마다 기존에 있던 번들 파일을 먼저 깔끔히 지우고 싶은 경우에는 clean-webpack-plugin 플러그인을 사용
 
+### dev
+
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       minify: false, // index.html minify 여부
@@ -226,14 +251,26 @@ plugins: [
 
 > `HtmlWebpackPlugin` template을 설정하지 않으면 `webpack serve`를 해도 리액트 코드가 `$root`에 들어가지 않는다!!
 
-- **mode** : production - 빌드 / development - dev <u>(생략..)</u>
+### build
+
+```js
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+plugins: [
+    new CleanWebpackPlugin()
+  ],
+```
+
+> `CleanWebpackPlugin` : dist 폴더의 내용을 다 지우고 새로 생성
+
+- **mode** : development - 개발용 / production - 빌드용 <u>(생략..)</u>
 
 ### package.json에 스크립트 입력
 
 ```js
 {
   "scripts": {
-    "dev": "webpack serve --progress --mode development",
+    "dev": "webpack serve --progress --mode development --config ./webpack.config.dev.js",
     "build": "webpack --progress --mode production"
   }
 }
@@ -248,7 +285,8 @@ webpack-dev-server로 하면 not found module 에러가 계속 나서 찾다가 
 <br/>
 
 [[React] CRA 없이 리액트 환경 만들기](https://baeharam.netlify.app/posts/react/React-CRA-%EC%97%86%EC%9D%B4-%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0) <br/>
-[웹팩(Webpack) 기본 설정법 (Entry/Output/Loader/Plugins)](https://www.daleseo.com/webpack-config/)
+[웹팩(Webpack) 기본 설정법 (Entry/Output/Loader/Plugins)](https://www.daleseo.com/webpack-config/)<br/>
+[Command Line Interface](https://webpack.kr/api/cli/)
 
 ### 에러 체크
 
