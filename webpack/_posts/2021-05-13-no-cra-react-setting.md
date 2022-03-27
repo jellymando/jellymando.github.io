@@ -71,7 +71,7 @@ tsconfig.json 설정
 ### babel 설치
 
 ```js
-yarn add @babel/core --dev
+yarn add @babel/core @babel/preset-env @babel/preset-react --dev
 ```
 
 ### webpack 설치
@@ -120,17 +120,30 @@ const App = () => {
 export default App;
 ```
 
+### 바벨 설정
+
+루트 경로에 babel.config.json 파일을 만들고 설정
+
+```js
+{
+    "presets": [
+        "@babel/env",
+        "@babel/react"
+    ]
+}
+```
+
 ### 웹팩 설정
 
 루트 경로에 webpack.config.js 파일을 만들고 설정
 
-- **entry** : 모듈의 의존성이 시작되는 부분으로 웹팩은 이 Entry 속성에 명시된 파일을 기준으로 의존성 트리를 만들어 하나의 번들 파일을 만든다.
+- **entry** : 모듈의 의존성이 시작되는 부분으로 웹팩은 이 entry 속성에 명시된 파일을 기준으로 의존성 트리를 만들어 하나의 번들 파일을 만든다.
 
 ```js
 module.exports = {
   entry: {
-    main: "./src/index.tsx",
-  },
+    main: "./src/index.js"
+  }
 };
 ```
 
