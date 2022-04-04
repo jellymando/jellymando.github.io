@@ -8,8 +8,6 @@ sitemap: false
 
 <img src="/assets/img/blog/2022-04-04-javascript-parameter-argument.png">
 
-<br/>
-
 ### 함수 이름
 
 - 식별자
@@ -17,7 +15,7 @@ sitemap: false
 
 ### 매개변수 (parameter)
 
-- 인자
+- = 인자
 - 0개 이상의 매개변수를 소괄호로 감싸고 쉼표로 구분한다.
 - 각 매개변수에는 함수를 호출할 때 지정한 인수가 <u>순서대로</u> 할당된다.
 - 함수를 정의할 때 선언하며, 함수 내부에서 변수와 동일하게 취급된다.
@@ -27,7 +25,7 @@ sitemap: false
 
 - 값으로 평가할 수 있는 표현식이어야 한다.
 - 함수를 호출할 때 지정하며, 개수와 타입에 제한이 없다.
-- 인자로 전달한 값은 매개변수를 통해 사용 가능하게 된다.
+- 인수로 전달한 값은 매개변수를 통해 사용 가능하게 된다.
 
 <br/>
 
@@ -46,4 +44,4 @@ var result = add(1, 2) // 1, 2 => 인수
 <br/>
 
 모던 자바스크립트 Deep Dive - 157p, 168p<br/>
-[9. 매개변수(parameter)와 인자(argument)](https://velog.io/@sdc337dc/9.-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98parameter%EC%99%80-%EC%9D%B8%EC%9E%90argument)
+[인수(Argument)와 인자(Parameter, 매개변수)의 차이](https://amagrammer91.tistory.com/9)
