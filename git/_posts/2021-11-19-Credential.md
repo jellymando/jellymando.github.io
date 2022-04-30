@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Windows] git 자격 증명 재등록"
+title: "[Windows] git 자격 증명 등록"
 sitemap: false
 ---
 
@@ -26,7 +26,7 @@ Mac은 모르겠으나, 윈도우에서는 제어판의 `Windows 자격 증명` 
 
 `암호` 입력란에 github에서 발급받은 accessToken 값을 집어넣는다.
 
-만약 `git:https://github.com` 항목을 삭제했다면, `일반 자격 증명 추가`를 클릭해 새로 추가한다.
+만약 `git:https://github.com` 항목을 삭제했다면, **일반 자격 증명 추가**를 클릭해 새로 추가한다.
 
 ~~`Windows 자격 증명 추가` 눌렀다가 안돼서 SSH 발급받았었건만..~~
 
