@@ -53,6 +53,8 @@ menu:
     url: /typescript/
   - title: React
     url: /react/
+  - title: Redux
+    url: /redux/
   - title: CSS
     url: /css/
   - title: HTML
