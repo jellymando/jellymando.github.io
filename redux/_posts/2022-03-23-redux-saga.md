@@ -39,6 +39,16 @@ Saga가 이펙트를 yield 하면 미들웨어는 Promise가 완료될 때까지
 
 **Promise가 해결되면 미들웨어는 Saga를 재개하여 다음 yield까지 코드를 실행한다.**
 
+### take
+
+특정 액션이 디스패치 될 때까지 기다린다.
+
+```js
+function* watchLogIn() {
+  yield take("LOG_IN", logIn); // 'LOG_IN'이 디스패치되면 logIn 함수 실행
+}
+```
+
 ## 헬퍼 함수 사용하기
 
 여러 개의 Saga를 한 번에 실행하기 위해 redux-saga의 헬퍼 함수를 사용한다.
