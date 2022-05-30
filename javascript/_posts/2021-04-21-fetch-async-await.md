@@ -91,12 +91,13 @@ async 문법은 Promise 형태의 응답을 반환하는 함수를 동기식 문
 
 ```js
 try {
-  await fetch("http://example.com/movies.json").then((response) => {
-    if(!response.ok) throw new Error("HTTP 에러");
-    return response.json();
-  }
+  const result = await fetch(
+    'https://zl3m4qq0l9.execute-api.ap-northeast-2.amazonaws.com/dev/'
+  )
+  if (!result.ok) throw new Error('HTTP 에러')
+  return result.json()
 } catch (e) {
-  throw new Error(`fetch 작업 오류 : ${e.message}`);
+  throw new Error(`fetch 작업 오류 : ${e.message}`)
 }
 ```
 
