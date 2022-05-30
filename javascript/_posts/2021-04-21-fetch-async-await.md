@@ -83,6 +83,24 @@ fetch('http://example.com/movies.json')
   })
 ```
 
+#### Promise 사용
+
+```js
+const request = () => {
+  return new Promise((resolve, reject) => {
+    fetch(
+      'https://zl3m4qq0l9.execute-api.ap-northeast-2.amazonaws.com/dev/'
+    ).then((result) => {
+      if (!result.ok) throw new Error('HTTP 에러')
+      resolve(result.json())
+    })
+  })
+}
+const init = async () => {
+  const rootNodes = await request()
+}
+```
+
 #### \* `async/await` 사용
 
 async 문법은 Promise 형태의 응답을 반환하는 함수를 동기식 문법으로 작성할 수 있도록 도와주는 문법이다.
