@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "✅CRA 없이 리액트 환경 만들기"
+title: '✅CRA 없이 리액트 환경 만들기'
 sitemap: false
 ---
 
@@ -105,23 +105,23 @@ yarn add -D html-webpack-plugin clean-webpack-plugin
 #### index.tsx
 
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 #### App.tsx
 
 ```js
-import React from "react";
+import React from 'react'
 
 const App = () => {
-  return <div></div>;
-};
+  return <div></div>
+}
 
-export default App;
+export default App
 ```
 
 ## 바벨 설정
@@ -143,33 +143,37 @@ export default App;
 
 루트 경로에 webpack.config.js, webpack.config.dev.js 파일을 만들어 각각 설정한다.
 
-- **entry** : 모듈의 의존성이 시작되는 부분으로 웹팩은 이 entry 속성에 명시된 파일을 기준으로 의존성 트리를 만들어 하나의 번들 파일을 만든다.
+### entry
 
-### dev
+모듈의 의존성이 시작되는 부분으로 웹팩은 이 entry 속성에 명시된 파일을 기준으로 의존성 트리를 만들어 하나의 번들 파일을 만든다.
+
+- dev
 
 ```js
 module.exports = {
   entry: {
-    main: "./index.js"
+    main: './index.js'
   }
-};
+}
 ```
 
 루트의 index 파일(DOM을 그려주는 파일)을 기준으로 한다.
 
-### build
+- build
 
 ```js
 module.exports = {
   entry: {
-    main: "./src/index.tsx"
+    main: './src/index.tsx'
   }
-};
+}
 ```
 
 모듈들을 내보내는 파일(라이브러리로 만들 파일)을 기준으로 한다.
 
-- **resolve** : 웹팩이 모듈을 처리하는 방식을 정의하는 것으로 확장자를 생략하고도 인식하게 만든다.
+### resolve
+
+웹팩이 모듈을 처리하는 방식을 정의하는 것으로 확장자를 생략하고도 인식하게 만든다.
 
 ```js
 resolve: {
@@ -180,9 +184,17 @@ resolve: {
 
 [Webpack + React + TypeScript: Module not found … in … node_modules/react/](https://stackoverflow.com/questions/47721962/webpack-react-typescript-module-not-found-in-node-modules-react)
 
-- **output** : 웹팩의 번들링 결과물에 대한 옵션. 번들링 결과를 path 경로에 filename으로 묶어낸다. entry 설정은 항상 프로젝트 디렉터리 내부이기 때문에 상대 경로로 하는 반면에, output 설정은 항상 프로젝트 디렉터리 내부라는 보장이 없으므로 절대 경로로 한다. path 모듈을 사용하기 위해서 설정 파일의 module.exports 위에 선언해주자.
+### output
 
-### build
+웹팩의 번들링 결과물에 대한 옵션.
+
+번들링 결과를 path 경로에 filename으로 묶어낸다.
+
+entry 설정은 항상 프로젝트 디렉터리 내부이기 때문에 상대 경로로 하는 반면에, output 설정은 항상 프로젝트 디렉터리 내부라는 보장이 없으므로 절대 경로로 한다.
+
+path 모듈을 사용하기 위해서 설정 파일의 `module.exports` 위에 선언해주자.
+
+- build
 
 ```js
 const { resolve } = require('path');
@@ -196,7 +208,9 @@ output: {
 
 > 참고로 \_\_dirname은 NodeJS에서 현재 프로젝트 디렉터리를 의미합니다. npx webpack을 실행하면 프로젝트 최상위 디렉터리에 index.js 파일이 생성되었음을 확인할 수 있다.
 
-- **externals** : 특정 import 패키지의 번들링을 방지하고 대신 런타임에 이러한 외부 종속성을 검색
+### externals
+
+특정 import 패키지의 번들링을 방지하고 대신 런타임에 이러한 외부 종속성을 검색
 
 npm 라이브러리를 사용하는 프로젝트에서 라이브러리의 react 컴포넌트를 import하지 못하는 에러 때문에 추가하였다.
 
@@ -204,7 +218,9 @@ npm 라이브러리를 사용하는 프로젝트에서 라이브러리의 react 
   externals: ["react", "react-dom"],
 ```
 
-- **module.rules** : Loader 추가
+### module.rules
+
+Loader 추가
 
 ```js
 module: {
@@ -234,9 +250,11 @@ module: {
 },
 ```
 
-- **plugins** : 웹팩을 실행할 때 마다 기존에 있던 번들 파일을 먼저 깔끔히 지우고 싶은 경우에는 clean-webpack-plugin 플러그인을 사용
+### plugins
 
-### dev
+웹팩을 실행할 때 마다 기존에 있던 번들 파일을 먼저 깔끔히 지우고 싶은 경우에는 clean-webpack-plugin 플러그인을 사용
+
+- dev
 
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -251,7 +269,7 @@ plugins: [
 
 > `HtmlWebpackPlugin` template을 설정하지 않으면 `webpack serve`를 해도 리액트 코드가 `$root`에 들어가지 않는다!!
 
-### build
+- build
 
 ```js
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -263,9 +281,11 @@ plugins: [
 
 > `CleanWebpackPlugin` : dist 폴더의 내용을 다 지우고 새로 생성
 
-- **mode** : development - 개발용 / production - 빌드용 <u>(생략..)</u>
+### mode
 
-### package.json에 스크립트 입력
+development - 개발용 / production - 빌드용 <u>(생략..)</u>
+
+### scripts
 
 ```js
 {
@@ -282,13 +302,34 @@ webpack-dev-server로 하면 not found module 에러가 계속 나서 찾다가 
 
 [Cannot find module 'webpack/bin/config-yargs'](https://stackoverflow.com/questions/40379139/cannot-find-module-webpack-bin-config-yargs/41182205)
 
-<br/>
+### exports
+
+모듈 내의 파일에 대해 경로를 제공할 수 있다.
+
+```js
+{
+  "name": "package",
+  "exports": {
+    ".": "./main.js",
+    "./sub/path": "./secondary.js",
+    "./prefix/": "./directory/",
+    "./prefix/deep/": "./other-directory/",
+    "./other-prefix/*": "./yet-another/*/*.js"
+  }
+}
+```
+
+라이브러리를 사용하는 곳에서 `import "package"` 또는 `import "package/sub/path"`와 같이 모듈을 요청할 때,
+
+`import "package"`는 package 라이브러리 내에서 `.` 경로이므로 `./main.js` 파일을 내보내고, `import "package/sub/path"`는 package 라이브러리 내에서 `./sub/path` 경로이므로 `./secondary.js` 파일을 내보내준다.
+
+## 참고사이트
 
 [[React] CRA 없이 리액트 환경 만들기](https://baeharam.netlify.app/posts/react/React-CRA-%EC%97%86%EC%9D%B4-%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0) <br/>
 [웹팩(Webpack) 기본 설정법 (Entry/Output/Loader/Plugins)](https://www.daleseo.com/webpack-config/)<br/>
 [Command Line Interface](https://webpack.kr/api/cli/)
 
-### 에러 체크
+## 에러 체크
 
 - `index.html`에 js library 참조하니 build 에러. `index.js`에서 import or require.
 
