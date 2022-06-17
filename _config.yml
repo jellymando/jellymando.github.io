@@ -71,6 +71,8 @@ menu:
     url: /backend/
   - title: Network
     url: /network/
+  - title: Python
+    url: /python/
   - title: JQuery
     url: /jquery/
   - title: WebRTC
