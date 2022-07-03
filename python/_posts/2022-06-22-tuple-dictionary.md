@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Python 기초] Tuple, Dictionary 자료형'
+title: "[Python 기초] Tuple, Dictionary 자료형"
 sitemap: false
 ---
 
@@ -53,4 +53,44 @@ person['hometown'] = 'Seoul'
 person = {'name': 'Michael', 'age', 10}
 del person['age']
 # person = {'name': 'Michael'}
+```
+
+#### keys/values 메서드
+
+- `Dictionary.keys()` : Dictionary의 모든 Key를 반환
+- `Dictionary.values()` : Dictionary의 모든 Value를 반환
+
+#### 연습문제
+
+| Coffee         | Price |
+| -------------- | ----- |
+| 아메리카노     | 4100  |
+| 카페라떼       | 4600  |
+| 카라멜마끼아또 | 5100  |
+
+- 위 메뉴판대로 주문을 입력하면 총 금액을 출력하는 프로그램을 작성해봅시다.
+- 첫번째 줄에 숫자 하나(n)를 입력받습니다.
+- 두번째 줄부터 n+1번째 줄까지 메뉴(아메리카노, 카페라떼, 카라멜마끼아또)중 하나를 입력받습니다.
+
+```python
+n = int(input())
+a = []
+menu = {
+    "아메리카노":4100,
+    "카페라떼":4600,
+    "카라멜마끼아또":5100
+}
+total = 0
+
+while len(a) < n:
+    s = input()
+    if s in menu.keys():
+        a.append(s)
+    else:
+        print("메뉴에 있는 음료만 시키십시오.")
+
+for m in a:
+    total += menu[m]
+
+print(total)
 ```
