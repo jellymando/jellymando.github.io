@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '✅CRA 없이 리액트 환경 만들기'
+title: "✅CRA 없이 리액트 환경 만들기"
 sitemap: false
 ---
 
@@ -105,23 +105,23 @@ yarn add -D html-webpack-plugin clean-webpack-plugin
 #### index.tsx
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 #### App.tsx
 
 ```js
-import React from 'react'
+import React from "react";
 
 const App = () => {
-  return <div></div>
-}
+  return <div></div>;
+};
 
-export default App
+export default App;
 ```
 
 ## 바벨 설정
@@ -152,9 +152,9 @@ export default App
 ```js
 module.exports = {
   entry: {
-    main: './index.js'
+    main: "./index.js"
   }
-}
+};
 ```
 
 루트의 index 파일(DOM을 그려주는 파일)을 기준으로 한다.
@@ -164,9 +164,9 @@ module.exports = {
 ```js
 module.exports = {
   entry: {
-    main: './src/index.tsx'
+    main: "./src/index.tsx"
   }
-}
+};
 ```
 
 모듈들을 내보내는 파일(라이브러리로 만들 파일)을 기준으로 한다.
@@ -213,6 +213,10 @@ output: {
 특정 import 패키지의 번들링을 방지하고 대신 런타임에 이러한 외부 종속성을 검색
 
 npm 라이브러리를 사용하는 프로젝트에서 라이브러리의 react 컴포넌트를 import하지 못하는 에러 때문에 추가하였다.
+
+develop 모드에 넣으면 `react is not defined` 에러가 발생하므로 주의하자.
+
+- build
 
 ```js
   externals: ["react", "react-dom"],
