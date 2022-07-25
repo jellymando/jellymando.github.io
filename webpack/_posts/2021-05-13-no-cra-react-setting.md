@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '✅CRA 없이 리액트 환경 만들기'
+title: "✅CRA 없이 리액트 환경 만들기"
 sitemap: false
 ---
 
@@ -105,23 +105,23 @@ yarn add -D html-webpack-plugin clean-webpack-plugin
 #### index.tsx
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 #### App.tsx
 
 ```js
-import React from 'react'
+import React from "react";
 
 const App = () => {
-  return <div></div>
-}
+  return <div></div>;
+};
 
-export default App
+export default App;
 ```
 
 ## 바벨 설정
@@ -143,6 +143,10 @@ export default App
 
 루트 경로에 webpack.config.js, webpack.config.dev.js 파일을 만들어 각각 설정한다.
 
+### mode
+
+development - 개발용 / production - 빌드용 <u>(생략..)</u>
+
 ### entry
 
 모듈의 의존성이 시작되는 부분으로 웹팩은 이 entry 속성에 명시된 파일을 기준으로 의존성 트리를 만들어 하나의 번들 파일을 만든다.
@@ -152,9 +156,9 @@ export default App
 ```js
 module.exports = {
   entry: {
-    main: './index.js'
+    main: "./index.js"
   }
-}
+};
 ```
 
 루트의 index 파일(DOM을 그려주는 파일)을 기준으로 한다.
@@ -164,9 +168,9 @@ module.exports = {
 ```js
 module.exports = {
   entry: {
-    main: './src/index.tsx'
+    main: "./src/index.tsx"
   }
-}
+};
 ```
 
 모듈들을 내보내는 파일(라이브러리로 만들 파일)을 기준으로 한다.
@@ -214,8 +218,35 @@ output: {
 
 npm 라이브러리를 사용하는 프로젝트에서 라이브러리의 react 컴포넌트를 import하지 못하는 에러 때문에 추가하였다.
 
+develop 모드에 넣으면 `react is not defined` 에러가 발생하므로 주의하자.
+
+- build
+
 ```js
   externals: ["react", "react-dom"],
+```
+
+### devServer
+
+webpack-dev-server와 관련된 옵션 설정
+
+- `open` : 서버를 실행하면 자동으로 브라우저를 염
+- `port` : 서버 포트번호를 설정
+- `allowedHosts` : 서버에 접근할 수 있는 호스트 설정
+- `overlay` : 컴파일 오류나 경고가 있는 경우 브라우저에 오버레이로 표시함
+
+```js
+devServer: {
+  open: true,
+  port: 9000,
+  allowedHosts: [
+    'host.com',
+    'subdomain.host.com',
+    'subdomain2.host.com',
+    'host2.com',
+  ],
+  overlay: true
+}
 ```
 
 ### module.rules
@@ -280,10 +311,6 @@ plugins: [
 ```
 
 > `CleanWebpackPlugin` : dist 폴더의 내용을 다 지우고 새로 생성
-
-### mode
-
-development - 개발용 / production - 빌드용 <u>(생략..)</u>
 
 ### scripts
 
