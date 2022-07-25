@@ -1,20 +1,20 @@
 ---
 layout: post
-title: '[match.params] 라우터 path를 통해 parameter 전달하기'
+title: '라우터 path를 통해 parameter 전달하기'
 sitemap: false
 ---
 
 {:toc .large-only}
 
-## match.params
+## params
 
-리액트에서 Router를 통해 설정한 path 값을 해당 페이지(컴포넌트)에서 불러오기 위해 `props.match.params` 을 사용한다.
+리액트에서 Router를 통해 설정한 path 값을 해당 페이지(컴포넌트)에서 불러오기 위해 `params`를 사용한다.
 
 ## 라우트 path 설정하기
 
 ```js
 <Switch>
-  <Route exact path="/post/:postId" component={Post} />
+  <Route exact path="/blog/:categoryId/:postId" component={Post} />
 </Switch>
 ```
 
@@ -22,12 +22,27 @@ sitemap: false
 
 ## props 사용하기
 
-`/post/34238` 이라는 url로 접속하면 Post 페이지의 props 객체 내부의 postId 값이 34238로 전달된다.
+`/blog/abc/12345` url로 접속했다고 가정했을 때, 클래스형/함수형 컴포넌트에서 params 값을 가져오는 방법이 있다.
+
+### 클래스형 컴포넌트
+
+`this.props`로 전달되는 `match.params` 객체를 통해 categoryId, postId 값을 얻을 수 있다.
 
 ```js
 const { match } = this.props
-const { postId } = match.params
-console.log(postId) // 34238
+const { categoryId, postId } = match.params
+console.log(categoryId, postId) // abc, 12345
+```
+
+### 함수형 컴포넌트
+
+`react-router-dom`의 `useParams()` 훅을 사용하여 params 값을 얻을 수 있다.
+
+```js
+import { useParams } from 'react-router-dom'
+const params = useParams()
+const { categoryId, postId } = params
+console.log(categoryId, postId) // abc, 12345
 ```
 
 ## Query String
