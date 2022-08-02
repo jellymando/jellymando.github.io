@@ -29,6 +29,8 @@ const FancyButton = ({ ref }) => {
 
 ## 올바른 예
 
+JSX를 `forwardRef`로 감싸주고, 두 번째 파라미터로 ref를 전달한다.
+
 ```js
 // App.jsx
 const ref = React.createRef();
