@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[URLSearchParams] url parameters 추출하기"
+title: '[URLSearchParams] url parameters 추출하기'
 sitemap: false
 ---
 
@@ -19,10 +19,10 @@ URL 뒤의 `?`를 포함한 문자열 쿼리이다.
 아래와 같이 변수에 담을 수 있다.
 
 ```js
-const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(location.search)
 // 혹은
-const url = new URL("https://example.com?foo=1&bar=2");
-const params = new URLSearchParams(url.search);
+const url = new URL('https://example.com?foo=1&bar=2')
+const params = new URLSearchParams(url.search)
 ```
 
 ### urlSearchParams.get("name")
@@ -30,14 +30,14 @@ const params = new URLSearchParams(url.search);
 해당 name으로 조회되는 첫 번째 파라미터 값을 리턴한다.
 
 ```js
-const url = new URL("https://example.com/?name=Jonathan&age=18");
-const params = new URLSearchParams(url.search);
-const name = params.get("name");
-console.log(name); // "Jonathan"
-const age = parseInt(params.get("age"), 10);
-console.log(age); // 숫자 18
-const address = params.get("address");
-console.log(address); // null
+const url = new URL('https://example.com/?name=Jonathan&age=18')
+const params = new URLSearchParams(url.search)
+const name = params.get('name')
+console.log(name) // "Jonathan"
+const age = parseInt(params.get('age'), 10)
+console.log(age) // 숫자 18
+const address = params.get('address')
+console.log(address) // null
 ```
 
 ### urlSearchParams.getAll("name")
@@ -45,10 +45,23 @@ console.log(address); // null
 해당 name으로 조회되는 모든 파라미터 값을 배열로 리턴한다.
 
 ```js
-const url = new URL("https://example.com?foo=1&foo=2");
-const params = new URLSearchParams(url.search);
-const foos = params.getAll("foo");
-console.log(foos); // ["1", "2"]
+const url = new URL('https://example.com?foo=1&foo=2')
+const params = new URLSearchParams(url.search)
+const foos = params.getAll('foo')
+console.log(foos) // ["1", "2"]
+```
+
+### urlSearchParams.set("name", value)
+
+파라미터 값을 설정한다.
+
+만약 해당 파라미터 값이 여러 개라면, 설정한 값을 제외한 나머지는 모두 제거된다.
+
+```js
+let url = new URL('https://example.com?foo=1&bar=2')
+url.searchParams.set('foo', 3)
+console.log(url.href)
+// https://example.com/?foo=3&bar=2
 ```
 
 ## 참고사이트
