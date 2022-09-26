@@ -11,14 +11,15 @@ sitemap: false
 이미지의 해상도에 상관없이 부모 요소의 가로와 세로를 꽉 채우게 하려고 한다.
 
 ```css
-.bumo {
+.parent {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100px;
   height: 100px;
 }
-.jasic {
+
+.child {
   min-width: 100%;
   min-height: 100%;
 }
@@ -40,19 +41,25 @@ sitemap: false
 
 #### object-fit: contain
 
-대체 콘텐츠의 가로세로비를 유지하면서, 요소의 콘텐츠 박스 내부에 들어가도록 크기를 맞춤 조절합니다.
-
-콘텐츠가 콘텐츠 박스 크기에 맞도록 하면서도 가로세로비를 유지하게 되므로, 서로의 가로세로비가 일치하지 않으면 객체가 "레터박스"처럼 됩니다.
+콘텐츠의 기본 크기와 가로세로 비율을 유지하면서 부모 요소 가운데에 위치시킨다.
 
 <img src="/assets/img/blog/2022-03-08-object-fit_01.png" style="margin: 30px 0">
 
 #### object-fit: cover
 
-대체 콘텐츠의 가로세로비를 유지하면서, 요소 콘텐츠 박스를 가득 채웁니다.
+콘텐츠의 가로세로 비율을 유지하면서 부모 요소를 가득 채운다.
 
-서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나갑니다.
+부모와 가로세로 비율이 일치하지 않아서 밖으로 삐져나온 부분은 잘린다.
 
 <img src="/assets/img/blog/2022-03-08-object-fit_02.png" style="margin: 30px 0">
+
+#### object-fit: scale-down
+
+콘텐츠의 기본 크기와 가로세로 비율을 유지하면서 `object-fit: none`과 `object-fit: contain` 중 더 <u>작은</u> 크기로 부모 요소 가운데에 위치시킨다.
+
+부모 요소가 `video` 태그이고 `width: 100%; height: 100%` 속성일 때 `video[poster] {object-fit: contain}`을 적용한 경우,
+
+처음 미디어를 불러올 때 `poster` 크기가 순간적으로 부모 사이즈에 맞춰 늘어났다가 contain 적용되는 경우가 있어 `object-fit: scale-down`을 적용했더니 정상적으로 노출되었다.
 
 ## 참고사이트
 
