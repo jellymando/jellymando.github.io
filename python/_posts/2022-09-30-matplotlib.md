@@ -16,21 +16,21 @@ sitemap: false
 x = [1, 2, 3, 4, 5]
 y = [1, 2, 3, 4, 5]
 
-// 선 그리기
+# 선 그리기
 plt.plot(x, y)
 
-// 그래프 제목 추가
+# 그래프 제목 추가
 plt.title("First Plot")
 
-// x축 라벨 추가
+# x축 라벨 추가
 plt.xlabel("x")
 
-// y축 라벨 추가
+# y축 라벨 추가
 plt.ylabel("y")
 
-// 저장하기
-fig.set_dip(300) // 해상도(보통 300 지정)
-fig.savefig(”first_plot.png”) // 파일명 지정
+# 저장하기
+fig.set_dip(300) # 해상도(보통 300 지정)
+fig.savefig(”first_plot.png”) # 파일명 지정
 ```
 
 <img src="/assets/img/blog/2022-09-30-matplotlib_01.png" style="margin-top:20px;">
@@ -65,7 +65,7 @@ ax.scatter(water['Attack'], water['Defense'],
 ax.set_xlabel("Attack")
 ax.set_ylabel("Defense")
 
-// 라벨 표시
+# 라벨 표시
 ax.legend(loc="upper right")
 
 fig.savefig("plot.png")
