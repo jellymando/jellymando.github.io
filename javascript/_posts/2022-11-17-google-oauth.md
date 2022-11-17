@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '구글 인증 access token 발급받고 api 호출하기'
+title: "구글 인증 access token 발급받고 api 호출하기"
 sitemap: false
 ---
 
@@ -12,30 +12,53 @@ sitemap: false
 
 ```js
 gapi.client.init({
-  apiKey: 'YOUR_API_KEY',
-  clientId: 'YOUR_CLIENT_ID',
+  apiKey: "YOUR_API_KEY",
+  clientId: "YOUR_CLIENT_ID",
   discoveryDocs: [discoveryUrl],
   scope: SCOPE
-})
+});
 ```
 
 ## 새로운 방식
 
 새로운 인증 방식에서는 `google.accounts.oauth2.initTokenClient`로 client 객체를 생성한다.
 
+인증 토큰을 발급받는 방식은 callback 함수를 통해 토큰 값을 얻거나, 리다이렉트로 서버의 엔드포인트에 토큰을 전달해주는 방식이 있다.
+
+### callback 사용
+
 ```js
 client = google.accounts.oauth2.initTokenClient({
-  client_id: 'YOUR_CLIENT_ID',
+  client_id: "YOUR_CLIENT_ID",
   scope:
-    'https://www.googleapis.com/auth/calendar.readonly \
-                  https://www.googleapis.com/auth/contacts.readonly',
+    "https://www.googleapis.com/auth/calendar.readonly \
+                  https://www.googleapis.com/auth/contacts.readonly",
   callback: (tokenResponse) => {
-    access_token = tokenResponse.access_token
+    access_token = tokenResponse.access_token;
   }
-})
+});
 ```
 
-위 함수 실행 시 로그인 팝업이 뜨고, 구글 계정으로 로그인하면 callback 함수가 실행된다.
+### 리다이렉트
+
+```js
+// 스크립트 로드 시 실행
+function initClient() {
+  client = google.accounts.oauth2.initCodeClient({
+    client_id: "YOUR_CLIENT_ID",
+    scope:
+      "https://www.googleapis.com/auth/calendar.readonly \
+                  https://www.googleapis.com/auth/photoslibrary.readonly",
+    ux_mode: "redirect",
+    redirect_uri: "YOUR_AUTHORIZATION_CODE_ENDPOINT_URI"
+  });
+}
+// Request an access token
+function getAuthCode() {
+  // Request authorization code and obtain user consent
+  client.requestCode();
+}
+```
 
 ## api 호출하기
 
