@@ -21,7 +21,11 @@ gapi.client.init({
 
 ## 새로운 방식
 
-새로운 인증 방식에서는 `google.accounts.oauth2.initTokenClient`로 client 객체를 생성한다.
+access token을 발급받는 방식은 팝업으로 인증한 후 callback 함수를 통해 토큰 값을 얻거나, 리다이렉트로 인증한 후 URI에 승인 코드를 전달해주는 방식이 있다.
+
+### 팝업 방식
+
+팝업 방식에서는 `google.accounts.oauth2.initTokenClient`로 client 객체를 생성한다.
 
 ```js
 function initClient() {
@@ -40,9 +44,9 @@ function getToken() {
 }
 ```
 
-`client.requestAccessToken()` 함수 실행 시 로그인 팝업이 뜨고, 구글 계정으로 로그인하면 callback 함수가 실행된다.
+`client.requestAccessToken()` 함수 실행 시 로그인 팝업이 뜨고, 구글 계정으로 로그인하면 callback 함수를 통해 `access_token` 값이 넘어온다.
 
-## 리다이렉트 방식
+### 리다이렉트 방식
 
 팝업이 아닌 리다이렉트 방식을 사용해야 하는 경우 우선 승인 코드를 발급받아야 한다.
 
