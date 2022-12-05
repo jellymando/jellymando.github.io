@@ -24,8 +24,7 @@ console.log(b)
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2CREj%2FbtqC3OPKKGv%2FQ9nTUlt1DuvpGPzv5c7fY1%2Fimg.jpg" />
 
-위 예시에서 v1과 v2는 서로 같은 주솟값을 참조한다.
-<br/>
+위 예시에서 v1과 v2는 서로 같은 주솟값을 참조한다.<br/>
 
 ```js
 v2 = 'hi teaho'
@@ -56,8 +55,7 @@ console.log(arr2)
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7mSsi%2FbtqC22HGwPM%2Fk1jdxqC7ypkp27kG4jMTLK%2Fimg.jpg" />
 
-위 예시에서 arr1과 arr2는 서로 같은 주솟값을 참조한다.
-<br/>
+위 예시에서 arr1과 arr2는 서로 같은 주솟값을 참조한다.<br/>
 
 ```js
 arr2[0] = 0
@@ -70,7 +68,7 @@ console.log(arr2)
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbfvTet%2FbtqC21opzVf%2Fw4KQ1szIw6WYZrN0d3JpVK%2Fimg.jpg" />
 
-배참조형 데이터는 새로운 주소값에 할당되지 않고 참조된 주소 내부에서 변경된다.
+참조형 데이터는 새로운 주소값에 할당되지 않고 참조된 주소 내부에서 변경된다.
 
 arr1과 arr2가 여전히 같은 주소값을 참조하기 때문에 같은 값을 가진다.
 
