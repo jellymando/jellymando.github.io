@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Vanilla JS 외부 영역 클릭 감지하기'
+title: '[contains] 외부 영역 클릭 감지하기'
 sitemap: false
 ---
 
@@ -8,7 +8,7 @@ sitemap: false
 
 ## e.target과 contains
 
-e.target과 Node.contains를 이용하여 외부 영역을 클릭했는지 감지한다.
+e.target과 contains를 이용하여 외부 영역을 클릭했는지 감지할 수 있다.
 
 ```js
   handleClickOutside(e) {
@@ -19,10 +19,14 @@ e.target과 Node.contains를 이용하여 외부 영역을 클릭했는지 감�
   }
 ```
 
-contains를 사용할 때는 Node가 명확해야한다.
-`const $contentWrapper = document.getElementsByClassName('modal')`로 했을 때 contains is not a function 에러가 났었다.
-if문에서 `$contentWrapper &&` 를 넣은 이유는 그럴 일은 거의 없겠지만 `$contentWrapper` 요소가 없을 때는 실행되지 않도록 하기 위해서다.
+contains를 사용할 때는 엘리먼트가 명확해야 한다.
 
-<br/>
+`const $contentWrapper = document.getElementsByClassName('modal')`로 했을 때 contains is not a function 에러가 났었다.
+
+## svg 주의
+
+엘리먼트 안의 svg를 클릭했을 때는 contains가 false로 나오기 때문에 svg에 `pointer-events: none` 스타일을 추가해줘야 한다.
+
+## 참고사이트
 
 [클릭 외부 영역 감지](https://www.javaer101.com/ko/article/2655964.html)
