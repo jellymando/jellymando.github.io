@@ -1,14 +1,14 @@
 ---
 layout: post
-title: '[contains] 외부 영역 클릭 감지하기'
+title: '[contains] 외부 영역 감지하기'
 sitemap: false
 ---
 
 {:toc .large-only}
 
-## e.target과 contains
+## contains
 
-e.target과 contains를 이용하여 외부 영역을 클릭했는지 감지할 수 있다.
+contains를 이용하여 이벤트 타겟이 엘리먼트 외부 영역에 있는지 감지할 수 있다.
 
 ```js
   handleClickOutside(e) {
