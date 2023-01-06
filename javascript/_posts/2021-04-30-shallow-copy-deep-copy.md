@@ -1,47 +1,61 @@
 ---
 layout: post
-title: '배열의 얕은 복사와 깊은 복사'
+title: 'immutable 데이터와 mutable 데이터, 얕은 복사/깊은 복사'
 sitemap: false
 ---
 
 {:toc .large-only}
 
-### 얕은 복사
+### immutable 데이터와 mutable 데이터
 
-#### 기본형에서 얕은 복사
+#### immutable 데이터
 
-기본형 타입에서는 복사한 데이터를 변경해도 원본은 변경되지 않는다.
+immutable은 **불변**이라는 뜻이며 boolean, number, string 등의 기본형 데이터는 immutable하다.
 
 ```js
 var v1 = 'test'
 var v2 = v1
 
-console.log(a)
+console.log(v1)
 // 'test'
-console.log(b)
+console.log(v2)
 // 'test'
 ```
+
+위 예시에서 v2 변수에 v1 값을 넣는다.
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2CREj%2FbtqC3OPKKGv%2FQ9nTUlt1DuvpGPzv5c7fY1%2Fimg.jpg" />
 
-위 예시에서 v1과 v2는 서로 같은 주솟값을 참조한다.<br/>
+'test'라는 string 타입 데이터가 기존 주소값에 없기 때문에 새로 할당된다.
+
+v1과 v2는 'test'라는 같은 값을 가지므로 같은 주소값을 참조한다.
 
 ```js
-v2 = 'hi teaho'
+var v1 = 'test'
+var v2 = v1
+v1 = 'hi teaho'
 
-console.log(a)
-// 'test'
-console.log(b)
+console.log(v1)
 // 'hi teaho'
+console.log(v2)
+// 'test'
 ```
+
+위 코드에서는 v1의 값을 'hi teaho'로 변경했다.
+
+v2는 v1을 복사한 것이니 v1 값을 바꾸면 v2 값도 바뀔까?
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FrU6OR%2FbtqC5nRubs5%2FXxwA8hMPM1pLTA5x5nqX1k%2Fimg.jpg" />
 
-기본형 데이터는 값이 주소에 없으면 새로운 주소에 할당된다.
+'hi teaho'라는 string 타입 데이터가 기존 주소값에 없기 때문에 새로운 주소에 할당된다.
 
-v2에 다른 값을 할당하면 해당 값이 새로운 주소에 추가되고 이제 v1과 v2는 다른 주솟값을 참조한다.
+'test'와 'hi teaho'의 주소값이 각각 있기 때문에 이제 v1과 v2는 다른 주소값을 참조한다.
 
-#### 참조형에서 얕은 복사
+기본형 타입에서는 복사한 데이터를 변경('hi teaho')해도 원본('test')은 변경되지 않는다. (immutable)
+
+#### mutable 데이터
+
+mutable은 변할 수 있다는 뜻이며 객체, 배열 등의 참조형 데이터는 mutable하다.
 
 ```js
 var arr1 = [1, 2, 3, 4]
@@ -53,11 +67,19 @@ console.log(arr2)
 // [ 1, 2, 3, 4 ]
 ```
 
+위 예시에서 arr2 변수에 arr1 값을 넣는다.
+
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7mSsi%2FbtqC22HGwPM%2Fk1jdxqC7ypkp27kG4jMTLK%2Fimg.jpg" />
 
-위 예시에서 arr1과 arr2는 서로 같은 주솟값을 참조한다.<br/>
+'[ 1, 2, 3, 4 ]'라는 object 타입 데이터가 기존 주소값에 없기 때문에 새로 할당된다.
+
+배열 안의 '1, 2, 3, 4'라는 number 타입 데이터가 기존 주소값에 없기 때문에 새로 할당되고, object 타입 데이터는 이 주소값들을 참조한다.
+
+arr1과 arr2는 서로 같은 주소값을 참조한다.
 
 ```js
+var arr1 = [1, 2, 3, 4]
+var arr2 = arr1
 arr2[0] = 0
 
 console.log(arr1)
@@ -66,11 +88,15 @@ console.log(arr2)
 // [ 0, 2, 3, 4 ]
 ```
 
+arr2 배열의 첫번째 항목을 바꿔보자.
+
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbfvTet%2FbtqC21opzVf%2Fw4KQ1szIw6WYZrN0d3JpVK%2Fimg.jpg" />
 
-참조형 데이터는 새로운 주소값에 할당되지 않고 참조된 주소 내부에서 변경된다.
+'0'라는 number 타입 데이터가 기존 주소값에 없기 때문에 새로 할당되고, object 타입 데이터는 <u>새로운 주소에 할당되는 것이 아니라</u> '1' 데이터를 참조하던 주소값을 '0'을 참조하는 것으로 변경한다.
 
 arr1과 arr2가 여전히 같은 주소값을 참조하기 때문에 같은 값을 가진다.
+
+### mutable 데이터의 얕은 복사
 
 #### Array.prototype.slice()
 
@@ -101,7 +127,7 @@ console.log(arr4)
 // 'arr4: ' [ { a: 0 }, { b: 2 }, 3, 4 ]
 ```
 
-### 깊은 복사
+### mutable 데이터를 불변으로 사용하기 (깊은 복사)
 
 #### JSON 객체의 메서드 사용
 
