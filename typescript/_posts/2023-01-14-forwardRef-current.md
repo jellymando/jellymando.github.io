@@ -13,7 +13,7 @@ React에서 ref를 props로 전달하기 위해 forwardRef를 사용하면 "형�
 ```js
 const Nav = forwardRef<HTMLVideoElement | null>((props, ref) => {
   const handleScreenShare = useCallback(() => {
-        if (videoRef!.current) startScreenShare(videoRef!.current);
+        if (ref!.current) startScreenShare(ref!.current);
   }, []);
 ...
 ```
@@ -23,7 +23,7 @@ current 속성을 넣으면 해결될까 했지만 이걸로도 해결되지 않
 ```js
 const Nav = forwardRef<{current: HTMLVideoElement | null}>((props, ref) => {
   const handleScreenShare = useCallback(() => {
-        if (videoRef!.current) startScreenShare(videoRef!.current);
+        if (ref!.current) startScreenShare(ref!.current);
   }, []);
 ...
 ```
