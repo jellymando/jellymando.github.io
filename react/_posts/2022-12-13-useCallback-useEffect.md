@@ -89,32 +89,20 @@ useEffect에는 함수를 의존성 배열에 넣지 않아도 상태가 바뀌�
 useCallback에는 함수를 의존성 배열에 넣어줘야 한다.
 
 ```js
-import React, { useState, useCallback, useEffect } from "react";
+const callback1 = useCallback(() => {
+  return `Count : ${count1}`;
+}, [count1]);
 
-function App() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
+const callback2 = useCallback(() => {
+  console.log("-----------콜백 실행-----------", callback1());
+}, [callback1]); // 참조하는 함수를 의존성 배열에 넣어줘야 한다!
 
-  const callback1 = useCallback(() => {
-    return `Count : ${count1}`;
-  }, [count1]);
-
-  const callback2 = useCallback(() => {
-    console.log("-----------콜백 실행-----------", callback1());
-  }, [callback1]); // 참조하는 함수를 의존성 배열에 넣어줘야 한다!
-
-  useEffect(() => {
-    console.log("-----------useEffect-----------");
-    callback2();
-  }, [callback2]);
-
-  return (
-    <>
-      <button onClick={() => setCount1((count1) => count1 + 1)}>버튼1</button>
-      <button onClick={() => setCount2((count2) => count2 + 1)}>버튼2</button>
-    </>
-  );
-}
+useEffect(() => {
+  console.log("-----------useEffect-----------");
+  callback2();
+}, [count2]);
 ```
 
 위 코드에서 callback2의 의존성 배열에 callback1을 넣지 않으면, callback1을 실행하더라도 count1 값이 업데이트 되지 않는다.
+
+[코드샌드박스](https://codesandbox.io/s/usecallback-dependency-d5h06s?file=/src/App.jsx)에서 직접 실행해볼 수 있다.
