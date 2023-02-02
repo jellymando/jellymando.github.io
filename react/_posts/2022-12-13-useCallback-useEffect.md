@@ -91,10 +91,14 @@ const callback3 = useCallback(() => {
 
 useEffect(() => {
   document.addEventListener('click', callback3)
-}, []) // 이벤트 핸들러가 상태값을 참조하는 경우 의존성 배열에 핸들러 함수를 추가해야 한다.
+}, []) // callback3을 넣지 않으면 count1 값이 업데이트 되지 않는다.
 ```
 
 위 코드처럼 의존성 배열을 넣지 않으면 count1 값이 변경되도 document 클릭 시 상태값이 업데이트 되지 않는다.
+
+이벤트 핸들러가 상태값을 참조하는 경우 의존성 배열에 핸들러 함수를 추가해야 한다.
+
+혹은 이벤트 핸들러를 굳이 useCallback으로 감싸지 않고 의존성 배열에도 추가하지 않는 것도 방법이 될 수 있다.
 
 ## useCallback에는 의존성 배열을 넣어줘야 한다.
 
