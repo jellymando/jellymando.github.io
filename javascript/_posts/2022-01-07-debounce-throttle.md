@@ -82,6 +82,44 @@ setTimeout(() => {
 }, delay);
 ```
 
+### args 파라미터 넣는 이유
+
+```js
+window.addEventListener(
+  "resize",
+  throttle(() => {
+    console.log("resize");
+  }, 500)
+);
+```
+
+이벤트 핸들러는 이벤트 파라미터를 전달받아 실행되므로 아래 코드와 같다.
+
+```js
+window.addEventListener("resize", (event) =>
+  throttle(() => {
+    console.log("resize");
+  }, 500)(event)
+);
+```
+
+throttle은 클로저기 때문에 결국 아래와 같이 된다.
+
+```js
+window.addEventListener("resize", (event) => {
+  (...args) => {
+    if (!timeoutId) {
+      timeoutId = setTimeout(() => {
+        timeoutId = null;
+        func(...args);
+      }, delay);
+    }
+  }(event);
+});
+```
+
+이벤트 핸들러로부터 이벤트 객체가 전달되므로 args는 이벤트 객체이다.
+
 ## 참고사이트
 
 [쓰로틀링과 디바운싱](https://www.zerocho.com/category/JavaScript/post/59a8e9cb15ac0000182794fa)<br/>
