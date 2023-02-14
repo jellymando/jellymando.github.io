@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '엘리먼트의 크기 구하기 : clientWidth/clientHeight vs getBoundingClientRect()'
+title: "엘리먼트 크기 구하기 clientWidth/clientHeight vs offsetWidth/offsetHeight vs getBoundingClientRect()"
 sitemap: false
 ---
 
@@ -14,11 +14,19 @@ padding은 포함하지만 border, margin, 스크롤바는 포함하지 않는�
 
 <img src="/assets/img/blog/2022-06-16-getBoundingClientRect_01.png">
 
-## getBoundingClientRect()
+## offsetWidth/offsetHeight
+
+엘리먼트의 외부 너비/높이 픽셀값
+
+padding과 border, 스크롤바 크기도 포함한다. (margin은 X)
+
+<img src="/assets/img/blog/2022-06-16-getBoundingClientRect_03.png">
+
+## elem.getBoundingClientRect();
 
 엘리먼트의 크기와 뷰포트에 상대적인 위치 정보를 제공하는 DOMRect 객체를 반환한다.
 
-<img src="/assets/img/blog/2022-06-16-getBoundingClientRect_02.png">
+<img src="/assets/img/blog/2022-06-16-getBoundingClientRect_02.png" style="max-width: 600px;margin-top:20px;">
 
 ## 차이점
 
