@@ -8,7 +8,7 @@ sitemap: false
 
 모듈 등을 import 할 때 경로 차이가 많이 나면 `../../../../../Components/` 이런식으로 매우 복잡해진다.
 
-jsconfig.js 혹은 tsconfig.js 파일을 열어 아래 코드를 추가한다.
+jsconfig.json 혹은 tsconfig.json 파일을 열어 아래 코드를 추가한다.
 
 ```js
 {
