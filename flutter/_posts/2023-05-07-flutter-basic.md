@@ -90,6 +90,36 @@ class _MyHomePageState extends State<MyHomePage> {
 1. State 클래스를 상속받은 클래스를 상속 클래스라 한다. 생태 클래스는 변경 가능한 프로퍼티 변수(State)를 가지며 이 변수를 수정하여 화면을 다시 그릴 수 있다.
 1. `build()` 메서드를 가지며 상태에 따라 화면에 그려질 코드를 여기에 작성한다.
 
+## 위젯에서 위젯으로 값 전달
+
+```dart
+class MyHomePage extends StatefulWidget {
+    // 생성자
+    MyHomePage({Key key, this.title}) : super(key: key);
+
+    final String title;
+
+    @override
+    _MyHomePageState createState() => _MyHomePageState();
+}
+
+// 상태 클래스
+class _MyHomePageState extends State<MyHomePage> {
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+                title: Text(widget.title)
+            )
+        );
+    }
+}
+```
+
+MyHomePage 클래스로 전달받은 title 값은 `this.title` 매개변수로 전달되어 필드 상수인 `String title`에 대입된다.
+
+\_MyHomePageState 클래스에서 StatefulWidget의 title에 접근하려면 widget 프로퍼티를 사용하여 `widget.title`로 접근한다.
+
 ## 상태 변경
 
 ```dart
