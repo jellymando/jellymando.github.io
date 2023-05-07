@@ -63,6 +63,8 @@ menu:
     url: /node/
   - title: Next.js
     url: /nextjs/
+  - title: Flutter
+    url: /flutter/
   - title: Webpack
     url: /webpack/
   - title: Git
