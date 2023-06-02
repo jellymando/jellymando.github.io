@@ -144,3 +144,56 @@ class _MyHomePageState extends State<MyHomePage> {
 `setState()` 메서드로 상태를 변경하면 `build()` 메서드가 다시 실행되어 화면을 다시 그리게 된다.
 
 위 코드에서 변경 가능한 상태는 \_counter 변수이며 이 값이 변경될 때마다 화면을 다시 그리면 동적인 화면을 가진 앱이 된다.
+
+## 함수 실행
+
+Flutter에서 함수를 즉시 실행하려면 StatefulWidget인 경우 `initState()` 메서드 내에서, StatelessWidget인 경우 `build()` 메서드 내에서 호출한다.
+
+### StatefulWidget
+
+```dart
+class MyWidget extends StatefulWidget {
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  @override
+  void initState() {
+    super.initState();
+    // Call your function here
+    myFunction();
+  }
+
+  void myFunction() {
+    // Function logic goes here
+    print('My function is running immediately!');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Build your widget UI here
+    return Container();
+  }
+}
+```
+
+### StatelessWidget
+
+```dart
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Call your function here
+    myFunction();
+
+    // Build your widget UI here
+    return Container();
+  }
+
+  void myFunction() {
+    // Function logic goes here
+    print('My function is running immediately!');
+  }
+}
+```
