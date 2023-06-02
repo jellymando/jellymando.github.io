@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '모듈 순환 참조(Circular Dependency) 에러'
+title: '모듈 순환 참조(Circular Dependency) 개선하기'
 sitemap: false
 ---
 
@@ -54,7 +54,7 @@ import `alert.js`;
 // 아무 일도 발생하지 않는다.
 ```
 
-## Circular Dependency
+## Circular Dependency (순환 참조)
 
 이제 모듈의 순환 참조가 왜 에러를 발생시키는지 보자.
 
@@ -76,8 +76,75 @@ sayHello()
 
 1. index.js에서 a 모듈을 평가한다.
 1. a 모듈에서 b 모듈을 평가한다.
-1. b 모듈에서 a 모듈을 참조하고 있지만 위에서 이미 실행했기 때문에 a 모듈을 실행하지 않는다.
+1. b 모듈에서 a 모듈을 참조하고 있지만 위에서 이미 평가했기 때문에 a 모듈을 평가하지 않는다.
 1. b 모듈에서 `sayHello`를 실행하지만 `aModuleObject.sayHello`가 존재하지 않으므로 에러가 발생한다.
+
+## 순환 끊기
+
+### 최하위 모듈 만들기
+
+a와 b 모듈에서 모두 의존하는 최하위 모듈을 만드는 방법도 있다.
+
+```js
+// index.js
+import './modules.js'
+
+// modules.js
+export * from './a.js'
+export * from './b.js'
+
+// a.js
+import { sayHello } from './modules.js'
+export const NAME = 'mike'
+sayHello()
+
+// b.js
+import { NAME } from './modules.js'
+export const sayHello = () => {
+  console.log('hello~!', NAME)
+}
+```
+
+modules.js 파일을 만들어서 a.js와 b.js를 export 한다.
+
+a와 b 모듈을 사용할 때 modules에서 가져온다.
+
+<img src="/assets/img/blog/2022-10-25-Circular-Dependancy_01.png" style="margin:30px 0">
+
+이렇게 하면 a와 b가 서로 직접 의존하지 않으며, modules에서 NAME과 sayHello를 export하는 것과 같은 결과가 된다.
+
+주의할 점은, modules에서 a와 b를 import할 때 평가 순서를 주의해야 한다.
+
+만약 a보다 b를 먼저 export 한다면 NAME 변수가 정의되기 전이므로 에러가 발생한다.
+
+### 의존성 역전시키기
+
+예제 코드에서 의존성의 방향은 index.js -> a.js -> b.js 이다. 즉 모듈간의 순위는 index > a > b 이다.
+
+a는 b보다 순위가 높으므로 b를 참조할 수 있지만, b는 a를 참조해선 안 된다.
+
+에러가 나는 원인은 b가 a를 참조했기 때문이다.
+
+b에서 의존하고 있는 sayHello 함수를 a에서 b로 이동시킨다.
+
+```js
+// index.js
+import './a.js'
+
+// a.js
+import { sayHello } from './b.js'
+sayHello()
+
+// b.js
+export const NAME = 'mike'
+export const sayHello = () => {
+  console.log('hello~!', NAME)
+}
+```
+
+<img src="/assets/img/blog/2022-10-25-Circular-Dependancy_02.png" style="margin:30px 0">
+
+이렇게하면 모듈 평가 순위에 거스르지 않아서 에러가 발생하지 않는다.
 
 ## 참고사이트
 
