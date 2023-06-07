@@ -141,6 +141,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 `setState()` 메서드는 State 클래스가 제공하는 메서드이다.
 
+State 위젯 내부 메서드나 `initState()`, `didUpdateWidget` 등의 생명 주기 메서드에서 실행한다. `build()` 내부에서 호출하는 것은 권장하지 않는다.
+
 `setState()` 메서드로 상태를 변경하면 `build()` 메서드가 다시 실행되어 화면을 다시 그리게 된다.
 
 위 코드에서 변경 가능한 상태는 \_counter 변수이며 이 값이 변경될 때마다 화면을 다시 그리면 동적인 화면을 가진 앱이 된다.
