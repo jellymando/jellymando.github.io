@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "✅CRA 없이 리액트 환경 만들기"
+title: '✅CRA 없이 리액트 환경 만들기'
 sitemap: false
 ---
 
@@ -105,23 +105,23 @@ yarn add -D html-webpack-plugin clean-webpack-plugin
 #### index.tsx
 
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 #### App.tsx
 
 ```js
-import React from "react";
+import React from 'react'
 
 const App = () => {
-  return <div></div>;
-};
+  return <div></div>
+}
 
-export default App;
+export default App
 ```
 
 ## 바벨 설정
@@ -156,9 +156,9 @@ development - 개발용 / production - 빌드용 <u>(생략..)</u>
 ```js
 module.exports = {
   entry: {
-    main: "./index.js"
+    main: './index.js'
   }
-};
+}
 ```
 
 루트의 index 파일(DOM을 그려주는 파일)을 기준으로 한다.
@@ -168,9 +168,9 @@ module.exports = {
 ```js
 module.exports = {
   entry: {
-    main: "./src/index.tsx"
+    main: './src/index.tsx'
   }
-};
+}
 ```
 
 모듈들을 내보내는 파일(라이브러리로 만들 파일)을 기준으로 한다.
@@ -384,6 +384,22 @@ const TerserPlugin = require('terser-webpack-plugin');
     optimization: {
         minimizer: [new TerserPlugin({ extractComments: false })],
     },
+```
+
+- 모듈에서 json 파일 import 시 프로젝트에서 json 파일을 읽지 못함
+
+```bash
+The value is only accessible if the object's 'responseType' is '' or 'text' (was 'json')
+```
+
+위와 같은 에러가 발생하거나 json 파일에 대한 경로를 모듈에서 찾지 않고 프로젝트에서 찾음
+
+해결방법 : json파일을 js 파일로 바꾸고 객체로 export 한 후 JSON.stringify()로 json으로 변환해서 사용!
+
+```js
+import json from './json'
+
+JSON.stringify(bi)
 ```
 
 [How to prevent the creation of a LICENSE.txt file?](https://github.com/webpack-contrib/terser-webpack-plugin/issues/229#issuecomment-761294644)
