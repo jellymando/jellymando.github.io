@@ -93,6 +93,17 @@ addons: [
   ],
 ```
 
+이렇게 만든 탭에서 controls에서 설정한 args 값을 얻고 싶다면 useArgs 훅을 사용하면 된다.
+
+```js
+import { addons, types, useArgs } from '@storybook/manager-api'
+
+const MyPanel = () => {
+  const [args] = useArgs()
+  return <pre>{args}</pre>
+}
+```
+
 ## 참고사이트
 
 [Write an addon](https://storybook.js.org/docs/react/addons/writing-addons)
