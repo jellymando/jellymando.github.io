@@ -36,9 +36,11 @@ const functionComponent = () => {
 ```js
 function usePrevious(value) {
   const ref = useRef()
+
   useEffect(() => {
     ref.current = value
   }, [value])
+
   return ref.current
 }
 
@@ -63,7 +65,7 @@ usePrevious에 0이 인자로 전달되어 호출된다.
 
 <img src="/assets/img/blog/2022-05-22-prevState_02.png">
 
-useRef 인스턴스인 `prevCount`가 생성된다. 이 때 `useRef()` 기본값이 비어있으므로 `prevCount.current` 값은 undefined이다.
+useRef 인스턴스인 prevCount가 생성된다. 이 때 useRef() 기본값이 비어있으므로 prevCount.current 값은 undefined이다.
 
 useEffect는 컴포넌트가 렌더링 된 후 실행되는 hook이기 때문에, **useEffect를 실행하지 않고 undefined 값이 반환된다.**
 
@@ -71,11 +73,15 @@ useEffect는 컴포넌트가 렌더링 된 후 실행되는 hook이기 때문에
 
 <img src="/assets/img/blog/2022-05-22-prevState_03.png">
 
-렌더링이 완료된 후 useEffect가 실행되어 `prevCount.current` 값이 드디어 0으로 업데이트된다! 하지만 값을 새로 리턴하지는 않는다.
+렌더링이 완료된 후 useEffect가 실행되어 `prevCount.current` 값이 드디어 0으로 업데이트된다!
+
+하지만 ref 값은 state가 아니기 때문에 리렌더링되진 않는다.
 
 Counter의 state 값이 변경되면 다시 usePrevious가 호출되고, 이 때 0을 리턴한다.
 
 이렇게 해서 usePrevious가 prevState 값을 저장하고 리턴할 수 있다.
+
+<img src="/assets/img/blog/2022-05-22-prevState_04.png">
 
 ## 참고사이트
 
