@@ -60,22 +60,22 @@ function bubbleSort(arr) {
 
 ## 삽입 정렬
 
-- 배열을 2중 for문으로 순회하며 두 번째 인덱스부터 시작하여 앞 방향으로 인접한 두 요소를 비교한다.
-- 앞에 있는 요소가 더 크면, 뒤에 있는 요소를 앞에 있는 요소의 값으로 바꾼다.
-- 안쪽 for문을 돌면 해당 주기에서 가장 작은 수가 첫 번째 인덱스에 정렬된다.
-- i는 두 번째 인덱스부터 시작하여 점점 커지고, j는 i-1부터 시작하여 점점 작아진다.
-- 안쪽 for문에 `arr[j] > current` 조건을 붙이면 배열이 이미 정렬된 경우 시간복잡도를 최적화 할 수 있다.
+- 배열을 2중 for문으로 순회하며 i는 1 인덱스부터 시작하여 점점 커지고, j는 i-1부터 시작하여 점점 작아진다.
+- 변수 j의 스코프는 for문 바깥에 있다. 그래서 for문이 break 되지 않고 전부 순환되어 끝나면 j의 값은 -1이 된다.
+- arr[j]와 tmp 값을 비교하여 arr[j] 값이 더 크면 j+1 인덱스에 arr[j]를 삽입한다.
+- arr[j]와 tmp 값을 비교하여 arr[j] 값이 더 크지 않으면 break한다.
+- for문이 끝나면 마지막 j+1 인덱스에 tmp를 삽입한다.
+- 안쪽 for문에 `arr[j] > tmp` 조건을 붙이면 배열이 이미 정렬된 경우 시간복잡도를 최적화 할 수 있다.
 
 ```js
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
-    let current = arr[i];
+    let tmp = arr[i];
     let j;
-    for (j = i - 1; i >= 0 && arr[j] > current; j--) {
-      if (arr[j] > current) arr[j + 1] = arr[j];
-      else break;
+    for (j = i - 1; j >= 0 && arr[j] > tmp; j--) {
+      arr[j + 1] = arr[j];
     }
-    arr[j + 1] = current;
+    arr[j + 1] = tmp;
   }
   return arr;
 }
@@ -106,3 +106,7 @@ function insertionSort(arr) {
 삽입 정렬은 배열이 이미 정렬된 경우 조건문으로 O(n)의 시간 복잡도를 최적화할 수 있지만 선택 정렬, 버블 정렬은 항상 동일한 시간 복잡도가 걸린다.
 
 더 큰 배열의 경우 병합 정렬, 빠른 정렬 또는 힙 정렬과 같은 다른 보다 효율적인 정렬 알고리즘을 사용하는 것이 좋다.
+
+## 참고사이트
+
+[삽입 정렬](https://www.zerocho.com/category/Algorithm/post/57e39fca76a7850015e6944a)
