@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[정렬 알고리즘] 선택정렬, 버블정렬, 삽입정렬"
+title: "[알고리즘] 정렬 알고리즘"
 sitemap: false
 ---
 
@@ -8,11 +8,7 @@ sitemap: false
 
 ## 정렬 알고리즘
 
-배열을 순회하여 숫자를 오름차순 혹은 내림차순으로 정렬한다.
-
-배열을 정렬하는 방법에는 선택정렬, 버블정렬, 삽입정렬 등이 있다.
-
-아래 정렬들은 오름차순 기준으로 설명한다.
+배열을 순회하여 숫자를 정렬하는 알고리즘이다.
 
 ## 선택 정렬
 
@@ -38,6 +34,12 @@ function selectionSort(arr) {
 }
 ```
 
+### 시간 복잡도
+
+- 최선: O(n^2)
+- 평균: O(n^2)
+- 최악: O(n^2)
+
 ## 버블 정렬
 
 - 배열을 2중 for문으로 순회하며 인접한 두 요소를 비교한다.
@@ -48,15 +50,25 @@ function selectionSort(arr) {
 ```js
 function bubbleSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
+    let sorted = true; //이미 정렬된 상태라고 가정
+
     for (let j = 0; j < arr.length - i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        sorted = false; //swap 발생 = 미정렬 상태
       }
+      if (sorted) break; // 이미 정렬된 상태이므로 종료
     }
   }
   return arr;
 }
 ```
+
+#### 시간 복잡도
+
+- 최선: O(n) (배열이 이미 정렬된 경우)
+- 평균: O(n^2)
+- 최악: O(n^2)
 
 ## 삽입 정렬
 
@@ -81,32 +93,57 @@ function insertionSort(arr) {
 }
 ```
 
-## 시간 복잡도
-
-#### 선택 정렬
-
-- 최선: O(n^2)
-- 평균: O(n^2)
-- 최악: O(n^2)
-
-#### 버블 정렬
-
-- 최선: O(n^2)
-- 평균: O(n^2)
-- 최악: O(n^2)
-
-#### 삽입 정렬
+### 시간 복잡도
 
 - 최상: O(n) (배열이 이미 정렬된 경우)
 - 평균: O(n^2)
 - 최악: O(n^2)
 
-세 가지 정렬 알고리즘 모두 최악의 경우 O(n^2)의 시간 복잡도를 가지므로 대규모 데이터 세트에 대해 비효율적이다.
+## 퀵 정렬
 
-삽입 정렬은 배열이 이미 정렬된 경우 조건문으로 O(n)의 시간 복잡도를 최적화할 수 있지만 선택 정렬, 버블 정렬은 항상 동일한 시간 복잡도가 걸린다.
+- 피벗(pivot)을 기준으로 배열을 피벗보다 작은 배열과 피벗보다 큰 배열로 분할하고 이렇게 분할한 배열에 다시 퀵 정렬을 순환적으로 적용한다.
+- 처음 피벗은 배열의 0번째 인덱스로 하며 분할함수에서 피벗의 인덱스를 리턴한다.
+- 분할함수에서는 배열의 왼쪽과 오른쪽에서부터 피벗과 비교하면서 피벗보다 작은 요소를 발견하면 피벗의 index와 swap한다.
+- 배열이 이미 정렬된 경우 배열이 2개로 분할되지 않으므로 최악의 시간 복잡도를 가진다.
 
-더 큰 배열의 경우 병합 정렬, 빠른 정렬 또는 힙 정렬과 같은 다른 보다 효율적인 정렬 알고리즘을 사용하는 것이 좋다.
+```js
+function swap(arr, i, j) {
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+function partition(arr, left, right) {
+  let pivot = arr[right];
+  let pivotIdx = left;
+
+  for (let i = left; i < right; i++) {
+    if (arr[i] < pivot) {
+      swap(arr, i, pivotIdx);
+      pivotIdx++;
+    }
+  }
+  swap(arr, pivotIdx, right);
+  return pivotIdx;
+}
+
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    const pivotIdx = partition(arr, left, right);
+    quickSort(arr, left, pivotIdx - 1);
+    quickSort(arr, pivotIdx + 1, right);
+  }
+  return arr;
+}
+```
+
+### 시간 복잡도
+
+- 최상: O(nlogn) (피벗 선택의 임의성이 보장된 경우)
+- 평균: O(nlogn)
+- 최악: O(n^2) (배열이 이미 정렬된 경우)
 
 ## 참고사이트
 
-[삽입 정렬](https://www.zerocho.com/category/Algorithm/post/57e39fca76a7850015e6944a)
+[삽입 정렬](https://www.zerocho.com/category/Algorithm/post/57e39fca76a7850015e6944a)<br>
+[JavaScript로 Quick Sort(퀵 정렬) 구현하기](https://jun-choi-4928.medium.com/javascript%EB%A1%9C-quick-sort-%ED%80%B5-%EC%A0%95%EB%A0%AC-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-76bf539abc0d)
