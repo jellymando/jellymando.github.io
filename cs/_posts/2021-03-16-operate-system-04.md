@@ -102,6 +102,8 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 | 도착시간   | 0   | 2   | 4   | 5   |
 | CPU 사이클 | 7   | 4   | 1   | 3   |
 
+<img src="/assets/img/blog/2021-03-16-operate-system-04_hrn2.png" style="margin:20px 0;" />
+
 - 시간 0 : A 도착, 준비 큐에 A밖에 없으므로 A를 디스패치
 - 시간 2 : B 도착
 - 시간 4 : C 도착
