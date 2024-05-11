@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[알고리즘] 정렬 알고리즘"
+title: "[알고리즘] 정렬 알고리즘1"
 sitemap: false
 ---
 
@@ -8,14 +8,16 @@ sitemap: false
 
 ## 정렬 알고리즘
 
-배열을 순회하여 숫자를 정렬하는 알고리즘이다.
+- 입력 배열의 데이터를 크기 순서대로 재배치하는 것을 정렬(sort)이라고 한다.
+- 동일한 값을 가진 데이터의 상대적 위치가 정렬 후에도 유지되면 안정적 정렬 알고리즘이다.
+- 입력 배열 이외에 별도로 필요한 저장 공간이 상수 개를 넘지 않는 정렬 알고리즘을 제자리 정렬 알고리즘이라고 한다.
 
 ## 선택 정렬
 
-- 배열을 2중 for문으로 순회하며 `arr[minIndex]`보다 작은 최소값 index을 찾는다. minIndex의 초기값은 i이다.
-- 최소값을 찾은 후 현재 요소와 배열 순서를 교환한다. (ex. `[arr[j], arr[minIndex]] = [arr[minIndex], arr[j]]`)
-- 이 과정을 통해 가장 작은 값이 첫 번째 인덱스로 이동하고, 그 다음 작은 값이 첫 번째 인덱스 뒤부터 차례로 정렬된다.
-- i 값이 커질때마다 첫 번째 인덱스부터 정렬되므로 안쪽 for문은 `let j = i + 1; j < arr.length;` 조건으로 순회한다.
+- 제자리 정렬 알고리즘이다.
+- 미정렬 부분에서 최솟값을 찾아서 미정렬 부분의 첫 번째 데이터와 위치를 교환하며 정렬하는 방식이다.
+
+### 예시
 
 ```js
 function selectionSort(arr) {
@@ -34,6 +36,11 @@ function selectionSort(arr) {
 }
 ```
 
+- 배열을 2중 for문으로 순회하며 `arr[minIndex]`보다 작은 최소값 index을 찾는다. minIndex의 초기값은 i이다.
+- 최소값을 찾은 후 현재 요소와 배열 순서를 교환한다. (ex. `[arr[j], arr[minIndex]] = [arr[minIndex], arr[j]]`)
+- 이 과정을 통해 가장 작은 값이 첫 번째 인덱스로 이동하고, 그 다음 작은 값이 첫 번째 인덱스 뒤부터 차례로 정렬된다.
+- i 값이 커질때마다 첫 번째 인덱스부터 정렬되므로 안쪽 for문은 `let j = i + 1; j < arr.length;` 조건으로 순회한다.
+
 ### 시간 복잡도
 
 - 최선: O(n^2)
@@ -42,10 +49,11 @@ function selectionSort(arr) {
 
 ## 버블 정렬
 
-- 배열을 2중 for문으로 순회하며 인접한 두 요소를 비교한다.
-- 뒤에 있는 요소가 더 작으면 위치를 교환한다. (`[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]`)
-- 이 과정을 통해 가장 큰 값이 마지막 인덱스로 이동하고, 그 다음 큰 값이 마지막 인덱스 앞부터 차례로 정렬된다.
-- i 값이 커질때마다 마지막 인덱스부터 정렬되므로 안쪽 for문은 `let j = 0; j < arr.length - i - 1` 조건으로 순회한다.
+- 안정적인 정렬 알고리즘이다.
+- 제자리 정렬 알고리즘이다.
+- 인접한 두 데이터를 비교해가면서 왼쪽 데이터가 오른쪽 데이터보다 큰 경우 위치를 교환하는 방식이다.
+
+### 예시
 
 ```js
 function bubbleSort(arr) {
@@ -64,7 +72,12 @@ function bubbleSort(arr) {
 }
 ```
 
-#### 시간 복잡도
+- 배열을 2중 for문으로 순회하며 인접한 두 요소를 비교한다.
+- 뒤에 있는 요소가 더 작으면 위치를 교환한다. (`[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]`)
+- 이 과정을 통해 가장 큰 값이 마지막 인덱스로 이동하고, 그 다음 큰 값이 마지막 인덱스 앞부터 차례로 정렬된다.
+- i 값이 커질때마다 마지막 인덱스부터 정렬되므로 안쪽 for문은 `let j = 0; j < arr.length - i - 1` 조건으로 순회한다.
+
+### 시간 복잡도
 
 - 최선: O(n) (배열이 이미 정렬된 경우)
 - 평균: O(n^2)
@@ -72,12 +85,11 @@ function bubbleSort(arr) {
 
 ## 삽입 정렬
 
-- 배열을 2중 for문으로 순회하며 i는 1 인덱스부터 시작하여 점점 커지고, j는 i-1부터 시작하여 점점 작아진다.
-- 변수 j의 스코프는 for문 바깥에 있다. 그래서 for문이 break 되지 않고 전부 순환되어 끝나면 j의 값은 -1이 된다.
-- arr[j]와 tmp 값을 비교하여 arr[j] 값이 더 크면 j+1 인덱스에 arr[j]를 삽입한다.
-- arr[j]와 tmp 값을 비교하여 arr[j] 값이 더 크지 않으면 break한다.
-- for문이 끝나면 마지막 j+1 인덱스에 tmp를 삽입한다.
-- 안쪽 for문에 `arr[j] > tmp` 조건을 붙이면 배열이 이미 정렬된 경우 시간복잡도를 최적화 할 수 있다.
+- 안정적인 정렬 알고리즘이다.
+- 제자리 정렬 알고리즘이다.
+- 미정렬 부분에서 첫 번째 데이터를 뽑은 후 정렬 부분에서 데이터가 위치할 자리를 찾아서 삽입하는 방식이다.
+
+### 예시
 
 ```js
 function insertionSort(arr) {
@@ -93,57 +105,65 @@ function insertionSort(arr) {
 }
 ```
 
+- 배열을 2중 for문으로 순회하며 i는 1 인덱스부터 시작하여 점점 커지고, j는 i-1부터 시작하여 점점 작아진다.
+- 변수 j의 스코프는 for문 바깥에 있다. 그래서 for문이 break 되지 않고 전부 순환되어 끝나면 j의 값은 -1이 된다.
+- arr[j]와 tmp 값을 비교하여 arr[j] 값이 더 크면 j+1 인덱스에 arr[j]를 삽입한다.
+- arr[j]와 tmp 값을 비교하여 arr[j] 값이 더 크지 않으면 break한다.
+- for문이 끝나면 마지막 j+1 인덱스에 tmp를 삽입한다.
+- 안쪽 for문에 `arr[j] > tmp` 조건을 붙이면 배열이 이미 정렬된 경우 시간복잡도를 최적화 할 수 있다.
+
 ### 시간 복잡도
 
-- 최상: O(n) (배열이 이미 정렬된 경우)
+- 최선: O(n) (배열이 이미 정렬된 경우)
 - 평균: O(n^2)
 - 최악: O(n^2)
 
-## 퀵 정렬
+## 셸 정렬
 
-- 피벗(pivot)을 기준으로 배열을 피벗보다 작은 배열과 피벗보다 큰 배열로 분할하고 이렇게 분할한 배열에 다시 퀵 정렬을 순환적으로 적용한다.
-- 처음 피벗은 배열의 0번째 인덱스로 하며 분할함수에서 피벗의 인덱스를 리턴한다.
-- 분할함수에서는 배열의 왼쪽과 오른쪽에서부터 피벗과 비교하면서 피벗보다 작은 요소를 발견하면 피벗의 index와 swap한다.
-- 배열이 이미 정렬된 경우 배열이 2개로 분할되지 않으므로 최악의 시간 복잡도를 가진다.
+- 제자리 정렬 알고리즘이다.
+- 삽입 정렬의 단점을 보완할 수 있는 알고리즘이다. (하지만 최선의 시간복잡도는 삽입 정렬이 더 좋다.)
+- 삽입정렬은 데이터를 하나씩 비교하지만 셸 정렬은 멀리 떨어진 데이터와 비교하여 처리 속도 향상
+- 간격에 따라 성능이 달라진다. 가장 좋은 간격을 찾는 것은 아직 미해결 과제이다.
+
+### 예시
 
 ```js
-function swap(arr, i, j) {
-  const temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
-}
-
-function partition(arr, left, right) {
-  let pivot = arr[right];
-  let pivotIdx = left;
-
-  for (let i = left; i < right; i++) {
-    if (arr[i] < pivot) {
-      swap(arr, i, pivotIdx);
-      pivotIdx++;
+function shellSort(arr) {
+  const n = arr.length;
+  //gap: 부분배열의 개수 & 간격의 크기
+  for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
+    //gap개의 부분배열에 대한 삽입 정렬
+    for (let i = gap; i < n; i += 1) {
+      const temp = arr[i];
+      let j;
+      for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+        arr[j] = arr[j - gap];
+      }
+      arr[j] = temp;
     }
-  }
-  swap(arr, pivotIdx, right);
-  return pivotIdx;
-}
-
-function quickSort(arr, left = 0, right = arr.length - 1) {
-  if (left < right) {
-    const pivotIdx = partition(arr, left, right);
-    quickSort(arr, left, pivotIdx - 1);
-    quickSort(arr, pivotIdx + 1, right);
   }
   return arr;
 }
 ```
 
+- 입력 배열을 n/2로 나눈 gap 간격만큼 떨어진 데이터들을 비교하여 삽입 정렬한다.
+- gap이 1이 될 때까지 반복 수행한다.
+
 ### 시간 복잡도
 
-- 최상: O(nlogn) (피벗 선택의 임의성이 보장된 경우)
-- 평균: O(nlogn)
-- 최악: O(n^2) (배열이 이미 정렬된 경우)
+- 최선: O(nlogn) (배열이 이미 정렬된 경우)
+- 평균: O(n^2)
+- 최악: O(n^2)
+
+## 정리
+
+| 구분      | 안정적인 정렬 알고리즘 | 제자리 정렬 알고리즘 | 시간복잡도(최선) | 시간복잡도(평균) | 시간복잡도(최악) |
+| --------- | :--------------------: | :------------------: | :--------------: | :--------------: | :--------------: |
+| 선택 정렬 |           X            |          O           |      O(n^2)      |      O(n^2)      |      O(n^2)      |
+| 버블 정렬 |           O            |          O           |       O(n)       |      O(n^2)      |      O(n^2)      |
+| 삽입 정렬 |           O            |          O           |       O(n)       |      O(n^2)      |      O(n^2)      |
+| 셸 정렬   |           X            |          O           |     O(nlogn)     |      O(n^2)      |      O(n^2)      |
 
 ## 참고사이트
 
-[삽입 정렬](https://www.zerocho.com/category/Algorithm/post/57e39fca76a7850015e6944a)<br>
-[JavaScript로 Quick Sort(퀵 정렬) 구현하기](https://jun-choi-4928.medium.com/javascript%EB%A1%9C-quick-sort-%ED%80%B5-%EC%A0%95%EB%A0%AC-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-76bf539abc0d)
+[삽입 정렬](https://www.zerocho.com/category/Algorithm/post/57e39fca76a7850015e6944a)
