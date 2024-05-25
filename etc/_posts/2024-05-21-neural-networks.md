@@ -40,21 +40,12 @@ sitemap: false
 
 ### 활성함수
 
-- 하드 리미트
-
-<img src="/assets/img/blog/2024-05-21-neural-networks_3.png" style="max-width: 400px; height: auto;">
-
-- 시그모이드
-
-<img src="/assets/img/blog/2024-05-21-neural-networks_4.png" style="margin:10px 0; max-width: 400px; height: auto;">
-
-- TanH
-
-<img src="/assets/img/blog/2024-05-21-neural-networks_5.png" style="max-width: 400px; height: auto;">
-
-- ReLU
-
-<img src="/assets/img/blog/2024-05-21-neural-networks_6.png" style="max-width: 400px; height: auto;">
+| 구분        | 특징                                                                                                  |
+| ----------- | ----------------------------------------------------------------------------------------------------- |
+| 하드 리미트 | <img src="/assets/img/blog/2024-05-21-neural-networks_3.png" style="max-width: 400px; height: auto;"> |
+| 시그모이드  | <img src="/assets/img/blog/2024-05-21-neural-networks_4.png" style="max-width: 400px; height: auto;"> |
+| TanH        | <img src="/assets/img/blog/2024-05-21-neural-networks_5.png" style="max-width: 400px; height: auto;"> |
+| ReLU        | <img src="/assets/img/blog/2024-05-21-neural-networks_6.png" style="max-width: 400px; height: auto;"> |
 
 ### 연결형태
 
