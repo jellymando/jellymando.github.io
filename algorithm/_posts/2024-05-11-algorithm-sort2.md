@@ -18,6 +18,8 @@ sitemap: false
 - 피벗(pivot)을 기준으로 배열을 피벗보다 작은 배열과 피벗보다 큰 배열로 분할하고 이렇게 분할한 배열에 다시 퀵 정렬을 순환적으로 적용한다.
 - 배열이 이미 정렬된 경우 배열이 2개로 분할되지 않으므로 최악의 시간 복잡도를 가진다.
 
+<img src="/assets/img/blog/2024-05-11-algorithm-sort2_01.png" style="margin-top:20px;">
+
 ### 예시
 
 ```js
@@ -27,32 +29,53 @@ function swap(arr, i, j) {
   arr[j] = temp;
 }
 
-function partition(arr, left, right) {
-  let pivot = arr[right];
-  let pivotIdx = left;
+function partition(arr, start, end) {
+  let pivot = arr[start];
+  let left = start + 1;
+  let right = end;
 
-  for (let i = left; i < right; i++) {
-    if (arr[i] < pivot) {
-      swap(arr, i, pivotIdx);
-      pivotIdx++;
+  while (left < right) {
+    for (let i = left; i < end; i++) {
+      if (arr[left] >= pivot) break;
+      else left++;
+    }
+    for (let i = right; i > start; i--) {
+      if (arr[right] < pivot) break;
+      else right--;
+    }
+
+    //left가 right과 같거나 클 때 left++,right--를 하지 않아야 right과 피벗을 교환했을 때 정상적으로 정렬된다.
+    if (left < right) {
+      swap(arr, left, right);
+      left++;
+      right--;
     }
   }
-  swap(arr, pivotIdx, right);
-  return pivotIdx;
+
+  if (arr[start] > arr[right]) {
+    swap(arr, start, right);
+  }
+
+  return right;
 }
 
-function quickSort(arr, left = 0, right = arr.length - 1) {
-  if (left < right) {
-    const pivotIdx = partition(arr, left, right);
-    quickSort(arr, left, pivotIdx - 1);
-    quickSort(arr, pivotIdx + 1, right);
+function quickSort(arr, start = 0, end = arr.length - 1) {
+  if (start < end) {
+    const pivot = partition(arr, start, end);
+    quickSort(arr, start, pivot - 1);
+    quickSort(arr, pivot + 1, end);
   }
   return arr;
 }
+
+const arr = [30, 45, 20, 15, 40, 25, 35, 10];
+quickSort(arr);
 ```
 
 - 처음 피벗은 배열의 0번째 인덱스로 하며 분할함수에서 피벗의 인덱스를 리턴한다.
 - 분할함수에서는 배열의 왼쪽과 오른쪽에서부터 피벗과 비교하면서 피벗보다 작은 요소를 발견하면 피벗의 index와 swap한다.
+
+<img src="/assets/img/blog/2024-05-11-algorithm-sort2_02.png" style="margin-top:20px;">
 
 ### 시간 복잡도
 
@@ -66,6 +89,8 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 - 안정적인 정렬 알고리즘이다.
 - 제자리 정렬 알고리즘이 **아니다.**
 - 입력 배열을 동일한 크기의 두 부분배열로 분할하고, 각 부분배열을 순환적으로 합병 정렬한 뒤 합병하여 하나의 정렬된 배열을 만든다.
+
+<img src="/assets/img/blog/2024-05-11-algorithm-sort2_03.png" style="margin-top:20px;">
 
 ### 예시
 
