@@ -17,6 +17,8 @@ sitemap: false
 - 제자리 정렬 알고리즘이다.
 - 미정렬 부분에서 최솟값을 찾아서 미정렬 부분의 첫 번째 데이터와 위치를 교환하며 정렬하는 방식이다.
 
+<img src="/assets/img/blog/2023-08-19-algorithm-sort_01.png" style="margin-top:20px;">
+
 ### 예시
 
 ```js
@@ -52,6 +54,8 @@ function selectionSort(arr) {
 - 안정적인 정렬 알고리즘이다.
 - 제자리 정렬 알고리즘이다.
 - 인접한 두 데이터를 비교해가면서 왼쪽 데이터가 오른쪽 데이터보다 큰 경우 위치를 교환하는 방식이다.
+
+<img src="/assets/img/blog/2023-08-19-algorithm-sort_02.png" style="margin-top:20px;">
 
 ### 예시
 
@@ -89,6 +93,8 @@ function bubbleSort(arr) {
 - 제자리 정렬 알고리즘이다.
 - 미정렬 부분에서 첫 번째 데이터를 뽑은 후 정렬 부분에서 데이터가 위치할 자리를 찾아서 삽입하는 방식이다.
 
+<img src="/assets/img/blog/2023-08-19-algorithm-sort_03.png" style="margin-top:20px;">
+
 ### 예시
 
 ```js
@@ -124,6 +130,8 @@ function insertionSort(arr) {
 - 삽입 정렬의 단점을 보완할 수 있는 알고리즘이다. (하지만 최선의 시간복잡도는 삽입 정렬이 더 좋다.)
 - 삽입정렬은 데이터를 하나씩 비교하지만 셸 정렬은 멀리 떨어진 데이터와 비교하여 처리 속도 향상
 - 간격에 따라 성능이 달라진다. 가장 좋은 간격을 찾는 것은 아직 미해결 과제이다.
+
+<img src="/assets/img/blog/2023-08-19-algorithm-sort_04.png" style="margin-top:20px;">
 
 ### 예시
 
