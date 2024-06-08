@@ -79,7 +79,7 @@ sitemap: false
 
 - 가상 메모리를 논리적 의미에 부합하는 다양한 크기의 세그먼트로 나누어 관리하는 기법
 - 세그먼트 사상표에 세그먼트 존재 비트, 보조기억장치 주소, 세그먼트 길이, 세그먼트 번호에 대한 실주소에서의 시작 위치를 저장한다. 세그먼트 길이는 세그먼트 오버플로를 확인할 때 사용된다.
-  <img src="/assets/img/blog/2024-06-06-virtual-memory_07.png"style="display:block;margin:20px 0"/>
+  <img src="/assets/img/blog/2024-06-06-virtual-memory_07.png" style="display:block;margin:20px 0"/>
 
 ### 동적 주소변환
 
