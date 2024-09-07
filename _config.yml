@@ -77,10 +77,10 @@ menu:
     url: /network/
   - title: Python
     url: /python/
-  - title: JQuery
-    url: /jquery/
   - title: WebRTC
     url: /webrtc/
+  - title: C++
+    url: /cpp/
   - title: CS
     url: /cs/
   - title: 기타
