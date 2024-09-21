@@ -14,7 +14,7 @@ tags: [typescript]
 - .ts 확장자를 .js로 컴파일하여 사용
 - 타입 검사기를 통해 프로그램 실행 전에 확인 - 런타임이 아닌 컴파일 환경에서 에러를 잡을 수 있음
 
-> [슈퍼셋이란?](zetawiki.com/wiki/%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9,_%EC%A7%84%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9,_%EC%83%81%EC%9C%84%EC%A7%91%ED%95%A9,_%EC%A7%84%EC%83%81%EC%9C%84%EC%A7%91%ED%95%A9,_%ED%8F%AC%ED%95%A8%EA%B4%80%EA%B3%84)
+> [슈퍼셋이란?](https://zetawiki.com/wiki/%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9,_%EC%A7%84%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9,_%EC%83%81%EC%9C%84%EC%A7%91%ED%95%A9,_%EC%A7%84%EC%83%81%EC%9C%84%EC%A7%91%ED%95%A9,_%ED%8F%AC%ED%95%A8%EA%B4%80%EA%B3%84)
 
 ### 타입스크립트 설치
 
