@@ -1,6 +1,6 @@
 ---
 title: "[error] 기준 주소를 다시 지정하는 중에는 커밋 메시지를 변경할 수 없습니다."
-categories: [GIT]
+categories: [Git]
 tags: [git, error]
 ---
 

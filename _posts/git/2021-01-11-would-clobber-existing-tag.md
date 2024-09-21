@@ -1,6 +1,6 @@
 ---
 title: "[error] 거부됨 - would clobber existing tag"
-categories: [GIT]
+categories: [Git]
 tags: [git, error]
 ---
 

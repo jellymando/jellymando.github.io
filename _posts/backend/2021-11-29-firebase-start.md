@@ -1,6 +1,6 @@
 ---
 title: "[Firebase] 프로젝트 만들기"
-categories: [BACKEND]
+categories: [Backend]
 tags: [firebase]
 ---
 

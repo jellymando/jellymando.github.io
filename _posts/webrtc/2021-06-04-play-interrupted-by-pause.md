@@ -1,6 +1,6 @@
 ---
 title: "[error] The play() request was interrupted by a call to pause()"
-categories: [WEBRTC]
+categories: [webRTC]
 tags: [webrtc, error]
 ---
 

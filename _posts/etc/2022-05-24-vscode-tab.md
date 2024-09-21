@@ -1,6 +1,6 @@
 ---
 title: 'VSCode 탭 하나밖에 안열림'
-categories: [ETC]
+categories: [..etc]
 tags: [vscode]
 ---
 

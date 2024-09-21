@@ -1,6 +1,6 @@
 ---
 title: '[Pandas] Matplotlib 라이브러리로 그래프 그리기'
-categories: [PYTHON]
+categories: [Python]
 tags: [python]
 ---
 

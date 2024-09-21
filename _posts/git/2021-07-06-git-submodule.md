@@ -1,6 +1,6 @@
 ---
 title: "git에 저장된 repository를 module로 사용하기"
-categories: [GIT]
+categories: [Git]
 tags: [git]
 ---
 

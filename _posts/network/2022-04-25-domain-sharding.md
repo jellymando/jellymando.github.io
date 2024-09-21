@@ -1,6 +1,6 @@
 ---
 title: "Domain Sharding이란?"
-categories: [NETWORK]
+categories: [Network]
 tags: [network]
 ---
 

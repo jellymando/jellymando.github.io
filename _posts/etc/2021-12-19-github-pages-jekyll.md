@@ -1,6 +1,6 @@
 ---
 title: "[Github 블로그 에러] Page build failure"
-categories: [ETC]
+categories: [..etc]
 tags: [github]
 ---
 

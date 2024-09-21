@@ -1,6 +1,6 @@
 ---
 title: "프론트엔드 개발자 로드맵 (2020)"
-categories: [ETC]
+categories: [..etc]
 tags: [loadmap]
 ---
 

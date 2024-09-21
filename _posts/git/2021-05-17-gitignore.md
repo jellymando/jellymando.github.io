@@ -1,6 +1,6 @@
 ---
 title: ".gitignore 파일 적용하기"
-categories: [GIT]
+categories: [Git]
 tags: [git, gitignore]
 ---
 

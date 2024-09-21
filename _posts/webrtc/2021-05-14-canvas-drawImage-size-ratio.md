@@ -1,6 +1,6 @@
 ---
 title: "ctx.drawImage : 비디오를 캔버스로 가져오기"
-categories: [WEBRTC]
+categories: [webRTC]
 tags: [webrtc, cavnas]
 ---
 

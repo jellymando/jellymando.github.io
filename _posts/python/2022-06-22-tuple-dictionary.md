@@ -1,6 +1,6 @@
 ---
 title: "[Python 기초] Tuple, Dictionary 자료형"
-categories: [PYTHON]
+categories: [Python]
 tags: [python]
 ---
 

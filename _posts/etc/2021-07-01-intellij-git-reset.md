@@ -1,6 +1,6 @@
 ---
 title: "[intelliJ] git commit 되돌리기 (reset)"
-categories: [ETC]
+categories: [..etc]
 tags: [intellij]
 ---
 

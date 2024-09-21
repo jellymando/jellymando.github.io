@@ -1,6 +1,6 @@
 ---
 title: "쿠키(cookie), 세션(session), 캐시(cache)"
-categories: [ETC]
+categories: [..etc]
 tags: [cookie, session, cache]
 ---
 

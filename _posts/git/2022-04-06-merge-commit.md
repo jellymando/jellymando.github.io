@@ -1,6 +1,6 @@
 ---
 title: "fast-forward merge 커밋 메시지 생성하기"
-categories: [GIT]
+categories: [Git]
 tags: [git]
 ---
 

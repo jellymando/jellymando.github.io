@@ -1,6 +1,6 @@
 ---
 title: "[MongoDB] 설치하기"
-categories: [BACKEND]
+categories: [Backend]
 tags: [mongodb]
 ---
 

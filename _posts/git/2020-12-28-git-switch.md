@@ -1,6 +1,6 @@
 ---
 title: "Git checkout 👉 switch & restore"
-categories: [GIT]
+categories: [Git]
 tags: [git]
 ---
 

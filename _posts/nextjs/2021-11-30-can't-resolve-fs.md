@@ -1,6 +1,6 @@
 ---
 title: "[Error] can't resolve 'fs'"
-categories: [NEXTJS]
+categories: [Next.js]
 tags: [nextjs, error]
 ---
 

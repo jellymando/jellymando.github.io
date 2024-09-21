@@ -1,6 +1,6 @@
 ---
 title: "[데이터베이스 시스템] 관계형 모델"
-categories: [BACKEND]
+categories: [Backend]
 tags: [sql, database]
 ---
 

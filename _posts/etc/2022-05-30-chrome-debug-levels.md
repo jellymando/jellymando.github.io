@@ -1,6 +1,6 @@
 ---
 title: '크롬 디버깅 콘솔창에서 default levels 선택 안 될 때'
-categories: [ETC]
+categories: [..etc]
 tags: [chrome, debugging]
 ---
 

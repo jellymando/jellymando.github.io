@@ -1,6 +1,6 @@
 ---
 title: "[MongoDB] Schema 스키마 타입 제외 속성들"
-categories: [BACKEND]
+categories: [Backend]
 tags: [mongodb]
 ---
 

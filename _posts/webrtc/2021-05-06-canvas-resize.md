@@ -1,6 +1,6 @@
 ---
 title: "canvas의 크기를 수정하면 내용이 지워지고 까맣게 변하는 이슈"
-categories: [WEBRTC]
+categories: [webRTC]
 tags: [webrtc, canvas]
 ---
 

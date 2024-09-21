@@ -1,6 +1,6 @@
 ---
 title: "Access Token과 Sliding Sessions, Refresh Token"
-categories: [ETC]
+categories: [..etc]
 tags: [token, access token, sliding sessions, refresh token]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "[npm install] dependencies와 devDependencies"
-categories: [ETC]
+categories: [..etc]
 tags: [package, dependencies, devDependencies]
 ---
 

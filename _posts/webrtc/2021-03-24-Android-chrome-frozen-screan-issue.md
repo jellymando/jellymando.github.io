@@ -1,6 +1,6 @@
 ---
 title: "Android chrome에서 동영상을 중지하면 화면이 멈춤 이슈"
-categories: [WEBRTC]
+categories: [webRTC]
 tags: [webrtc]
 ---
 

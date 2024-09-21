@@ -1,6 +1,6 @@
 ---
 title: "[알고리즘] 정렬 알고리즘2 - 분할 정복"
-categories: [ALGORITHM]
+categories: [Algorithm]
 tags: [algorithm]
 ---
 

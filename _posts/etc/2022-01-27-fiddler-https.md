@@ -1,6 +1,6 @@
 ---
 title: 'Fiddler 켜면 https 페이지 안열리는 이슈'
-categories: [ETC]
+categories: [..etc]
 tags: [fiddler]
 ---
 

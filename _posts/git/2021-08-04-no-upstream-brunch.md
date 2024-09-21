@@ -1,6 +1,6 @@
 ---
 title: "[error] The current branch master has no upstream branch"
-categories: [GIT]
+categories: [Git]
 tags: [git, error]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "자동으로 github에 잔디 깔기"
-categories: [GIT]
+categories: [Git]
 tags: [git, github actions, schedule]
 ---
 

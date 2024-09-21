@@ -1,6 +1,6 @@
 ---
 title: "[ubuntu] git, node.js, yarn 설치하기"
-categories: [ETC]
+categories: [..etc]
 tags: [ubuntu, lunux]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "모두의 네트워크 - 02 네트워크의 기본 규칙"
-categories: [NETWORK]
+categories: [Network]
 tags: [network]
 ---
 

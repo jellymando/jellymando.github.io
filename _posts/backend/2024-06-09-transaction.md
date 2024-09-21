@@ -1,6 +1,6 @@
 ---
 title: "[데이터베이스 시스템] 트랜잭션"
-categories: [BACKEND]
+categories: [Backend]
 tags: [sql, database]
 ---
 

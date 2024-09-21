@@ -1,6 +1,6 @@
 ---
 title: "[Firebase] React 앱에 연동하기"
-categories: [BACKEND]
+categories: [Backend]
 tags: [firebase]
 ---
 

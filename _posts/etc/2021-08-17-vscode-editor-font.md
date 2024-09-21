@@ -1,6 +1,6 @@
 ---
 title: "[VSCode] 에디터 폰트 변경, 줄간격 변경하기"
-categories: [ETC]
+categories: [..etc]
 tags: [vscode]
 ---
 

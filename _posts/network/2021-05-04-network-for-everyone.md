@@ -1,6 +1,6 @@
 ---
 title: "모두의 네트워크 - 01 네트워크의 구조"
-categories: [NETWORK]
+categories: [Network]
 tags: [network]
 ---
 

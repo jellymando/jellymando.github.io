@@ -1,6 +1,6 @@
 ---
 title: '[cherry-pick] 특정 커밋만 merge 하기'
-categories: [GIT]
+categories: [Git]
 tags: [git]
 ---
 

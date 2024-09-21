@@ -1,6 +1,6 @@
 ---
 title: "[Windows] git 자격 증명 등록"
-categories: [GIT]
+categories: [Git]
 tags: [git]
 ---
 

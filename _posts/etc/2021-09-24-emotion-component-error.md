@@ -1,6 +1,6 @@
 ---
 title: "[Emotion 에러] Component selectors can only be used in conjunction"
-categories: [ETC]
+categories: [..etc]
 tags: [emotion]
 ---
 

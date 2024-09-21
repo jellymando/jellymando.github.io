@@ -1,6 +1,6 @@
 ---
 title: "eslint 에러 비활성화하기 (array-callback-return)"
-categories: [ETC]
+categories: [..etc]
 tags: [eslint]
 ---
 

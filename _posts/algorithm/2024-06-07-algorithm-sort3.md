@@ -1,6 +1,6 @@
 ---
 title: "[알고리즘] 정렬 알고리즘3 - 힙 정렬"
-categories: [ALGORITHM]
+categories: [Algorithm]
 tags: [algorithm, 정렬]
 ---
 
