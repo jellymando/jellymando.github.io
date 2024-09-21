@@ -1,6 +1,6 @@
 ---
 title: 'CustomEvent()로 이벤트 커스텀하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, custom event]
 ---
 

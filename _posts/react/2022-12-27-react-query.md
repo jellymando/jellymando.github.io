@@ -1,6 +1,6 @@
 ---
 title: 'react-query 사용하기'
-categories: [REACT]
+categories: [React]
 tags: [react, react query]
 ---
 

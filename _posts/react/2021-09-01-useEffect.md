@@ -1,6 +1,6 @@
 ---
 title: "useEffect 동작 원리, 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react, useEffect]
 ---
 

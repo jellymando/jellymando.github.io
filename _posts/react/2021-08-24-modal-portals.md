@@ -1,6 +1,6 @@
 ---
 title: "Portal을 사용하여 Modal 띄우기"
-categories: [REACT]
+categories: [React]
 tags: [react, modal]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "for, forEach, map의 차이점"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

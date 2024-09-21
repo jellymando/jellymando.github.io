@@ -1,6 +1,6 @@
 ---
 title: "Java와 Javascript의 차이점"
-categories: [..etc]
+categories: [기타]
 tags: [java, javascript]
 ---
 

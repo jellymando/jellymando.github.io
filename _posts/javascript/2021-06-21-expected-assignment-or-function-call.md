@@ -1,6 +1,6 @@
 ---
 title: "JavaScript arrow function 주의사항"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, arrow function]
 ---
 

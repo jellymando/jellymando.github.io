@@ -1,6 +1,6 @@
 ---
 title: "Promise를 이용하여 실행 지연시키기 (I hate Promise)"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, promise, 비동기]
 ---
 

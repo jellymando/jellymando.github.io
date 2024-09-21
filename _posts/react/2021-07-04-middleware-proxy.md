@@ -1,6 +1,6 @@
 ---
 title: "Proxy Middleware 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

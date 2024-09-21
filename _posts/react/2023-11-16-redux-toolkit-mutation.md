@@ -1,6 +1,6 @@
 ---
 title: '[Redux-toolkit] Matation 사용하기'
-categories: [REACT]
+categories: [React]
 tags: [redux, redux toolkit]
 ---
 

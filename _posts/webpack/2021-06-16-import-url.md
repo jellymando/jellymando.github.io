@@ -1,6 +1,6 @@
 ---
 title: "모듈의 절대 경로 설정하기"
-categories: [WEBPACK]
+categories: [Webpack]
 tags: [webpack, 절대경로]
 ---
 

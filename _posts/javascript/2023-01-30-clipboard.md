@@ -1,6 +1,6 @@
 ---
 title: 'Clipboard API 사용하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, clipboard]
 ---
 

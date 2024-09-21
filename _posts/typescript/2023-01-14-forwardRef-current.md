@@ -1,6 +1,6 @@
 ---
 title: "ForwardRef 사용할 때 발생하는 에러 (형식에 'current' 속성이 없습니다.)"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript, forwardRef, error]
 ---
 

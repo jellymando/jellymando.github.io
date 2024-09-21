@@ -1,6 +1,6 @@
 ---
 title: "배열에서 중복을 제거하는 3가지 방법"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

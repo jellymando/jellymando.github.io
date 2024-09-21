@@ -1,6 +1,6 @@
 ---
 title: "타입스크립트 입문 - 기초부터 실전까지 : 타입스크립트 설치"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

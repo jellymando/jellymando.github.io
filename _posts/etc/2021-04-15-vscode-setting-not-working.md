@@ -1,6 +1,6 @@
 ---
 title: "VSCode setting 적용 안될 때"
-categories: [..etc]
+categories: [기타]
 tags: [vscode]
 ---
 

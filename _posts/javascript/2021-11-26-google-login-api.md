@@ -1,6 +1,6 @@
 ---
 title: "구글 로그인 api 연동하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

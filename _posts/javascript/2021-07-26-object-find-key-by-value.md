@@ -1,6 +1,6 @@
 ---
 title: "[Object] value 값으로 key 찾기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: '자바스크립트 함수의 구성, 매개변수(parameter)와 인수(argument)'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, parameter, argument]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'React hook 의존성 배열에 useCallback 함수를 넣을 때 주의하기'
-categories: [REACT]
+categories: [React]
 tags: [react, useCallback]
 ---
 

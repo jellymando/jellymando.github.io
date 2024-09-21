@@ -1,6 +1,6 @@
 ---
 title: "html element의 data에 접근하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, dataset]
 ---
 

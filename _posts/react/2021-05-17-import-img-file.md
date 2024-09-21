@@ -1,6 +1,6 @@
 ---
 title: "React에서 이미지 파일 import 하기"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

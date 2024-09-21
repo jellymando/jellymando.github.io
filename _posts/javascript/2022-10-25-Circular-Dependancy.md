@@ -1,6 +1,6 @@
 ---
 title: '모듈 순환 참조(Circular Dependency) 개선하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 순환 참조]
 ---
 

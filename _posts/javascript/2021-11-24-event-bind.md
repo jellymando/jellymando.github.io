@@ -1,6 +1,6 @@
 ---
 title: "이벤트를 등록하는 방식, 이벤트 핸들러 내부의 this"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, this]
 ---
 

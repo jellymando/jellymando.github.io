@@ -1,6 +1,6 @@
 ---
 title: "Detect Browser - 브라우저, 버전 감지하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

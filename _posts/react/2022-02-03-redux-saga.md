@@ -1,6 +1,6 @@
 ---
 title: "[Redux-Saga] 미들웨어 만들고 스토어에 연결하기"
-categories: [REACT]
+categories: [React]
 tags: [redux]
 ---
 

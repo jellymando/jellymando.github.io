@@ -1,6 +1,6 @@
 ---
 title: "localStorage에 객체, 배열 형식 데이터 저장하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

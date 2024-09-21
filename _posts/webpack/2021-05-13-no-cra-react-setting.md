@@ -1,6 +1,6 @@
 ---
 title: '✅CRA 없이 리액트 환경 만들기'
-categories: [WEBPACK]
+categories: [Webpack]
 tags: [webpack]
 ---
 

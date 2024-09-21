@@ -1,6 +1,6 @@
 ---
 title: "리액트 이벤트 핸들러 네이밍 (on / handle)"
-categories: [REACT]
+categories: [React]
 tags: [react, naming, convention]
 ---
 

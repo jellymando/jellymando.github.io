@@ -1,6 +1,6 @@
 ---
 title: "[npm-run-all] npm scripts 여러개 실행하기"
-categories: [..etc]
+categories: [기타]
 tags: [npm]
 ---
 

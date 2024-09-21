@@ -1,6 +1,6 @@
 ---
 title: "for문과 for...of문, let과 const"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "✅TypeScript의 장점과 단점"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

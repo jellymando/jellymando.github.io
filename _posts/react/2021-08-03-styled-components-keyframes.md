@@ -1,6 +1,6 @@
 ---
 title: 'styled-components에서 keyframes 작성하기'
-categories: [REACT]
+categories: [React]
 tags: [react, styled components]
 ---
 

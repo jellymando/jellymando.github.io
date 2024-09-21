@@ -1,6 +1,6 @@
 ---
 title: '[contains] 외부 영역 감지하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 외부 영역 감지]
 ---
 

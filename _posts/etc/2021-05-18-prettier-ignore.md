@@ -1,6 +1,6 @@
 ---
 title: ".prettierignore 사용하기"
-categories: [..etc]
+categories: [기타]
 tags: [vscode, prettier]
 ---
 

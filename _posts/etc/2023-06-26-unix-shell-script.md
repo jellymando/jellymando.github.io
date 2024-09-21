@@ -1,6 +1,6 @@
 ---
 title: 'UNIX 쉘 스크립트 npm 패키지 버전 비교문 작성하기'
-categories: [..etc]
+categories: [기타]
 tags: [unix]
 ---
 

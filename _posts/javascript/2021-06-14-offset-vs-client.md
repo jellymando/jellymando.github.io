@@ -1,6 +1,6 @@
 ---
 title: "이벤트 좌표 client, offset 차이"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, offset]
 ---
 

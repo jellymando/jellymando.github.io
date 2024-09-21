@@ -1,6 +1,6 @@
 ---
 title: "MiniCssExtractPlugin - css 파일 따로 분리하기"
-categories: [WEBPACK]
+categories: [Webpack]
 tags: [webpack]
 ---
 

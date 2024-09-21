@@ -1,6 +1,6 @@
 ---
 title: '[React Router] URL path를 통해 parameter 전달하기'
-categories: [REACT]
+categories: [React]
 tags: [react, react router]
 ---
 

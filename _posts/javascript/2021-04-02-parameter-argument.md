@@ -1,6 +1,6 @@
 ---
 title: "parameter와 argument"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

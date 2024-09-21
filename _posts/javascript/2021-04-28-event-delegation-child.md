@@ -1,6 +1,6 @@
 ---
 title: "이벤트 위임에서 button의 자식 node 클릭 시 이벤트 발생❎"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

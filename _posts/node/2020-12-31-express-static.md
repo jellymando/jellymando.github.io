@@ -1,6 +1,6 @@
 ---
 title: "[Express] html에서 로드할 수 있는 파일 경로 설정"
-categories: [node]
+categories: [Node]
 tags: [node, express]
 ---
 

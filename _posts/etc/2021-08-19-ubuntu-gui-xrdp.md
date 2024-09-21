@@ -1,6 +1,6 @@
 ---
 title: "[ubuntu] GUI, 원격 데스크톱(Xrdp) 설치하기"
-categories: [..etc]
+categories: [기타]
 tags: [ubuntu, linux]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "[error] eslint ts 적용되지 않음, prettier/prettier 에러"
-categories: [REACT]
+categories: [React]
 tags: [react, error, eslint, prettier]
 ---
 

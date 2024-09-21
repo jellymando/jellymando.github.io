@@ -1,6 +1,6 @@
 ---
 title: "버블링과 캡쳐링 (feat. 흑역사)"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 버블링, 캡쳐링]
 ---
 

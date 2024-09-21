@@ -1,6 +1,6 @@
 ---
 title: "[Storybook] Global decorators - 공통 스타일 적용하기"
-categories: [REACT]
+categories: [React]
 tags: [storybook]
 ---
 

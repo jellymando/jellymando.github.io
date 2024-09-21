@@ -1,6 +1,6 @@
 ---
 title: "✅Virtual DOM이란? Diffing Algorithm"
-categories: [REACT]
+categories: [React]
 tags: [react, virtual dom]
 ---
 

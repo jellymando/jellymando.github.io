@@ -1,6 +1,6 @@
 ---
 title: 'Youtube 동영상 컨트롤 커스텀하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

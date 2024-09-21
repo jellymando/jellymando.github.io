@@ -1,6 +1,6 @@
 ---
 title: "debounce와 throttle 사용하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, debounce, throttle]
 ---
 

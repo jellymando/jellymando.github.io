@@ -1,6 +1,6 @@
 ---
 title: "Mac에서 톰캣 서버 강제 종료하기"
-categories: [..etc]
+categories: [기타]
 tags: [mac, tomcat]
 ---
 

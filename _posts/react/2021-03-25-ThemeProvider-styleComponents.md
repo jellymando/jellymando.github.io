@@ -1,6 +1,6 @@
 ---
 title: "ThemeProvider로 공통 스타일 속성 관리하기"
-categories: [REACT]
+categories: [React]
 tags: [react, ThemeProvider]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Flutter 앱 기본 구조"
-categories: [FLUTTER]
+categories: [Flutter]
 tags: [flutter]
 ---
 

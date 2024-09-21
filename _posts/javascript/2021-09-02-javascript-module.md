@@ -1,6 +1,6 @@
 ---
 title: "JavaScript module export & import"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, module]
 ---
 

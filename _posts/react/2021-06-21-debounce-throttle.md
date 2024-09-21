@@ -1,6 +1,6 @@
 ---
 title: "[lodash] 리액트에서 debounce나 throttle 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react, lodash, debounce, throttle]
 ---
 

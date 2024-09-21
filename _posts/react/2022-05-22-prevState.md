@@ -1,6 +1,6 @@
 ---
 title: '함수형 컴포넌트에서 prevState 구현하기'
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

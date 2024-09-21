@@ -1,6 +1,6 @@
 ---
 title: "Media Query 변수화해서 Styled-Components에서 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react, media query]
 ---
 

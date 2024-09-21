@@ -1,6 +1,6 @@
 ---
 title: 'fetch API를 이용한 비동기 통신'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, fetch]
 ---
 

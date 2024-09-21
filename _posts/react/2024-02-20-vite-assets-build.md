@@ -1,6 +1,6 @@
 ---
 title: '[Vite] assets 빌드하기'
-categories: [REACT]
+categories: [React]
 tags: [vite]
 ---
 

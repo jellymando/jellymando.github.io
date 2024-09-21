@@ -1,6 +1,6 @@
 ---
 title: "[React 스터디] 1 : 주요 개념 (1)"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'Intersection Observer API으로 스크롤 감지하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, intersection observer]
 ---
 

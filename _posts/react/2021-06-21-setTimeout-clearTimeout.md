@@ -1,6 +1,6 @@
 ---
 title: "리액트에서 setTimeout, clearTimeout 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

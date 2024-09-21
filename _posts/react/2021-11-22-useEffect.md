@@ -1,6 +1,6 @@
 ---
 title: "useEffect 의존성 배열 없애는 방법"
-categories: [REACT]
+categories: [React]
 tags: [react, useEffect]
 ---
 

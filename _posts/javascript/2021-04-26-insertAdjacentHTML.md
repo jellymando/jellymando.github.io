@@ -1,6 +1,6 @@
 ---
 title: "element 안에 html 집어넣기 : insertAdjacentHTML()"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

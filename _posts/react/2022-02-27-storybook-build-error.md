@@ -1,6 +1,6 @@
 ---
 title: "[Storybook] 빌드 시 You may need to refresh the browser 에러"
-categories: [REACT]
+categories: [React]
 tags: [storybook]
 ---
 

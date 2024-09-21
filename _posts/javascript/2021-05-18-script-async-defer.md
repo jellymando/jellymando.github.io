@@ -1,6 +1,6 @@
 ---
 title: "async와 defer 의미, 실행 순서, 공통점, 차이점"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, async, defer]
 ---
 

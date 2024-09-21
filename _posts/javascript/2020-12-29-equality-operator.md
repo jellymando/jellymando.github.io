@@ -1,6 +1,6 @@
 ---
 title: "동등 연산자 == 와 일치 연산자 === 의 차이🤨"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

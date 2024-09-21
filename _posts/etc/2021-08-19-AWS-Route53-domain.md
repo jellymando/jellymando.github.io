@@ -1,6 +1,6 @@
 ---
 title: "[AWS] Route 53에 도메인 등록하여 사용하기"
-categories: [..etc]
+categories: [기타]
 tags: [aws]
 ---
 

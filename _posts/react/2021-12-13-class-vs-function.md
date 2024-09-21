@@ -1,6 +1,6 @@
 ---
 title: "클래스형 컴포넌트와 함수형 컴포넌트의 차이"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

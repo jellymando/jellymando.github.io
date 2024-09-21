@@ -1,6 +1,6 @@
 ---
 title: "[React 스터디] 2 : 접근성"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

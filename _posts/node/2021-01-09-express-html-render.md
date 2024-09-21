@@ -1,6 +1,6 @@
 ---
 title: "Node Express 설치 및 html 라우팅하기🔥"
-categories: [node]
+categories: [Node]
 tags: [node, express]
 ---
 

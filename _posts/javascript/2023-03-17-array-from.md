@@ -1,6 +1,6 @@
 ---
 title: 'read only 속성의 객체를 writeable로 복사하는 방법'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

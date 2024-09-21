@@ -1,6 +1,6 @@
 ---
 title: "url 프로토콜 체크하여 http ➡️ https로 변경"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "ResizeObserver API : 엘리먼트 크기 변화 감지하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, ResizeObserver]
 ---
 

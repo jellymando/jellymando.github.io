@@ -1,6 +1,6 @@
 ---
 title: 'useSelector 최적화, shallowEqual 사용하기'
-categories: [REACT]
+categories: [React]
 tags: [redux, useSelector]
 ---
 

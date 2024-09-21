@@ -1,6 +1,6 @@
 ---
 title: "HTTP 모듈 (3: 데이터 추출과 쿠키 추출)"
-categories: [node]
+categories: [Node]
 tags: [node]
 ---
 

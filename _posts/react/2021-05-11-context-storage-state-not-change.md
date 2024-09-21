@@ -1,6 +1,6 @@
 ---
 title: "context로 storage 값을 사용하는데 값이 초기화되지 않을 때"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

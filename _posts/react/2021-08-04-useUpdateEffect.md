@@ -1,6 +1,6 @@
 ---
 title: "[react-use] useUpdateEffect Hook"
-categories: [REACT]
+categories: [React]
 tags: [react, useUpdateEffect]
 ---
 

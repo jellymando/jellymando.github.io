@@ -1,6 +1,6 @@
 ---
 title: '리액트 합성 이벤트 throttle 적용 안되는 이슈'
-categories: [REACT]
+categories: [React]
 tags: [react, throttle]
 ---
 

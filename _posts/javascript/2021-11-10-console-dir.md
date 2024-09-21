@@ -1,6 +1,6 @@
 ---
 title: "console.log()와 console.dir()의 차이점"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, debbuging]
 ---
 

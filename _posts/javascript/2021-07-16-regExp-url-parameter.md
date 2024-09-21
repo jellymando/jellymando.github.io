@@ -1,6 +1,6 @@
 ---
 title: '정규식을 이용하여 URL 체크하기 + 정규식 사용법 정리'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 정규식]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "e.target과 e.currentTarget의 차이"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

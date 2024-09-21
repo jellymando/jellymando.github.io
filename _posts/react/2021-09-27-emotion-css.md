@@ -1,6 +1,6 @@
 ---
 title: "[Emotion] css prop 사용 안되는 에러"
-categories: [REACT]
+categories: [React]
 tags: [emotion]
 ---
 

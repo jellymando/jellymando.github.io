@@ -1,6 +1,6 @@
 ---
 title: 'immutable 데이터와 mutable 데이터, 얕은 복사/깊은 복사'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 깊은 복사]
 ---
 

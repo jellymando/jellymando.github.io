@@ -1,6 +1,6 @@
 ---
 title: "[Redux-Saga] 리액트 hook과 함께 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [redux]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "[js+css] 상하좌우 요소 만들기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

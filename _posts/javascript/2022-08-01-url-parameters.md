@@ -1,6 +1,6 @@
 ---
 title: '[URLSearchParams] url parameters 추출하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

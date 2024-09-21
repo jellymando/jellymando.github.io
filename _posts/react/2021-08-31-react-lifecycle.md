@@ -1,6 +1,6 @@
 ---
 title: "✅리액트 컴포넌트의 생명주기"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

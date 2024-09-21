@@ -1,6 +1,6 @@
 ---
 title: '언마운트 시 Ref.current 이벤트 clean-up 하기'
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

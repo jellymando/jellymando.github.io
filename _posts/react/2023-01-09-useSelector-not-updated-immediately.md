@@ -1,6 +1,6 @@
 ---
 title: "react-redux 상태가 동기적으로 업데이트되지 않음"
-categories: [REACT]
+categories: [React]
 tags: [redux, useSelector]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "1 : 타입스크립트란? & 기본 설치"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

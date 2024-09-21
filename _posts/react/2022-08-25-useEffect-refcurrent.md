@@ -1,6 +1,6 @@
 ---
 title: 'useEffect 의존성 배열에 ref 사용'
-categories: [REACT]
+categories: [React]
 tags: [react, useEffect]
 ---
 

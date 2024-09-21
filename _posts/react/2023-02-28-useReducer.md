@@ -1,6 +1,6 @@
 ---
 title: 'useReducer를 사용하여 useState 대체하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [react, useReducer]
 ---
 

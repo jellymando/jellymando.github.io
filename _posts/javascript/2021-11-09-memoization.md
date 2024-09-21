@@ -1,6 +1,6 @@
 ---
 title: "메모이제이션(Memoization) 사용하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 최적화]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: '?? 연산자와 || 연산자'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 연산자]
 ---
 

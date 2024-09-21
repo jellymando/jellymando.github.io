@@ -1,6 +1,6 @@
 ---
 title: "React에서 Redux 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [redux]
 ---
 

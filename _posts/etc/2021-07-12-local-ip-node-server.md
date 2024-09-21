@@ -1,6 +1,6 @@
 ---
 title: "local ip로 node server 구동하기 (맥북)"
-categories: [..etc]
+categories: [기타]
 tags: [node]
 ---
 

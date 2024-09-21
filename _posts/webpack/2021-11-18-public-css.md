@@ -1,6 +1,6 @@
 ---
 title: "public 경로의 css 파일 번들링하기"
-categories: [WEBPACK]
+categories: [Webpack]
 tags: [webpack]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "React에 ESLint와 Prettier 끼얹기"
-categories: [REACT]
+categories: [React]
 tags: [react, eslint, prettier]
 ---
 

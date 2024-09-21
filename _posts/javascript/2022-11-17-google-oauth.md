@@ -1,6 +1,6 @@
 ---
 title: '구글 인증 후 access token 발급받기..'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

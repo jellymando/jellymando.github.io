@@ -1,6 +1,6 @@
 ---
 title: "숫자 범위만큼 map 돌리기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

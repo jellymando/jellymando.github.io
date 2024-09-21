@@ -1,6 +1,6 @@
 ---
 title: "✅실행 컨텍스트"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, context]
 ---
 

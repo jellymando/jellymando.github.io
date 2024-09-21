@@ -1,6 +1,6 @@
 ---
 title: "Typescript NPM 모듈 만들기"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

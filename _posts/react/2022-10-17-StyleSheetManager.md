@@ -1,6 +1,6 @@
 ---
 title: '[styled-components] StyleSheetManager 사용하기'
-categories: [REACT]
+categories: [React]
 tags: [react, styled components]
 ---
 

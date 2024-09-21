@@ -1,6 +1,6 @@
 ---
 title: '바닐라로 고양이 검색 만들기 : render() addEventListener에서 메서드 사용하기'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, vanila]
 ---
 

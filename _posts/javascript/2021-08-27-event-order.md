@@ -1,6 +1,6 @@
 ---
 title: "자바스크립트 동작 원리, 메모리 구조, 이벤트 루프"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 이벤트 루프]
 ---
 

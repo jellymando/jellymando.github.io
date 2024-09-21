@@ -1,6 +1,6 @@
 ---
 title: "[Inquirer] 커맨드 라인에 Prompts 설정하기"
-categories: [node]
+categories: [Node]
 tags: [node]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: '[matchPath] 라우터 path 체크하기'
-categories: [REACT]
+categories: [React]
 tags: [react, react router]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'npm vs yarn ? yarn install 버전 에러 해결'
-categories: [..etc]
+categories: [기타]
 tags: [npm, yarn]
 ---
 

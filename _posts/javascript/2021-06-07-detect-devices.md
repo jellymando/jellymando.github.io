@@ -1,6 +1,6 @@
 ---
 title: "디바이스 감지 Detect Devices"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "onUnload 이벤트에서 새로고침과 창 닫힘 구분"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

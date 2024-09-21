@@ -1,6 +1,6 @@
 ---
 title: '[Redux] 기초 배우기'
-categories: [REACT]
+categories: [React]
 tags: [redux]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "무한 스크롤 구현하기 : scrollTop, scrollHeight"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 무한스크롤]
 ---
 

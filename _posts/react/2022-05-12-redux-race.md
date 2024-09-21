@@ -1,6 +1,6 @@
 ---
 title: '[Redux-Saga] race 이용하기'
-categories: [REACT]
+categories: [React]
 tags: [redux]
 ---
 

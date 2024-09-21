@@ -1,6 +1,6 @@
 ---
 title: "node로 .ts 파일 실행시키기"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

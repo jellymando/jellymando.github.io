@@ -1,6 +1,6 @@
 ---
 title: "[orientationchange] 디바이스 방향 바뀌는 것 감지 🔁"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, orientationchange]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "[Storybook] 페이지에 Icons 컴포넌트 나열하기"
-categories: [REACT]
+categories: [React]
 tags: [storybook]
 ---
 

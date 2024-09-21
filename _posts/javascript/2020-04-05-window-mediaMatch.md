@@ -1,6 +1,6 @@
 ---
 title: 'Window.matchMedia()'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

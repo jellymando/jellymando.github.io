@@ -1,6 +1,6 @@
 ---
 title: "IOS에서 Canvas에 그릴 때 좌표 안맞는 문제"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, canvas]
 ---
 

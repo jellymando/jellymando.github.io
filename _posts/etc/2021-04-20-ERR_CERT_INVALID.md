@@ -1,6 +1,6 @@
 ---
 title: "'연결이 비공개로 설정되어 있지 않습니다' NET::ERR_CERT_INVALID"
-categories: [..etc]
+categories: [기타]
 tags: [https, error]
 ---
 

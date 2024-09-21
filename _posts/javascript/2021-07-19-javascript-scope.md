@@ -1,6 +1,6 @@
 ---
 title: "스코프(scope)란? ✨"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, scope]
 ---
 

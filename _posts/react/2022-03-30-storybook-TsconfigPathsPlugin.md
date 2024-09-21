@@ -1,6 +1,6 @@
 ---
 title: "[Storybook] Typescript 절대경로 적용하기"
-categories: [REACT]
+categories: [React]
 tags: [storybook]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'iframe이 제대로 마운트되지 않은 경우 체크'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, iframe]
 ---
 

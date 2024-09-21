@@ -1,6 +1,6 @@
 ---
 title: "✅브라우저 렌더링 과정"
-categories: [..etc]
+categories: [기타]
 tags: [browser, network]
 ---
 

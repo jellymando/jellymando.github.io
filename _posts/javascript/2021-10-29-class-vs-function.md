@@ -1,6 +1,6 @@
 ---
 title: "Class와 함수 생성자의 차이"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

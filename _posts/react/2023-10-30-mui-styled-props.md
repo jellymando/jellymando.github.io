@@ -1,6 +1,6 @@
 ---
 title: '[MUI] Styled Component에 props 전달 시 에러'
-categories: [REACT]
+categories: [React]
 tags: [react, mui, error]
 ---
 

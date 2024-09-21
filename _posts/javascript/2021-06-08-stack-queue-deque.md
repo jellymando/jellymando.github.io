@@ -1,6 +1,6 @@
 ---
 title: "자료구조 : 스택(Stack), 큐(Queue), 덱(Deque)"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 자료구조]
 ---
 

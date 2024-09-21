@@ -1,6 +1,6 @@
 ---
 title: "[React 스터디] 3 : 코드 분할"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

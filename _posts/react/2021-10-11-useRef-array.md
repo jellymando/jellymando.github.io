@@ -1,6 +1,6 @@
 ---
 title: "여러개의 DOM에 useRef 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react, useRef]
 ---
 

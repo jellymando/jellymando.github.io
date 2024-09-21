@@ -1,6 +1,6 @@
 ---
 title: "[error] 앱 실행 시 tsconfig.json 자동 수정됨"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript, error]
 ---
 

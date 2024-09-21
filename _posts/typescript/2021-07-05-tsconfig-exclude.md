@@ -1,6 +1,6 @@
 ---
 title: "[tsconfig] 특정 파일 제외하기"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

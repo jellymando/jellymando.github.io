@@ -1,6 +1,6 @@
 ---
 title: "이미지가 빌드되지 않는 이슈"
-categories: [WEBPACK]
+categories: [Webpack]
 tags: [webpack, file-loader]
 ---
 

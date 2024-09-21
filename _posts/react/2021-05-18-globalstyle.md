@@ -1,6 +1,6 @@
 ---
 title: "스타일 컴포넌트 GlobalStyle 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

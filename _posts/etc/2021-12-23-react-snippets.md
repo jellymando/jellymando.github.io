@@ -1,6 +1,6 @@
 ---
 title: '[VSCode] React Snippets 비교'
-categories: [..etc]
+categories: [기타]
 tags: [vscode, extension, snippets]
 ---
 

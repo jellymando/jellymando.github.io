@@ -1,6 +1,6 @@
 ---
 title: "비동기로 브라우저 새 창 띄우기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

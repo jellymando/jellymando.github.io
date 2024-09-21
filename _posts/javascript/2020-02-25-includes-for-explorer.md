@@ -1,6 +1,6 @@
 ---
 title: "익스플로러에서 includes 대신 indexOf를 사용하자"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, cross browsing]
 ---
 

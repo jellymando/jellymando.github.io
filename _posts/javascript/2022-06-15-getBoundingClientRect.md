@@ -1,6 +1,6 @@
 ---
 title: "엘리먼트 크기 구하기 clientWidth/clientHeight vs offsetWidth/offsetHeight vs getBoundingClientRect()"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

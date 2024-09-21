@@ -1,6 +1,6 @@
 ---
 title: "React에서 children을 map 돌리기"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

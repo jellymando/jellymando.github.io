@@ -1,6 +1,6 @@
 ---
 title: '[Redux-Saga] 이펙트를 사용하여 비동기 처리 saga 만들기'
-categories: [REACT]
+categories: [React]
 tags: [redux]
 ---
 

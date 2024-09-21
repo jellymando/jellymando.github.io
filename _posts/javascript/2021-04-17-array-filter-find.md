@@ -1,6 +1,6 @@
 ---
 title: "[Array] filter()와 find()의 차이점"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript]
 ---
 

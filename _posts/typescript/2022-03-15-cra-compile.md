@@ -1,6 +1,6 @@
 ---
 title: "CRA에서 build 시 .d.ts 파일 생성 안됨"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript]
 ---
 

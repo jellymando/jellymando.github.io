@@ -1,6 +1,6 @@
 ---
 title: "Webpack Server IP 설정하기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [webpack]
 ---
 

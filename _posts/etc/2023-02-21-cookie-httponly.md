@@ -1,6 +1,6 @@
 ---
 title: '쿠키의 httpOnly 옵션'
-categories: [..etc]
+categories: [기타]
 tags: [cookie, network, http]
 ---
 

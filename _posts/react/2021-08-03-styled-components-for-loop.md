@@ -1,6 +1,6 @@
 ---
 title: "styled-components에서 for문 돌리기"
-categories: [REACT]
+categories: [React]
 tags: [react, styled components]
 ---
 

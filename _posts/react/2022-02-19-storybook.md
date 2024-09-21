@@ -1,6 +1,6 @@
 ---
 title: 'Storybook을 사용한 design-system 만들기'
-categories: [REACT]
+categories: [React]
 tags: [storybook]
 ---
 

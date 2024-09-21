@@ -1,6 +1,6 @@
 ---
 title: "Mouseenter와 Mouseover의 차이점"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, mouseenter, mouseover]
 ---
 

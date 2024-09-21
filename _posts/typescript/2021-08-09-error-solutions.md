@@ -1,6 +1,6 @@
 ---
 title: "[error] 에러 해결 모음집☠"
-categories: [TYPESCRIPT]
+categories: [Typescript]
 tags: [typescript, error]
 ---
 

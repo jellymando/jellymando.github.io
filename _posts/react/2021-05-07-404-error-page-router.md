@@ -1,6 +1,6 @@
 ---
 title: "리액트를 다루는 기술 : 리액트 라우터로 SPA 개발하기"
-categories: [REACT]
+categories: [React]
 tags: [react, react router]
 ---
 

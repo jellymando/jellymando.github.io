@@ -1,6 +1,6 @@
 ---
 title: "input과 fileReader로 file 업로드하고 읽기"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, file]
 ---
 

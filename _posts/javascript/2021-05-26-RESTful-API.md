@@ -1,6 +1,6 @@
 ---
 title: "RESTful API란? ✨"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, restful api]
 ---
 

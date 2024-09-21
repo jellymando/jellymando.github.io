@@ -1,6 +1,6 @@
 ---
 title: "웹 사이트 성능 최적화하기⚡"
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 최적화]
 ---
 

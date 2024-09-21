@@ -1,6 +1,6 @@
 ---
 title: "CRA로 만든 리액트 프로젝트에서 public 폴더 이미지 사용하기"
-categories: [REACT]
+categories: [React]
 tags: [react]
 ---
 

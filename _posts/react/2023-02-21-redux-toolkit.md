@@ -1,6 +1,6 @@
 ---
 title: 'Redux Toolkit + RTK 사용 방법'
-categories: [REACT]
+categories: [React]
 tags: [redux, redux toolkit]
 ---
 

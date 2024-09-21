@@ -1,6 +1,6 @@
 ---
 title: 'bind / call / apply 사용법, 차이점'
-categories: [JAVASCRIPT]
+categories: [Javascript]
 tags: [javascript, 바인딩]
 ---
 

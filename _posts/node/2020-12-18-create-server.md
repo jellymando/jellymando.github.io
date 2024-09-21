@@ -1,6 +1,6 @@
 ---
 title: "HTTP 모듈 (1: createServer)"
-categories: [node]
+categories: [Node]
 tags: [node]
 ---
 
