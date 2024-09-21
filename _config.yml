@@ -83,6 +83,8 @@ menu:
     url: /cpp/
   - title: CS
     url: /cs/
+  - title: AI
+    url: /ai/
   - title: 기타
     url: /etc/
 
