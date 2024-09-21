@@ -31,4 +31,4 @@ article.dataset.parent; // "cars"
 
 <br/>
 
-[데이터 속성 사용하기](developer.mozilla.org/ko/docs/Learn/HTML/Howto/Use_data_attributes)
+[데이터 속성 사용하기](https://developer.mozilla.org/ko/docs/Learn/HTML/Howto/Use_data_attributes)
