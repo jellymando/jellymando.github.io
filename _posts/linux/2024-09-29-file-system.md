@@ -1,5 +1,6 @@
 ---
 title: "[LINUX] 파일과 디렉터리"
+date: 2024-09-29 22:00:00
 categories: [Linux]
 tags: [linux]
 ---
