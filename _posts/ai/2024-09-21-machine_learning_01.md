@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "[머신러닝] 벡터와 행렬"
-sitemap: false
+categories: [AI]
+tags: [ai]
 ---
 
 {:toc .large-only}
