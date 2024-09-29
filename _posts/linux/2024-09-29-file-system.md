@@ -1,7 +1,7 @@
 ---
 title: "[LINUX] 파일과 디렉터리"
-categories: [Algorithm]
-tags: [algorithm]
+categories: [Linux]
+tags: [linux]
 ---
 
 {:toc .large-only}
