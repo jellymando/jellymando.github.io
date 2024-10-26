@@ -1,5 +1,5 @@
 ---
-title: "[JSP] 내장 객체"
+title: "[JSP] 내장 객체와 영역"
 categories: [JSP]
 tags: [jsp]
 ---
