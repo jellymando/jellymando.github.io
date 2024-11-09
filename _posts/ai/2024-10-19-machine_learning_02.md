@@ -27,14 +27,14 @@ tags: [ai]
   - <span><span style="margin-right:5px;">사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 확률:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_01.png" style="width:auto;height:38px;"></span>
   - <span><span style="margin-right:5px;">사건 A가 이미 관찰되었다는 조건에서 사건 B가 일어날 확률:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_02.png" style="width:auto;height:36.5px;"></span>
   - ex) 주사위를 던져서 나온 숫자가 4보다 크거나 같다는 것이 관찰되었다는 조건에서 짝수의 눈이 나올 확률 (2/3)
-  - 서로 독립적인 사건 A, B에 대한 조건부확률은 `P(A|B)=P(A)`, `P(B|A)=P(B)`
+  - 서로 독립적인 사건 A, B에 대한 조건부확률은 P(A\|B)=P(A), P(B\|A)=P(B)
 
 ### 선험확률과 후험확률
 
 - 사전 정보 없이 계산되는 확률을 선험확률(사전확률)이라고 함
   - P(A): A의 선험확률, P(B): B의 선험확률
 - 추가적인 정보를 얻은 후 계산되는 확률을 후험확률(사후확률)이라고 함
-  - `P(A|B)`: 사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 후험확률
+  - P(A\|B): 사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 후험확률
 
 ### 베이즈 정리
 
