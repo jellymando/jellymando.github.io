@@ -44,8 +44,8 @@ tags: [ai]
 
 ### 우도비에 의한 분류
 
-- 이진 분류 문제: 데이터 x가 주어졌을 때, 두 개의 클래스에 속할 확률 `p(C₁|x)`, `p(C₂|x)` 중 확률값이 큰 클래스로 할당
-- 판별 함수: `g(x) = p(C₁|x)-p(C₂|x)`
+- 이진 분류 문제: 데이터 x가 주어졌을 때, 두 개의 클래스에 속할 확률 p(C₁\|x)`, `p(C₂\|x) 중 확률값이 큰 클래스로 할당
+- 판별 함수: g(x) = p(C₁\|x)-p(C₂\|x)
 - 우도비: 각 클래스에서 x가 관찰될 확률밀도의 비율
 - 베이즈 분류기: 베이즈 정리로부터 유도된 결정경계를 이용한 분류
 
@@ -53,9 +53,9 @@ tags: [ai]
 <img src="../../assets/img/blog/2024-11-03-machine_learning3_05.png" style="display:block;margin:10px 0;">
 <img src="../../assets/img/blog/2024-11-03-machine_learning3_06.png" style="display:block;margin-bottom:20px">
 
-p(C₁)=p(C₂)인 경우(각각 전체 데이터의 50%씩 차지) 결정경계는 `p(x|C₁)=p(x|C₂)`가 되는 지점이 될 것이다.
+p(C₁)=p(C₂)인 경우(각각 전체 데이터의 50%씩 차지) 결정경계는 p(x\|C₁)=p(x\|C₂)가 되는 지점이 될 것이다.
 
-만약 p(C₁)≠p(C₂)인 경우 결정경계는 `p(x|C₁)=p(x|C₂)`를 만족하는 지점을 따라 왼쪽 또는 오른쪽으로 치우치게 될 것이다.
+만약 p(C₁)≠p(C₂)인 경우 결정경계는 p(x\|C₁)=p(x\|C₂)를 만족하는 지점을 따라 왼쪽 또는 오른쪽으로 치우치게 될 것이다.
 
 <img src="../../assets/img/blog/2024-11-03-machine_learning3_07.png" style="margin-top:5px">
 
