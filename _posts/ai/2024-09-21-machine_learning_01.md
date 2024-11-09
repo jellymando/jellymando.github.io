@@ -68,7 +68,7 @@ tags: [ai]
 
 ### 선형독립/선형종속
 
-<span style="margin-right:5px;">n개의 벡터집합의 선형결합이 0일 때, 즉</span><img src="/assets/img/blog/2024-09-21-machine_learning1_11.png" style="width:180px;height:auto;">일 때 이를 만족시키는 해가 <img src="/assets/img/blog/2024-09-21-machine_learning1_12.png" style="width:165px;height:auto;"> 밖에 존재하지 않으면 벡터집합은 선형독립이이고, 그렇지 않으면 선형종속이다.
+<span><span style="margin-right:5px;">n개의 벡터집합의 선형결합이 0일 때, 즉</span><img src="/assets/img/blog/2024-09-21-machine_learning1_11.png" style="width:180px;height:auto;">일 때 이를 만족시키는 해가 <img src="/assets/img/blog/2024-09-21-machine_learning1_12.png" style="width:165px;height:auto;"> 밖에 존재하지 않으면 벡터집합은 선형독립이이고, 그렇지 않으면 선형종속이다.</span>
 
 <img src="/assets/img/blog/2024-09-21-machine_learning1_13.png"/>
 
@@ -108,7 +108,7 @@ tags: [ai]
 - 행렬의 곱셈: 앞의 행렬 A의 행에 뒤의 행렬 B의 열을 곱한다.
   - <img src="/assets/img/blog/2024-09-21-machine_learning1_18.png" style="width:460px;height:auto;">
   - 앞의 행렬의 열의 수와 뒤의 행렬의 행의 수가 같아야 연산이 가능하다.
-  - 즉, 앞의 행렬 A의 크기가 m*r이고 뒤의 행렬 B의 크기가 r*n일 때 곱셈 연산이 가능하고, 이때 얻어지는 행렬의 크기는 m*n이다.
+  - 즉, 앞의 행렬 A의 크기가 m\*r이고 뒤의 행렬 B의 크기가 r\*n일 때 곱셈 연산이 가능하고, 이때 얻어지는 행렬의 크기는 m\*n이다.
   - A의 i번째 행벡터와 뒤의 B의 j번째 열벡터의 내적으로 볼 수 있다.
   - 교환법칙이 성립하지 않는다.(AB!=BA) 하지만 분배법칙(A(B+C)=AB+AC)과 결합법칙((AB)C=A(BC))은 성립한다.
 
@@ -126,7 +126,7 @@ tags: [ai]
 
 ### 정방행렬
 
-행렬 X의 행과 열의 수가 같을 때, 즉 **n*n** 크기의 행렬을 정방행렬이라고 한다.
+행렬 X의 행과 열의 수가 같을 때, 즉 **n\*n** 크기의 행렬을 정방행렬이라고 한다.
 
 아래는 실제 응용에 많이 사용되는 정방행렬들이다.
 
@@ -189,8 +189,8 @@ tags: [ai]
 
 ### 고유값과 고유벡터
 
-- <span style="display:flex;align-items:center;"><img src="/assets/img/blog/2024-09-21-machine_learning1_35.png">를 만족하는 0이 아닌 벡터 x가 존재하면, λ를 고유값, x를 λ에 대응하는 고유벡터라고 한다.</span>
-  - A: n*n 행렬, λ: 람다
+- <span><img src="/assets/img/blog/2024-09-21-machine_learning1_35.png">를 만족하는 0이 아닌 벡터 x가 존재하면, λ를 고유값, x를 λ에 대응하는 고유벡터라고 한다.</span>
+  - A: n\*n 행렬, λ: 람다
 - Ax와 x는 평행(같은 방향)이다.
 
 <img src="/assets/img/blog/2024-09-21-machine_learning1_36.png" style="max-width:300px;height:auto;margin-top:10px;">
@@ -203,8 +203,10 @@ tags: [ai]
 
 #### 고유값과 고유벡터 구하기
 
-<p style="display:flex;align-items:center;"><span style="margin-right:5px;">행렬 A가</span><img src="/assets/img/blog/2024-09-21-machine_learning1_39.png" style="width:85px;height:auto;margin-bottom:10px">로 주어졌을 때</p>
-<p style="display:flex;"><span style="margin-right:5px;">특성방정식</span><img src="/assets/img/blog/2024-09-21-machine_learning1_38.png" style="width:auto;height:19px;">에 따라 아래와 같이 구할 수 있다.</p>
+<span><span style="margin-right:5px;">행렬 A가</span><img src="/assets/img/blog/2024-09-21-machine_learning1_39.png" style="width:85px;height:auto;margin-bottom:10px"><span style="margin-right:5px;">로 주어졌을 때 특성방정식<span>
+<img src="/assets/img/blog/2024-09-21-machine_learning1_38.png" style="width:auto;height:19px;">
+<span>에 따라 아래와 같이 구할 수 있다.</span></span>
+
 <img src="/assets/img/blog/2024-09-21-machine_learning1_40.png" style="width:290px;height:auto;">
 
 > 참고사이트: https://www.youtube.com/watch?v=-L0y6nPQFcM&list=PLxz77rwoJPpWMrEaUpfGTG9P7X_faMYGi&index=8, https://angeloyeo.github.io/2019/07/17/eigen_vector.html
@@ -224,14 +226,13 @@ tags: [ai]
   - T(cu) = cT(u) : 스칼라 곱셈 연산 보존
   - (T: 선형변환)
 
-<img src="/assets/img/blog/2024-09-21-machine_learning1_42.png" style="max-width:600px;height:auto;margin-top:10px;">
+<img src="/assets/img/blog/2024-09-21-machine_learning1_42.png" style="width:100%;max-width:600px;height:auto;margin-top:10px;">
 
 > 참고사이트: https://www.youtube.com/watch?v=VS7BVNCYnDE, http://www.ktword.co.kr/test/view/view.php?no=4651, http://www.ktword.co.kr/test/view/view.php?no=5768
 
 #### 예시) 회전변환
 
 <img src="/assets/img/blog/2024-09-21-machine_learning1_44.jpg">
-
 
 ### 행렬변환
 
