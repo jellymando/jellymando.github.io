@@ -24,24 +24,24 @@ tags: [ai]
   - ex) 주사위를 던져서 짝수이면서 4보다 크거나 같은 숫자가 나올 확률 (1/3)
   - A와 B가 서로 배반사건인 경우는 P(A∩B)=0
 - 조건부확률 : 추가적인 조건이 주어졌을 때 사건이 일어날 확률
-  - <span style="display:flex;align-items:center;"><span style="margin-right:5px;">사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 확률:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_01.png" style="width:auto;height:38px;"></span>
-  - <span style="display:flex;align-items:center;"><span style="margin-right:5px;">사건 A가 이미 관찰되었다는 조건에서 사건 B가 일어날 확률:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_02.png" style="width:auto;height:36.5px;"></span>
+  - <span><span style="margin-right:5px;">사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 확률:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_01.png" style="width:auto;height:38px;"></span>
+  - <span><span style="margin-right:5px;">사건 A가 이미 관찰되었다는 조건에서 사건 B가 일어날 확률:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_02.png" style="width:auto;height:36.5px;"></span>
   - ex) 주사위를 던져서 나온 숫자가 4보다 크거나 같다는 것이 관찰되었다는 조건에서 짝수의 눈이 나올 확률 (2/3)
-  - 서로 독립적인 사건 A, B에 대한 조건부확률은 P(A|B)=P(A), P(B|A)=P(B)
+  - 서로 독립적인 사건 A, B에 대한 조건부확률은 `P(A|B)=P(A)`, `P(B|A)=P(B)`
 
 ### 선험확률과 후험확률
 
 - 사전 정보 없이 계산되는 확률을 선험확률(사전확률)이라고 함
   - P(A): A의 선험확률, P(B): B의 선험확률
 - 추가적인 정보를 얻은 후 계산되는 확률을 후험확률(사후확률)이라고 함
-  - P(A|B): 사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 후험확률
+  - `P(A|B)`: 사건 B가 이미 관찰되었다는 조건에서 사건 A가 일어날 후험확률
 
 ### 베이즈 정리
 
 - 선험확률을 바탕으로 후험확률을 얻는 공식
-- <span style="display:flex;align-items:center;"><span style="margin-right:5px;">조건부확률의 식을 정리하면:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_03.png" style="width:auto;height:19px;"></span>
-- <span style="display:flex;align-items:center;"><span style="margin-right:5px;">이를 다시 정리하면:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_04.png" style="width:auto;height:38px;"></span>
-- <span style="display:flex;align-items:center;"><span>사전확률 P(A)가 서로 독립적이고(</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_05.png" style="width:auto;height:19px;"><span>) 완전하다면 (</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_06.png" style="width:auto;height:19px;"><span>) 아래와 같이 정리할 수 있다.</span></span>
+- <span><span style="margin-right:5px;">조건부확률의 식을 정리하면:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_03.png" style="width:auto;height:19px;"></span>
+- <span><span style="margin-right:5px;">이를 다시 정리하면:</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_04.png" style="width:auto;height:38px;"></span>
+- <span><span>사전확률 P(A)가 서로 독립적이고(</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_05.png" style="width:auto;height:19px;"><span>) 완전하다면 (</span><img src="../../assets/img/blog/2024-10-19-machine_learning2_06.png" style="width:auto;height:19px;"><span>) 아래와 같이 정리할 수 있다.</span></span>
   - <img src="../../assets/img/blog/2024-10-19-machine_learning2_07.png" style="width:auto;height:19px;">
 - 이를 베이즈 정리에 확장하면 아래와 같다.
   - <img src="../../assets/img/blog/2024-10-19-machine_learning2_08.png" style="width:auto;height:38px;">
