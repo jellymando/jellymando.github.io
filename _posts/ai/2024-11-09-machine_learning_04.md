@@ -88,7 +88,7 @@ tags: [ai]
 - P(y=1\|x)>0.5 → 𝑥∈𝐶₂
 - <img src="../../assets/img/blog/2024-11-09-machine_learning4_16.png" style="width:auto;height:38px;">
 
-### 파라미터 m과 b 값에 따른 로지스틱 함수의 형태
+#### 파라미터 m과 b 값에 따른 로지스틱 함수의 형태
 
 <img src="../../assets/img/blog/2024-11-09-machine_learning4_17.png">
 
