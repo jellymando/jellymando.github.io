@@ -1,5 +1,5 @@
 ---
-title: "[머신러닝] 지도학습: 군집화"
+title: "[머신러닝] 비지도학습: 군집화"
 categories: [AI]
 tags: [ai]
 ---
@@ -12,9 +12,9 @@ tags: [ai]
 - 입력 데이터로부터 추출된 특징 공간에서 특징값의 유사성에 따라 비슷한 데이터들끼리 묶음
 - 대표적인 군집화 알고리즘으로 K-평균 군집화, 계층적 군집화가 있음
 
-<img src="../../assets/img/blog/2024-11-10-machine_learning5_01.png" style="margin-top:5px;">
+<img src="../../assets/img/blog/2024-11-10-machine_learning5_03.png" style="margin-top:5px;">
 
-<img src="../../assets/img/blog/2024-11-10-machine_learning5_03.png" style="margin-top:10px;">
+<img src="../../assets/img/blog/2024-11-10-machine_learning5_01.png" style="margin-top:5px;">
 
 ### 분류와의 차이
 
