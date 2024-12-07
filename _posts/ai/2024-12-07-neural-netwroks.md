@@ -80,7 +80,7 @@ tags: [ai]
 
 <img src="../../assets/img/blog/2024-12-07-neural-networks_10.png" style="margin-top:5px">
 
-### 다층 퍼셉트론의 학습
+### MLP의 학습
 
 <img src="../../assets/img/blog/2024-12-07-neural-networks_11.png" style="margin-bottom:5px">
 
@@ -97,7 +97,7 @@ tags: [ai]
 
 <img src="../../assets/img/blog/2024-12-07-neural-networks_12.png" style="margin-top:5px">
 
-### 다층 퍼셉트론 학습의 고려사항
+### MLP 학습의 고려사항
 
 #### 지역 극소의 문제
 
@@ -126,7 +126,7 @@ tags: [ai]
 - 실제 문제에서 학습의 속도와 찾아지는 해의 성능을 좌우함
 - 입력 데이터 차원과 데이터의 개수 등을 고려하여 조정하는 것이 좋다.
 
-### 다층 퍼셉트론의 학습 전략
+### MLP의 학습 전략
 
 #### 학습 모드의 설정
 
