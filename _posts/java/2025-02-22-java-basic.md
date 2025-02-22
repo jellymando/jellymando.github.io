@@ -23,7 +23,7 @@ tags: [java]
 
 <img src="../../assets/img/blog/2025-02-22-java-basic_01.png" style="margin-top:10px;">
 
-### Java 플랫폼의 구성
+## Java 플랫폼의 구성
 
 - Java VM
   - Java 프로그램의 실행 환경을 제공하는 가상 기계
@@ -45,7 +45,7 @@ tags: [java]
   - Java 소스를 컴파일한 결과물
   - Java 플랫폼의 **Java VM에서 실행 가능**한 코드
 
-## 프로젝트 배포하기
+## Java 프로젝트 배포하기
 
 - 실행에 필요한 클래스 파일들을 묶어서 .jar 파일을 만들 수 있음
 - 이클립스에서 프로젝트를 마우스 오른쪽 클릭한 후 'Export..' 선택
