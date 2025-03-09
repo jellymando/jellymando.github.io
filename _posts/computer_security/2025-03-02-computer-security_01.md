@@ -1,12 +1,12 @@
 ---
-title: "[컴퓨터 보안] 컴퓨터 보안의 개념과 암호"
+title: "[컴퓨터 보안] 컴퓨터 보안과 암호, 블록 암호화 알고리즘"
 categories: [컴퓨터보안]
 tags: [보안]
 ---
 
 {:toc .large-only}
 
-## 컴퓨터 보안의 개념
+## 컴퓨터 보안
 
 - 컴퓨팅 환경이 관여된 모든 상황에 대한 정보보호
 - 컴퓨팅 환경에 저장되거나 처리되는 정보를 다양한 위협으로부터 보호하기 위한 정책 및 기법
@@ -69,3 +69,57 @@ tags: [보안]
 - 대표적인 알고리즘: RSA, ECC, ElGamal 등
 
 <img src="../../assets/img/blog/2025-03-02-computer-security_03.png" style="margin-top:10px;">
+
+## 블록 암호화 알고리즘
+
+### ECB
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_04.png" style="margin-bottom:10px;">
+
+- 전자 코드 북(Electronic Code Book) 모드
+- 평문을 일정한 블록 단위로 나누어 암호화하는 방식
+- 장점: 암호화/복호화 시 병렬 처리가 가능하다.
+- 단점: 동일한 평문 블록은 동일한 암호문을 생성하여 패턴 분석이 가능하므로 보안에 취약하다.
+
+### CBC
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_05.png" style="margin-bottom:10px;">
+
+- 암호 블록 연결(Cipher Block Chaining) 모드
+- 첫 블록은 IV(초기화 벡터)로 암호화하고, 이후 블록은 이전 암호문 결과와 XOR 연산을 순차적으로 반복하는 방식
+- 장점: 암호화 시 한 블록이 손상되면 그 이후의 블록들에 모두 오류가 발생되므로 데이터 무결성을 검증할 수 있다.
+- 단점: 암호화 시 이전 암호화 결과가 다음 암호화에 영향을 주므로 병렬 처리를 할 수 없다. (복호화 시에는 병렬 처리 가능)
+
+### CFB
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_06.png" style="margin-bottom:10px;">
+
+- 암호 피드백(Cipher FeedBack) 모드
+- CBC의 변형으로, 블록 암호를 자기 동기 스트림 암호로 변환하는 방식
+- 장점 : 암호화/복호화 과정에 암호화 함수만 사용하므로 복호화 함수가 필요 없음
+- 단점 : CBC와 마찬가지로 암호화 시 병렬 처리를 할 수 없다.
+
+### OFB
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_07.png" style="margin-bottom:10px;">
+
+- 출력 피드백(Output FeedBack) 모드
+- 주로 영상이나 음성 데이터와 같은 디지털화된 아날로그 신호에 사용한다.
+- 장점 : 암호화 시 블록이 손상되더라도 이후의 블록에는 영향을 미치지 않는다. 복호화 함수가 필요 없다.
+- 단점 : 암호화 시 병렬 처리를 할 수 없다. 공격자가 암호문 블록을 비트 반전시키면, 대응하는 평문 블록이 비트 반전된다.(비트 플리핑 공격)
+
+### CTR
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_08.png" style="margin-bottom:10px;">
+
+- 카운터(Counter) 모드
+- 암호화 시 증가하는 카운터 값과 시작값 nonce를 암호화하여 키 스트림을 생성하고, 생성된 키 스트림과 평문 블록을 XOR 연산하여 암호문을 만드는 방식
+- 장점 : 암호화/복호화 시 병렬 처리가 가능하다. 암호화 시 블록이 손상되더라도 이후의 블록에는 영향을 미치지 않는다. 복호화 함수가 필요 없다.
+- 단점 : nonce나 카운터 값을 재사용하면 보안성이 떨어질 수 있다. 공격자가 암호문 블록을 비트 반전시키면, 대응하는 평문 블록이 비트 반전된다.(비트 플리핑 공격)
+
+### 참고사이트
+
+[블록 암호화 모드(ECB, CBC, CFB, OFB, CTR)](https://blog.skby.net/%EB%B8%94%EB%A1%9D-%EC%95%94%ED%98%B8%ED%99%94-%EB%AA%A8%EB%93%9Cecb-cbc-cfb-ofb-ctr/)<br/>
+[정보보안 - 블록 암호화 기법의 종류와 특징 : ESB, CBC, CFB, OFB, CTR](https://ohaengsa.tistory.com/entry/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88-%EB%B8%94%EB%A1%9D-%EC%95%94%ED%98%B8%ED%99%94-%EA%B8%B0%EB%B2%95%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95)<br/>
+[블록 암호 운용 방식](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D)
+[블록 암호의 운영 모드](https://blog.naver.com/wnrjsxo/221713141818)
