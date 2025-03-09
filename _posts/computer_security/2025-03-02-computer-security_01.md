@@ -121,7 +121,7 @@ tags: [보안]
 
 [블록 암호화 모드(ECB, CBC, CFB, OFB, CTR)](https://blog.skby.net/%EB%B8%94%EB%A1%9D-%EC%95%94%ED%98%B8%ED%99%94-%EB%AA%A8%EB%93%9Cecb-cbc-cfb-ofb-ctr/)<br/>
 [정보보안 - 블록 암호화 기법의 종류와 특징 : ESB, CBC, CFB, OFB, CTR](https://ohaengsa.tistory.com/entry/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88-%EB%B8%94%EB%A1%9D-%EC%95%94%ED%98%B8%ED%99%94-%EA%B8%B0%EB%B2%95%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95)<br/>
-[블록 암호 운용 방식](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D)
+[블록 암호 운용 방식](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D)<br/>
 [블록 암호의 운영 모드](https://blog.naver.com/wnrjsxo/221713141818)
 
 ## 전자봉투의 암호화/복호화
