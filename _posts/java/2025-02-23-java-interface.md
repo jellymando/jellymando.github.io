@@ -1,6 +1,5 @@
 ---
 title: "[JAVA] 인터페이스와 다형성, 익명/중첩 클래스"
-date: 2025-02-23 20:00:00 +0900
 categories: [JAVA]
 tags: [java]
 ---
