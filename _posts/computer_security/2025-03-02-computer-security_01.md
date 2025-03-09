@@ -1,5 +1,5 @@
 ---
-title: "[컴퓨터 보안] 컴퓨터 보안과 암호, 블록 암호화 알고리즘"
+title: "[컴퓨터 보안] 컴퓨터 보안과 암호, 대칭키/공개키 방식"
 categories: [컴퓨터보안]
 tags: [보안]
 ---
@@ -123,3 +123,30 @@ tags: [보안]
 [정보보안 - 블록 암호화 기법의 종류와 특징 : ESB, CBC, CFB, OFB, CTR](https://ohaengsa.tistory.com/entry/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88-%EB%B8%94%EB%A1%9D-%EC%95%94%ED%98%B8%ED%99%94-%EA%B8%B0%EB%B2%95%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95)<br/>
 [블록 암호 운용 방식](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D)
 [블록 암호의 운영 모드](https://blog.naver.com/wnrjsxo/221713141818)
+
+## 전자봉투의 암호화/복호화
+
+### 암호화 과정
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_09.png" style="margin-bottom:10px;">
+
+1. 철수의 메시지 평문에 해시 함수를 적용하여 해시값(메시지 다이제스트)을 생성함
+2. 이 해시값을 철수의 사설키로 암호화하여 전자서명을 생성함
+3. 메시지와 전자서명, 철수의 공개키가 들어있는 인증서를 대칭키(비밀키)로 암호화
+4. 이 대칭키를 영희의 공개키로 암호화하여 전자봉투를 생성함
+5. 3번의 암호문과 4번의 전자봉투를 영희에게 전송함
+
+### 복호화 과정
+
+<img src="../../assets/img/blog/2025-03-02-computer-security_10.png" style="margin-bottom:10px;">
+
+1. 영희는 암호문과 전자봉투를 수신
+2. 전달받은 전자봉투를 영희의 사설키로 복호화하여 대칭키(비밀키)를 획득함
+3. 획득한 대칭키로 암호문을 복호화하여 메시지, 전자서명, 철수의 인증서를 획득함
+4. 철수의 인증서에 있는 공개키를 통해 전자서명을 복호화하여 해시값을 획득함
+5. 메시지에서 생성한 해시값과 3번의 해시값을 비교하여 메시지 위변조 여부를 검증함
+
+### 참고사이트
+
+[전자봉투(Digital Envelope)](https://m.blog.naver.com/sdug12051205/221575078655)<br/>
+[전자봉투 (Digital Envelope)](https://blog.skby.net/%EC%A0%84%EC%9E%90%EB%B4%89%ED%88%AC-digital-envelope/)
