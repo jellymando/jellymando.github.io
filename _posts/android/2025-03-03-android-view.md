@@ -150,3 +150,90 @@ tags: [android]
   ...
 />
 ```
+
+## View 위젯 종류
+
+### TextView
+
+- 문자열을 화면에 출력하는 위젯
+
+| 속성       | 설명                                                                                                                                                                    |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| text       | - text 속성에 출력할 문자열을 지정하여 사용<br/>- strings.xml에 id와 함께 문자열을 정의하고 참조하여 사용 가능                                                          |
+| textSize   | - 폰트 크기를 지정(실수형)<br/>- sp, dp, px, in, nm 등의 단위를 지정해야 함                                                                                             |
+| textColor  | - 텍스트 색상을 지정<br/>- 개발자가 별다른 속성값을 지정하지 않으면 안드로이드 기본색인 불투명한 밝은 회색으로 적용됨                                                   |
+| textStyle  | - 텍스트 스타일을 지정<br/>- normal, bold, italic 중 하나를 지정하거나 `\|`로 묶어 두 개 이상 지정할 수 있음 (`\|` 앞뒤에 공백 없이 붙여서 작성)                        |
+| typeface   | - 폰트(글꼴)을 지정<br/>- normal, sans, serif, monospace 중 하나의 글꼴만 지정할 수 있음                                                                                |
+| singleLine | - 문자열을 위젯의 폭에 맞춰 한 줄에 출력하는 속성<br/>- 위젯의 폭에 맞는 문자열만큼만 출력하고, 나머지 부분은 `...`로 생략되어 출력<br/>- 기본값은 false (여러 줄 출력) |
+
+```xml
+<!-- text 속성에 출력할 문자열을 지정하여 사용 -->
+<TextView
+  ...
+  android:text="New Text"
+/>
+
+<!-- strings.xml에 id와 함께 문자열을 정의하고 참조하여 사용 -->
+<resources>
+  <string name="hello_world">Hello world!</string>
+</resources>
+
+<TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="@string/hello_world"
+  android:textSize="30dp"
+  android:textColor="#ff405aff"
+  android:textStyle="bold|italic"
+  android:typeface="serif"
+  android:singleLine="true"
+/>
+```
+
+### ImageView
+
+- 화면에 그림을 보여주는 위젯
+- 화면의 그림은 아이콘으로 활용할 수도 있고 일반적인 비트맵으로 출력할 수도 있음
+- 이미지 파일을 res 폴더에 복사해 놓으면 AAPT가 컴파일 전에 res 폴더의 이미지 파일명 ID를 자동으로 R.java에 정의해 줌
+
+| 속성               | 설명                                                                                                                                                                                                                          |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| src                | - 출력할 이미지를 지정<br/>- 일반적으로 리소스 폴더에 이미지를 복사해 놓고 ID를 지정하여 사용<br/>- 외부 이미지나 색상 코드를 지정할 수도 있음                                                                                |
+| maxWidth/maxHeight | - 이미지의 가로/세로 크기의 최대값을 지정                                                                                                                                                                                     |
+| minWidth/minHeight | - 이미지의 가로/세로 크기의 최소값을 지정                                                                                                                                                                                     |
+| adjustViewBounds   | - 이미지의 종횡비를 맞추기 위해 ImageView의 크기에 대한 한계값을 지정<br/>- true면 종횡비를 유지하면서 maxWidth, maxHeight 속성값에 따라 출력되고, false면 이미지의 가로/세로 모두 화면 전체를 채우게 됨<br/>- 기본값은 false |
+| cropToPadding      | - 레이아웃 내부에 적용된 padding 속성에 따라 이미지를 자를지 여부를 지정<br/>- true면 padding과 겹치는 이미지 부분은 잘려서 출력되고, false면 padding 속성을 무시하고 이미지 출력<br/>- 기본값은 false                        |
+| scaleType          | - 이미지의 크기를 조정하는 기준을 지정<br/>- matrix, fitXY, center, centerCrop 등 설정 가능<br/>- fitXY: 이미지 가로/세로가 화면 크기에 맞추어 출력됨<br/>- matrix: 이미지가 좌측 상단을 기준으로 출력됨                      |
+
+<img src="../../assets/img/blog/2025-03-03-android-view_04.png" style="margin:10px 0;">
+
+```xml
+<!-- adjustViewBounds가 true가 아니므로 layout_height 속성의 우선순위가 maxHeight보다 높아 세로 크기가 100dp로 출력됨 -->
+<ImageView
+  android:layout_width="match_parent"
+  android:layout_height="100dp"
+  android:src="@drawable/banana"
+  android:maxHeight="200pt"
+/>
+
+<!-- adjustViewBounds가 true이므로 layout_width, layout_height보다 maxWidth, maxHeight의 우선순위가 높아 가로/세로가 50dp로 출력됨 -->
+<ImageView
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:src="@drawable/banana"
+  android:maxWidth="50pt"
+  android:maxHeight="50pt"
+  android:adjustViewBounds="true"
+/>
+
+<!-- adjustViewBounds가 true이고 maxWidth, maxHeight 속성이 없으므로 가로/세로 종횡비를 유지하면서 부모 레이아웃의 크기를 채우는 형태로 출력됨 -->
+<ImageView
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:src="@drawable/banana"
+  android:background="#cccccc"
+  android:adjustViewBounds="true"
+/>
+```
+
+<img src="../../assets/img/blog/2025-03-03-android-view_05.png" style="margin-top:10px;">
