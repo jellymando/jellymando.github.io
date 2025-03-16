@@ -151,7 +151,7 @@ tags: [android]
 />
 ```
 
-## View 위젯 종류
+## View 위젯
 
 ### TextView
 
@@ -199,8 +199,8 @@ tags: [android]
 | 속성               | 설명                                                                                                                                                                                                                          |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | src                | - 출력할 이미지를 지정<br/>- 일반적으로 리소스 폴더에 이미지를 복사해 놓고 ID를 지정하여 사용<br/>- 외부 이미지나 색상 코드를 지정할 수도 있음                                                                                |
-| maxWidth/maxHeight | - 이미지의 가로/세로 크기의 최대값을 지정                                                                                                                                                                                     |
-| minWidth/minHeight | - 이미지의 가로/세로 크기의 최소값을 지정                                                                                                                                                                                     |
+| maxWidth/maxHeight | 이미지의 가로/세로 크기의 최대값을 지정                                                                                                                                                                                       |
+| minWidth/minHeight | 이미지의 가로/세로 크기의 최소값을 지정                                                                                                                                                                                       |
 | adjustViewBounds   | - 이미지의 종횡비를 맞추기 위해 ImageView의 크기에 대한 한계값을 지정<br/>- true면 종횡비를 유지하면서 maxWidth, maxHeight 속성값에 따라 출력되고, false면 이미지의 가로/세로 모두 화면 전체를 채우게 됨<br/>- 기본값은 false |
 | cropToPadding      | - 레이아웃 내부에 적용된 padding 속성에 따라 이미지를 자를지 여부를 지정<br/>- true면 padding과 겹치는 이미지 부분은 잘려서 출력되고, false면 padding 속성을 무시하고 이미지 출력<br/>- 기본값은 false                        |
 | scaleType          | - 이미지의 크기를 조정하는 기준을 지정<br/>- matrix, fitXY, center, centerCrop 등 설정 가능<br/>- fitXY: 이미지 가로/세로가 화면 크기에 맞추어 출력됨<br/>- matrix: 이미지가 좌측 상단을 기준으로 출력됨                      |
@@ -237,3 +237,217 @@ tags: [android]
 ```
 
 <img src="../../assets/img/blog/2025-03-03-android-view_05.png" style="margin-top:10px;">
+
+### Button
+
+- 사용자로부터 선택 이벤트를 수집할 수 있는 인터페이스를 제공하는 위젯
+- 터치 동작을 통해 선택 명령을 내릴 수 있음
+
+| 속성        | 설명                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------- |
+| text        | 버튼 내부에 출력되는 문자열                                                                                               |
+| textAllCaps | - 버튼 내부에 출력되는 문자열을 대문자로 출력할 지 여부<br/>- 기본값은 true                                               |
+| onClick     | - 버튼의 클릭 이벤트가 발생할 때 수행되는 동작을 연결하는 속성<br/>- 수행할 함수는 MainActivity.java의 클래스 내부에 정의 |
+
+```java
+// MainActivity.java
+public class MainActivity extends AppCompatActivity {
+  ...
+  public void onButtonClick(View view) {
+    TextView text1 = (TextView) findViewById(R.id.text1);
+    switch(view.getId()) {
+      case R.id.button1:
+        text1.setText("hello");
+        break
+      case R.id.button2:
+        text1.setText("world");
+        break;
+    }
+  }
+}
+```
+
+```xml
+<Button
+  android:id="@+id/button1"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="hello"
+  android:onClick="onButtonClick"
+/>
+<Button
+  android:id="@+id/button2"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="world"
+  android:onClick="onButtonClick"
+/>
+<TextView
+  android:id="@+id/text1"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+/>
+```
+
+<img src="../../assets/img/blog/2025-03-03-android-view_06.png" style="margin-top:10px;">
+
+### EditText
+
+- 사용자로부터 문자열을 입력받을 수 있는 인터페이스를 제공하는 위젯
+- TextView의 서브클래스로, TextView의 모든 속성을 사용할 수 있음
+
+| 속성    | 설명                                                                                                                         |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| text    | EditText가 처음 화면에 출력될 때 빈칸에 기본적으로 들어갈 문자열을 지정                                                      |
+| getText | - EditText에 입력한 문자열을 JAVA 코드에서 활용하기 위해 참조하는 메서드<br/>- toString 메서드를 통해 문자열로 변환하여 사용 |
+
+```java
+// MainActivity.java
+public class MainActivity extends AppCompatActivity {
+  ...
+  public void onButtonClick(View view) {
+    EditText edit = (EditText) findViewById(R.id.edit);
+    String str = edit.getText().toString();
+    Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
+  }
+}
+```
+
+```xml
+<EditText
+  android:id="@+id/edit"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Input Please"
+/>
+<Button
+  android:id="@+id/button"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Button"
+  android:onClick="onButtonClick"
+/>
+```
+
+### CheckBox
+
+- 사용자가 문자열 리스트에서 다수의 구성요소를 선택하기 위한 인터페이스를 제공하는 위젯
+
+| 속성      | 설명                                                         |
+| --------- | ------------------------------------------------------------ |
+| text      | CheckBox에 들어갈 문자열을 지정                              |
+| isChecked | 체크된 경우 true, 체크되지 않은 경우 false를 반환하는 메서드 |
+
+```xml
+<CheckBox
+  android:id="@+id/checkbox1"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="apple"
+/>
+<CheckBox
+  android:id="@+id/checkbox2"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="banana"
+/>
+<CheckBox
+  android:id="@+id/checkbox3"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="orange"
+/>
+```
+
+<img src="../../assets/img/blog/2025-03-03-android-view_07.png" style="margin-top:10px;">
+
+### RadioButton
+
+- 사용자가 문자열 리스트에서 하나의 구성요소를 선택하기 위한 인터페이스를 제공하는 위젯
+- RadioGroup 태그로 선택 범위를 지정함
+
+| 속성      | 설명                                                         |
+| --------- | ------------------------------------------------------------ |
+| text      | RadioButton에 들어갈 문자열을 지정                           |
+| isChecked | 체크된 경우 true, 체크되지 않은 경우 false를 반환하는 메서드 |
+
+```xml
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertival"
+>
+  <RadioButton
+    android:id="@+id/radio1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="apple"
+  />
+  <RadioButton
+    android:id="@+id/radio2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="banana"
+  />
+  <RadioButton
+    android:id="@+id/radio3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="orange"
+  />
+</RadioGroup>
+```
+
+### Switch
+
+- On/Off를 전환하는 토글 형태의 인터페이스를 제공하는 위젯
+- 사용자가 앱의 특정 기능을 켜고 끄는 용도와 특정 상황에 대한 동의를 수집하는 목적으로 활용됨
+
+| 속성      | 설명                                                         |
+| --------- | ------------------------------------------------------------ |
+| text      | Switch에 들어갈 문자열을 지정                                |
+| isChecked | 체크된 경우 true, 체크되지 않은 경우 false를 반환하는 메서드 |
+
+```java
+// MainActivity.java
+public class MainActivity extends AppCompatActivity {
+  ...
+  public void onButtonClick(View view) {
+    Switch switch = (Switch) findViewById(R.id.switch);
+    TextView text = (TextView) findViewById(R.id.text);
+    switch(view.getId()) {
+      case R.id.button:
+        if(switch.isChecked()) {
+          text.setText("Switch On");
+        } else {
+          text.setText("Switch Off");
+        }
+        break;
+    }
+  }
+}
+```
+
+```xml
+<Switch
+    xmlns:andrioid="http://schemas.android.com/apk/res/android"
+    android:id="@+id/switch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="approval"
+/>
+<Button
+  android:id="@+id/button"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Button"
+  android:onClick="onButtonClick"
+/>
+<TextView
+  android:id="@+id/text"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+/>
+```
+
+<img src="../../assets/img/blog/2025-03-03-android-view_08.png" style="margin-top:10px;">
