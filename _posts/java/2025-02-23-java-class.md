@@ -67,7 +67,7 @@ class PrintStream {
 p.setName('홍길동').setAge(30).setAddress("서울");
 ```
 
-### stacic
+### static
 
 #### static 필드
 
