@@ -1,6 +1,6 @@
 ---
 title: "[JAVA] 클래스와 상속"
-date: 2025-02-23 20:00:00 +0900
+date: 2025-02-23T20:00:00+09:00
 categories: [JAVA]
 tags: [java]
 ---

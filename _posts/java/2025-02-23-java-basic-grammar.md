@@ -1,6 +1,6 @@
 ---
 title: "[JAVA] Java 기본 문법"
-date: 2025-02-23 14:00:00 +0900
+date: 2025-02-23T14:00:00+09:00
 categories: [JAVA]
 tags: [java]
 ---
