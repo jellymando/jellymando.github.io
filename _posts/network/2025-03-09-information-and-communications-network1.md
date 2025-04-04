@@ -1,7 +1,7 @@
 ---
 title: "[정보통신망] 컴퓨터 통신"
-categories: [정보통신망]
-tags: [정보통신망]
+categories: [Network]
+tags: [network]
 ---
 
 {:toc .large-only}
