@@ -1,6 +1,6 @@
 ---
 title: "[url-loader] 이미지 파일 base64 URL로 변환하기"
-categories: [Webpack]
+categories: [FE Build]
 tags: [webpack, url-loader]
 ---
 
@@ -32,13 +32,13 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
-    ],
-  },
+              limit: 8192
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
 ```
 

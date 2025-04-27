@@ -1,6 +1,6 @@
 ---
 title: "public 경로의 css 파일 번들링하기"
-categories: [Webpack]
+categories: [FE Build]
 tags: [webpack]
 ---
 
@@ -18,8 +18,8 @@ entry의 프로퍼티 값을 배열로 설정할 수 있다는 걸 몰랐었다.
 module.exports = {
   //...
   entry: {
-    main: ["./public/css/main.css", "./public/js/index.js"],
-  },
+    main: ["./public/css/main.css", "./public/js/index.js"]
+  }
 };
 ```
 

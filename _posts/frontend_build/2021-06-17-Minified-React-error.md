@@ -1,6 +1,6 @@
 ---
 title: "[Error] Minified React error #321"
-categories: [Webpack]
+categories: [FE Build]
 tags: [webpack, error]
 ---
 

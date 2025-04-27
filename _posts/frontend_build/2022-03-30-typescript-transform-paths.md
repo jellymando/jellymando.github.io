@@ -1,6 +1,6 @@
 ---
 title: "TypeScript declarations 파일 절대경로를 상대경로로 변환하기"
-categories: [Webpack]
+categories: [FE Build]
 tags: [webpack, 절대경로]
 ---
 

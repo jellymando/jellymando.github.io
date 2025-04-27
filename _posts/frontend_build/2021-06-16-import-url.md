@@ -1,7 +1,7 @@
 ---
 title: "모듈의 절대 경로 설정하기"
-categories: [Webpack]
-tags: [webpack, 절대경로]
+categories: [FE Build]
+tags: [fe build, 절대경로]
 ---
 
 {:toc .large-only}

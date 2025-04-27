@@ -1,6 +1,6 @@
 ---
 title: "MiniCssExtractPlugin - css 파일 따로 분리하기"
-categories: [Webpack]
+categories: [FE Build]
 tags: [webpack]
 ---
 
@@ -31,10 +31,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-    ],
-  },
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      }
+    ]
+  }
 };
 ```
 
