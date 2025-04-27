@@ -1,5 +1,5 @@
 ---
-title: '[object-fit] 가로세로 비율 유지하면서 사이즈 조정하기'
+title: "[object-fit] 가로세로 비율 유지하면서 사이즈 조정하기"
 categories: [CSS]
 tags: [css]
 ---
@@ -43,7 +43,7 @@ tags: [css]
 
 콘텐츠의 기본 크기와 가로세로 비율을 유지하면서 부모 요소 가운데에 위치시킨다.
 
-<img src="/assets/img/blog/2022-03-08-object-fit_01.png" style="margin: 30px 0">
+<img src="../../assets/img/blog/css/2022-03-08-object-fit_01.png" style="margin: 30px 0">
 
 #### object-fit: cover
 
@@ -51,7 +51,7 @@ tags: [css]
 
 부모와 가로세로 비율이 일치하지 않아서 밖으로 삐져나온 부분은 잘린다.
 
-<img src="/assets/img/blog/2022-03-08-object-fit_02.png" style="margin: 30px 0">
+<img src="../../assets/img/blog/css/2022-03-08-object-fit_02.png" style="margin: 30px 0">
 
 #### object-fit: scale-down
 

@@ -12,7 +12,7 @@ tags: [typescript]
 - 컴파일 언어
 - 정적 타입 언어
 
-<img src="/assets/img/blog/2021-09-15-typescript_01.png">
+<img src="../../assets/img/blog/typescript/2021-09-15-typescript_01.png">
 
 ## TypeScript의 장점
 

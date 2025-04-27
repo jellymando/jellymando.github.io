@@ -16,7 +16,7 @@ tags: [git]
 
 2개의 커밋 A와 B가 있을 때, A의 히스토리가 B의 히스토리에 전부 포함되어 있는 경우, 2개의 커밋은 **fast-forward** 관계이다.
 
-<img src="/assets/img/blog/2022-04-06-merge-message_01.png" style="margin-bottom:30px;">
+<img src="../../assets/img/blog/git/2022-04-06-merge-message_01.png" style="margin-bottom:30px;">
 
 위 그림에서 bugfix는 master 브랜치에서 분기한 브랜치다.
 
@@ -26,7 +26,7 @@ bugfix 브랜치를 master 브랜치로 병합할 때, master 브랜치의 상�
 
 이렇게 fast-forward merge인 경우에는 머지 커밋 생성되지 않는다.
 
-<img src="/assets/img/blog/2022-04-06-merge-message_02.png">
+<img src="../../assets/img/blog/git/2022-04-06-merge-message_02.png">
 
 ## non fast-forward merge
 

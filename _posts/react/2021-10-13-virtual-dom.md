@@ -10,7 +10,7 @@ tags: [react, virtual dom]
 
 Virtual DOM에 대해 이해하려면 DOM부터 알아봐야 하겠다.
 
-<img src="/assets/img/blog/2021-10-13-DOM_01.jpeg" style="margin:30px 0">
+<img src="../../assets/img/blog/react/2021-10-13-DOM_01.jpeg" style="margin:30px 0">
 
 DOM은 Document Object Model의 약자로, <u>객체로 표현되는 문서(HTML 등) 구조</u>이다.
 
@@ -22,7 +22,7 @@ HTML은 정적이지만 자바스크립트를 이용하여 동적으로 변경�
 
 예를 들면, `document.getElementById`, `document.getElementsByTagName`, `document.querySelector` 등이 있다.
 
-<img src="/assets/img/blog/2021-10-13-DOM_02.jpeg" style="margin:30px 0">
+<img src="../../assets/img/blog/react/2021-10-13-DOM_02.jpeg" style="margin:30px 0">
 
 DOM을 조작할 때마다 웹 페이지를 새로 그리면 성능이 저하될 수 있다.
 

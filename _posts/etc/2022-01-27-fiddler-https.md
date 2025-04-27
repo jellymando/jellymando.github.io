@@ -1,5 +1,5 @@
 ---
-title: 'Fiddler 켜면 https 페이지 안열리는 이슈'
+title: "Fiddler 켜면 https 페이지 안열리는 이슈"
 categories: [기타]
 tags: [fiddler]
 ---
@@ -10,7 +10,7 @@ tags: [fiddler]
 
 Fiddler를 켜면 https 페이지가 아래와 같이 연결되지 않았다.
 
-<img src="/assets/img/blog/2022-01-27-fiddler-https_01.png">
+<img src="../../assets/img/blog/etc/2022-01-27-fiddler-https_01.png">
 
 ## 해결
 
@@ -18,7 +18,7 @@ Fiddler에서 https 인증서를 새로 발급받는다.
 
 (Tools - Options - HTTPS - Actions - Reset All Certificates)
 
-<img src="/assets/img/blog/2022-01-27-fiddler-https_02.png">
+<img src="../../assets/img/blog/etc/2022-01-27-fiddler-https_02.png">
 
 ## 참고사이트
 

@@ -1,12 +1,12 @@
 ---
-title: '자바스크립트 함수의 구성, 매개변수(parameter)와 인수(argument)'
+title: "자바스크립트 함수의 구성, 매개변수(parameter)와 인수(argument)"
 categories: [Javascript]
 tags: [javascript, parameter, argument]
 ---
 
 {:toc .large-only}
 
-<img src="/assets/img/blog/2022-04-04-javascript-parameter-argument.png">
+<img src="../../assets/img/blog/javascript/2022-04-04-javascript-parameter-argument.png">
 
 ### 함수 이름
 
@@ -33,12 +33,12 @@ tags: [javascript, parameter, argument]
 // 함수 선언문
 function add(x, y) {
   // x, y => 매개변수
-  return x + y
+  return x + y;
 }
 
 // 함수 호출
 // 인수 1과 2가 매개변수 x, y에 순서대로 할당되고 함수 몸체의 문들이 실행된다.
-var result = add(1, 2) // 1, 2 => 인수
+var result = add(1, 2); // 1, 2 => 인수
 ```
 
 <br/>

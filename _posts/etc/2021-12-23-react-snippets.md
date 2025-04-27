@@ -1,5 +1,5 @@
 ---
-title: '[VSCode] React Snippets 비교'
+title: "[VSCode] React Snippets 비교"
 categories: [기타]
 tags: [vscode, extension, snippets]
 ---
@@ -10,7 +10,7 @@ tags: [vscode, extension, snippets]
 
 새 컴퓨터에 VSCode를 설치하고, 이것저것 환경 세팅을 하면서 리액트 스니펫을 설치하게 되었다.
 
-<img src="/assets/img/blog/2021-12-23-react-snippets.png" style="margin-bottom:20px">
+<img src="../../assets/img/blog/etc/2021-12-23-react-snippets.png" style="margin-bottom:20px">
 
 마켓플레이스에서 react만 검색해도 많은 Snippets들이 나온다.
 
@@ -31,20 +31,20 @@ tags: [vscode, extension, snippets]
 #### rcredux
 
 ```js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 export class FileName extends Component {
   render() {
-    return <div>$4</div>
+    return <div>$4</div>;
   }
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```
 
 단축어 종류가 굉장히 많다.
@@ -82,15 +82,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 #### container
 
 ```js
-import { connect } from 'react-redux'
-import component from '../components/component'
-import { actionCreator } from '../actionPath'
+import { connect } from "react-redux";
+import component from "../components/component";
+import { actionCreator } from "../actionPath";
 
-const mapStateToProps = (state, ownProps) => ({})
+const mapStateToProps = (state, ownProps) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(component)
+export default connect(mapStateToProps, mapDispatchToProps)(component);
 ```
 
 전체적으로 ES7 React/Redux/GraphQL/React-Native snippets와 단축어가 다르다.

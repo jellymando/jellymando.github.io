@@ -1,5 +1,5 @@
 ---
-title: '[Redux] 기초 배우기'
+title: "[Redux] 기초 배우기"
 categories: [React]
 tags: [redux]
 ---
@@ -20,9 +20,9 @@ tags: [redux]
 
 ```js
 const addTodoAction = {
-  type: 'todos/todoAdded',
-  payload: 'Buy milk'
-}
+  type: "todos/todoAdded",
+  payload: "Buy milk"
+};
 ```
 
 ### Action Creator
@@ -32,10 +32,10 @@ const addTodoAction = {
 ```js
 const addTodo = (text) => {
   return {
-    type: 'todos/todoAdded',
+    type: "todos/todoAdded",
     payload: text
-  }
-}
+  };
+};
 ```
 
 ### Reducer
@@ -47,12 +47,12 @@ const addTodo = (text) => {
 ```js
 function counter(state, action) {
   switch (action.type) {
-    case 'INCREASE':
-      return state + 1
-    case 'DECREASE':
-      return state - 1
+    case "INCREASE":
+      return state + 1;
+    case "DECREASE":
+      return state - 1;
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -66,11 +66,11 @@ function counter(state, action) {
 스토어 안에는 상태와 리듀서가 들어있고, 추가적으로 몇가지 내장 함수들이 있다.
 
 ```js
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({ reducer: counterReducer })
+const store = configureStore({ reducer: counterReducer });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 0}
 ```
 
@@ -81,26 +81,26 @@ console.log(store.getState())
 **`store.dispatch()` 메서드에 액션을 전달하면 리듀서 함수를 통해 상태를 업데이트한다.**
 
 ```js
-store.dispatch({ type: 'counter/increment' })
+store.dispatch({ type: "counter/increment" });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 1}
 
 const increment = () => {
   return {
-    type: 'counter/increment'
-  }
-}
+    type: "counter/increment"
+  };
+};
 
-store.dispatch(increment())
+store.dispatch(increment());
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 2}
 ```
 
 ## Flow
 
-<img src="/assets/img/blog/2021-12-09-redux-basic_01.png" style="margin-bottom:30px">
+<img src="../../assets/img/blog/2021-12-09-redux-basic_01.png" style="margin-bottom:30px">
 
 Action - Dispatch - Reducer - Render
 
@@ -121,9 +121,9 @@ setState를 통해 상태를 업데이트할 때, **기존 객체나 배열은 �
 > `concat()` 메서드는 인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 **새 배열**을 반환합니다.
 
 ```js
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // Create a new copy of arr, with "c" appended to the end
-const arr2 = arr.concat('c')
+const arr2 = arr.concat("c");
 ```
 
 객체를 업데이트 하는 경우 스프레드 연산자로 기존 객체를 복사하여 새로운 객체를 만들어 업데이트한다.
@@ -134,7 +134,7 @@ const obj = {
     c: 3
   },
   b: 2
-}
+};
 
 const obj2 = {
   ...obj,
@@ -142,7 +142,7 @@ const obj2 = {
     ...obj.a,
     c: 42
   }
-}
+};
 ```
 
 ## 참고사이트

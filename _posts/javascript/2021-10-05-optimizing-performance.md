@@ -26,7 +26,7 @@ tags: [javascript, 최적화]
 
 아래 이미지에서 캐시가 없는 상태에서는 총 63개의 구성 요소를 다운로드하고, 캐시가 있는 상태에서는 24개의 구성 요소를 다운로드한다.
 
-<img src="/assets/img/blog/2021-10-05-optimizing-performance_01.png" style="margin:30px 0">
+<img src="../../assets/img/blog/javascript/2021-10-05-optimizing-performance_01.png" style="margin:30px 0">
 
 > 브라우저가 시도하는 모든 HTTP 요청은 먼저 브라우저 캐시로 라우팅되어, 요청을 수행하는데 사용할 수 있는 유효한 캐시가 있는지를 먼저 확인한다. 만약 유효한 캐시가 있으면, 이 캐시를 읽어서 불필요한 전송으로 인해 발생하는 네트워크 대기시간, 데이터 비용을 모두 상쇄한다.
 
@@ -42,7 +42,7 @@ tags: [javascript, 최적화]
 
 여러 개의 이미지를 불러올 필요 없이 아래와 같이 하나의 이미지를 불러오므로 로딩 속도가 개선된다.
 
-<img src="/assets/img/blog/2021-10-05-optimizing-performance_02.png" style="margin:30px 0">
+<img src="../../assets/img/blog/javascript/2021-10-05-optimizing-performance_02.png" style="margin:30px 0">
 
 - 코드 스플리팅(Code Splitting)
 

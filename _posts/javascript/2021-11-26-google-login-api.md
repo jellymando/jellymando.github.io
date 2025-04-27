@@ -38,7 +38,7 @@ Google 로그인을 연동할 html 문서에 Google Platform 라이브러리를 
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 ```
 
-<img src="/assets/img/blog/2021-11-26-google-people-api.png" style="margin-top:30px">
+<img src="../../assets/img/blog/javascript/2021-11-26-google-people-api.png" style="margin-top:30px">
 
 ## 프로필 정보 얻기
 

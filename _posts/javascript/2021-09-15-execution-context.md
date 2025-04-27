@@ -43,7 +43,7 @@ tags: [javascript, context]
 
 코드가 실행됨에 따라 실행 컨텍스트 스택에는 실행 컨텍스트가 추가(push)되고 제거(pop)된다.
 
-<img src="/assets/img/blog/2021-09-21-excution-context_01.png">
+<img src="../../assets/img/blog/javascript/2021-09-21-excution-context_01.png">
 
 ## 렉시컬 환경
 
@@ -58,13 +58,13 @@ tags: [javascript, context]
   - EnvironmentRecord(환경 레코드) : 스코프에 포함된 식별자를 등록하고 등록된 식별자에 바인딩된 값을 관리하는 저장소
   - OuterLexicalEnvironmentReference(외부 렉시컬 환경에 대한 참조) : 상위 스코프, 즉 해당 실행 컨텍스트를 생성한 상위 코드의 렉시컬 환경를 가리키며 스코프 체인을 구현한다.
 
-<img src="/assets/img/blog/2021-09-21-excution-context_02.png">
+<img src="../../assets/img/blog/javascript/2021-09-21-excution-context_02.png">
 
 ## 실행 컨텍스트의 생성과 식별자 검색 과정
 
 ### 전역 코드 평가
 
-<img src="/assets/img/blog/2021-09-21-excution-context_03.png" style="margin-bottom:30px;">
+<img src="../../assets/img/blog/javascript/2021-09-21-excution-context_03.png" style="margin-bottom:30px;">
 
 자바스크립트 엔진의 전역 코드 평가는 다음 순서로 진행된다.
 
@@ -135,7 +135,7 @@ function foo(a) {
 foo(20); // <- 호출 직전
 ```
 
-<img src="/assets/img/blog/2021-09-21-excution-context_04.png" style="margin-bottom:30px;">
+<img src="../../assets/img/blog/javascript/2021-09-21-excution-context_04.png" style="margin-bottom:30px;">
 
 #### 1. 함수 실행 컨텍스트 생성
 

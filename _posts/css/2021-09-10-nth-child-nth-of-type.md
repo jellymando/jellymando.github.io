@@ -10,13 +10,13 @@ tags: [css]
 
 부모의 n번째 자식 요소
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_01.png">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_01.png">
 
 ## :nth-of-type
 
 부모의 자식 요소 중 **type 조건을 만족하는** n번째 자식 요소
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_02.png">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_02.png">
 
 ## 무엇이 다른가?
 
@@ -33,7 +33,7 @@ tags: [css]
 
 ### nth-child(2)를 적용했을 때
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_03.png" style="margin-bottom:20px">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_03.png" style="margin-bottom:20px">
 
 실제로 p 요소들 중에서는 첫번째이지만 div의 자식 중 두번째 요소에 적용되었다.
 
@@ -73,7 +73,7 @@ tags: [css]
 
 last-child도 마찬가지다.
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_05.png" style="margin-top:10px; width: 300px; height: auto;">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_05.png" style="margin-top:10px; width: 300px; height: auto;">
  
 흥미롭다. p 요소와 상관없이 부모에게서 n번째 요소를 먼저 찾고, p면 적용된다.
 
@@ -81,19 +81,19 @@ last-child도 마찬가지다.
 
 MDN에도 이 예제가 나와 있다.
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_07.png" style="border:1px solid #d7d7d7;">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_07.png" style="border:1px solid #d7d7d7;">
 
 > 3 is used in the counting because it is a child, but it isn't selected because it isn't a `<span>`
 
 ### nth-of-type(2)를 적용했을 때
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_04.png" style="margin-bottom:20px">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_04.png" style="margin-bottom:20px">
 
 **부모의 p요소 중 n번째 요소에 css를 적용한다.**
 
 위에서 본 예외 예제에 적용해보면 형제와의 순서에 상관없이 p 요소 중에서 n번째 요소에 적용된다.
 
-<img src="/assets/img/blog/2021-09-10-nth-child-nth-of-type_06.png" style="margin-top:10px; width: 300px; height: auto;">
+<img src="../../assets/img/blog/css/2021-09-10-nth-child-nth-of-type_06.png" style="margin-top:10px; width: 300px; height: auto;">
 
 참고로 선택자 없이 `:nth-of-type(n)`만 사용하는 것도 가능하다.
 

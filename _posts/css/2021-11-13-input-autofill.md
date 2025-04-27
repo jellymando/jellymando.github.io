@@ -10,7 +10,7 @@ tags: [css]
 
 input에서 자동완성 항목 호버나 선택 시의 스타일을 지정한다.
 
-<img src="/assets/img/blog/2021-11-13-input-autofill.gif" style="margin:30px 0 40px;">
+<img src="../../assets/img/blog/css/2021-11-13-input-autofill.gif" style="margin:30px 0 40px;">
 
 ```css
 input {
