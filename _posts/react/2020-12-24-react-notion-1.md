@@ -30,8 +30,8 @@ const element = {
   type: "h1",
   props: {
     className: "greeting",
-    children: "Hello, world!",
-  },
+    children: "Hello, world!"
+  }
 };
 ```
 
@@ -85,7 +85,7 @@ function App() {
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-<img src="/assets/img/blog/2020-12-25-react-01.png">
+<img src="../../assets/img/blog/react/2020-12-25-react-01.png">
 
 ## 이벤트 처리
 
@@ -124,7 +124,7 @@ class Toggle extends React.Component {
 
   handleClick() {
     this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
+      isToggleOn: !state.isToggleOn
     }));
   }
 

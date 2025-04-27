@@ -41,7 +41,7 @@ p {
 }
 ```
 
-<img src="/assets/img/blog/2021-06-29-background-clip.png">
+<img src="../../assets/img/blog/css/2021-06-29-background-clip.png">
 
 <br/>
 

@@ -22,7 +22,7 @@ transform: translateX(-50%);
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-06-position-left-translateX.jpeg">
+<img src="../../assets/img/blog/css/2021-08-06-position-left-translateX.jpeg">
 
 <br/>
 

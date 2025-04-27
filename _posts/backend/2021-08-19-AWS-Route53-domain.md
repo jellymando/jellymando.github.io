@@ -1,7 +1,7 @@
 ---
 title: "[AWS] Route 53에 도메인 등록하여 사용하기"
-categories: [기타]
-tags: [aws]
+categories: [Backend]
+tags: [AWS]
 ---
 
 {:toc .large-only}
@@ -26,7 +26,7 @@ tags: [aws]
 
 - 위에서 생성한 레코드를 클릭하면 NS 유형에 4개의 네임서버가 나온다.
 
-<img src="/assets/img/blog/2021-08-19-AWS-Route53-domain_01.png">
+<img src="../../assets/img/blog/backend/2021-08-19-AWS-Route53-domain_01.png">
 
 - [freenom.com 사이트의 My Domains 페이지](https://my.freenom.com/clientarea.php?action=domains)로 들어간다.
 
@@ -34,11 +34,11 @@ tags: [aws]
 
 - Management Tools -> Nameservers 클릭
 
-<img src="/assets/img/blog/2021-08-19-AWS-Route53-domain_02.png">
+<img src="../../assets/img/blog/backend/2021-08-19-AWS-Route53-domain_02.png">
 
 - 네임서버 4개를 입력한 후 저장한다.
 
-<img src="/assets/img/blog/2021-08-19-AWS-Route53-domain_03.png">
+<img src="../../assets/img/blog/backend/2021-08-19-AWS-Route53-domain_03.png">
 
 ### 레코드 생성
 
@@ -48,7 +48,7 @@ tags: [aws]
 
 > 탄력적 IP로 설정하는 이유는, 기본 public IP는 유동 IP이기 때문에 새로 연결할 때마다 바뀌기 때문에 고정 IP로 설정하기 위함이다.
 
-<img src="/assets/img/blog/2021-08-19-AWS-Route53-domain_04.png">
+<img src="../../assets/img/blog/backend/2021-08-19-AWS-Route53-domain_04.png">
 
 - 레코드 이름을 입력하지 않은 레코드를 하나 생성하고, 레코드 이름에 `www`를 넣은 레코드도 추가로 생성한다.
 

@@ -27,7 +27,7 @@ tags: [javascript, 이벤트 루프]
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_01.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_01.png">
 
 ### 메모리 구조 예시
 
@@ -39,7 +39,7 @@ const tiger = new Animal();
 // stores `new Object()` instance on memory address 0x000001
 // `lion` has 0x000001 as value on stack
 let lion = {
-  strength: "Very Strong",
+  strength: "Very Strong"
 };
 ```
 
@@ -53,11 +53,11 @@ tiger와 lion은 참조형 타입이다.
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_02.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_02.png">
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_02_2.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_02_2.png">
 
 <br/>
 
@@ -67,7 +67,7 @@ tiger와 lion은 참조형 타입이다.
 
 - 이벤트 루프(Event Loop) : 콜 스택이 비어 있을 때 콜백 큐의 첫 번째 콜백을 넘겨준다.
 
-<img src="/assets/img/blog/2021-08-27-event-order_03.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_03.png">
 
 ## 동작 순서
 
@@ -97,7 +97,7 @@ tiger와 lion은 참조형 타입이다.
 
 ## 콜 스택 동작 예제
 
-<img src="/assets/img/blog/2021-08-27-event-order_04.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_04.png">
 
 <br/>
 
@@ -111,7 +111,7 @@ tiger와 lion은 참조형 타입이다.
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_05.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_05.png">
 
 <br/>
 
@@ -148,7 +148,7 @@ alert("C");
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-27-event-order_06.png">
+<img src="../../assets/img/blog/javascript/2021-08-27-event-order_06.png">
 
 <br/>
 

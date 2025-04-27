@@ -59,14 +59,14 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 - 준비 큐에 도착한 순서대로 CPU를 할당
 - 콘보이 효과 : 처리 시간이 긴 프로세스가 CPU를 차지하면 다른 프로세스들은 하염없이 기다려 시스템의 효율성이 떨어짐
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_fcfs.png" style="margin:20px 0;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_fcfs.png" style="margin:20px 0;" />
 
 | 프로세스   | A   | B   | C   | D   |
 | ---------- | --- | --- | --- | --- |
 | 도착시간   | 0   | 0   | 0   | 0   |
 | CPU 사이클 | 7   | 4   | 1   | 3   |
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_fcfs2.png" style="margin:20px 0;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_fcfs2.png" style="margin:20px 0;" />
 
 ### SJF(Shortest Job First) 스케줄링
 
@@ -79,7 +79,7 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 | 도착시간   | 0   | 2   | 4   | 5   |
 | CPU 사이클 | 7   | 4   | 1   | 3   |
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_sjf.png" style="margin:20px 0;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_sjf.png" style="margin:20px 0;" />
 
 - 시간 0 : A 도착, 준비 큐에 A밖에 없으므로 A를 디스패치
 - 시간 2 : B 도착
@@ -95,14 +95,14 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 - **비선점 방식**
 - 준비 큐에 있는 프로세스 중에서 응답비율이 가장 큰 작업부터 CPU를 할당
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_hrn.png" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_hrn.png" />
 
 | 프로세스   | A   | B   | C   | D   |
 | ---------- | --- | --- | --- | --- |
 | 도착시간   | 0   | 2   | 4   | 5   |
 | CPU 사이클 | 7   | 4   | 1   | 3   |
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_hrn2.png" style="margin:20px 0;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_hrn2.png" style="margin:20px 0;" />
 
 - 시간 0 : A 도착, 준비 큐에 A밖에 없으므로 A를 디스패치
 - 시간 2 : B 도착
@@ -126,7 +126,7 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 | 도착시간   | 0   | 2   | 4   | 5   |
 | CPU 사이클 | 7   | 4   | 1   | 3   |
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_srt.png" style="margin:20px 0;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_srt.png" style="margin:20px 0;" />
 
 - 시간 0 : A 도착, 준비 큐에 A밖에 없으므로 A를 디스패치
 - 시간 2 : B 도착, 남은 실행시간이 A보다 B가 짧으므로, A를 준비상태로 전이시키고 B를 디스패치
@@ -153,7 +153,7 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 
 #### 시간 할당량이 4인 경우
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_rr.png" style="margin:20px 0 30px;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_rr.png" style="margin:20px 0 30px;" />
 
 ### 다단계 피드백 큐 스케줄링
 
@@ -163,7 +163,7 @@ CPU 스케줄러는 프로세스가 생성된 후 종료될 때까지 모든 상
 - 프로세스가 시간 할당량을 다 썼으면 다음 단계의 준비 큐로 이동 배치
 - 단계가 커질수록 시간 할당향도 커짐
 
-<img src="/assets/img/blog/2021-03-16-operate-system-04_que.png" style="margin:20px 0;" />
+<img src="../../assets/img/blog/cs/2021-03-16-operate-system-04_que.png" style="margin:20px 0;" />
 
 ### 기타 스케줄링
 

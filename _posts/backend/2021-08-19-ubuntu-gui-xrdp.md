@@ -1,7 +1,7 @@
 ---
 title: "[ubuntu] GUI, 원격 데스크톱(Xrdp) 설치하기"
-categories: [기타]
-tags: [ubuntu, linux]
+categories: [Backend]
+tags: [AWS, ubuntu, linux]
 ---
 
 {:toc .large-only}
@@ -82,7 +82,7 @@ sudo vi /etc/xrdp/xrdp.ini
 
 - AWS 인스턴스 인바운드 규칙에 위 port와 5910 포트 추가한다.
 
-<img src="/assets/img/blog/2021-08-19-ubuntu-gui-xrdp.png">
+<img src="../../assets/img/blog/backend/2021-08-19-ubuntu-gui-xrdp.png">
 
 <br/>
 

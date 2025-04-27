@@ -36,4 +36,4 @@ tags: [css]
 </ul>
 ```
 
-<img src="/assets/img/blog/2021-05-12-nth-last-child.png">
+<img src="../../assets/img/blog/css/2021-05-12-nth-last-child.png">

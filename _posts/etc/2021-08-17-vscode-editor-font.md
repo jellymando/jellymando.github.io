@@ -10,7 +10,7 @@ tags: [vscode]
 
 `File > Preperences > Settings` 혹은 `Ctrl + ,`
 
-<img src="/assets/img/blog/2021-08-17-vscode-editor-font.png"/>
+<img src="../../assets/img/blog/etc/2021-08-17-vscode-editor-font.png"/>
 
 <br/>
 

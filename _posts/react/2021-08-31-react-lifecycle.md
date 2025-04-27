@@ -8,7 +8,7 @@ tags: [react]
 
 ## 클래스형 컴포넌트의 생명주기
 
-<img src="/assets/img/blog/2021-08-31-react-lifecycle_01.png">
+<img src="../../assets/img/blog/react/2021-08-31-react-lifecycle_01.png">
 
 <br/>
 
@@ -53,7 +53,7 @@ tags: [react]
 
 <br/>
 
-<img src="/assets/img/blog/2021-08-31-react-lifecycle_02.png">
+<img src="../../assets/img/blog/react/2021-08-31-react-lifecycle_02.png">
 
 ## 참고사이트
 

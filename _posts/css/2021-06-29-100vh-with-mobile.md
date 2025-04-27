@@ -10,7 +10,7 @@ tags: [css]
 
 모바일 브라우저는 PC와 달리 `vh` 값에 주소입력창을 포함하기 때문에 컨텐츠를 `100vh`로 지정하면 페이지 안에서 꽉 차는게 아니라 페이지보다 주소입력창 길이만큼 길어져 스크롤바가 생긴다.
 
-<img src="/assets/img/blog/2021-06-29-100vh_problem.png">
+<img src="../../assets/img/blog/css/2021-06-29-100vh_problem.png">
 
 <br/>
 

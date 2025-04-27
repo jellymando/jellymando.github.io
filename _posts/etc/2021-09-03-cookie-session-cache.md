@@ -26,7 +26,7 @@ tags: [cookie, session, cache]
 - 최대 300개 저장 가능
 - ex) 자동 로그인, 팝업 다시보지 않기, 장바구니
 
-<img src="/assets/img/blog/2021-09-03-cookie-session-cache_01.png">
+<img src="../../assets/img/blog/etc/2021-09-03-cookie-session-cache_01.png">
 
 <br/>
 
@@ -53,7 +53,7 @@ tags: [cookie, session, cache]
 
 <br/>
 
-<img src="/assets/img/blog/2021-09-03-cookie-session-cache_02.png">
+<img src="../../assets/img/blog/etc/2021-09-03-cookie-session-cache_02.png">
 
 <br/>
 
