@@ -307,16 +307,110 @@ tags: [android]
   android:layout_height="match_parent"
 >
   <TextView
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:src="@drawable/banana"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/banana"
   />
   <TextView
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:src="@drawable/earth"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/earth"
   />
 </FrameLayout>
 ```
 
 <img src="../../assets/img/blog/2025-04-27-android-layout_08.png" style="margin-top:10px;">
+
+## TableLayout
+
+- 표 형태로서 자식 View를 배치하는 레이아웃
+- TableRow 객체 하나가 하나의 행에 해당됨
+  - 여러 개의 행이 하나의 TableLayout에 배치되려면 적응적으로 세로의 크기가 조정되어야 함
+  - 이에 따라 TableRow의 높이는 wrap_content로 설정해야 함
+- TableRow 내부는 여러 개의 열(셀)로 구성되며 하나의 열에는 하나의 자식 View가 포함됨
+  - 하나의 셀에 배치되는 자식 View는 무조건 주어진 셀 안에 배치되므로 layout_width 속성은 wrap_content를 기본값으로 가짐
+  - 자식 View의 높이는 기본 속성값으로 wrap_content로 설정되지만, 필요한 경우 match_parent로 지정하여 하나의 셀로 행을 채울 수도 있음
+- TableRow의 개수가 행의 개수이고 하나의 TableRow 안에 배치되는 자식 View의 개수가 열(셀)의 개수이므로 TableLayout의 전체 크기는 행X열로 계산됨
+- 가로 행과 세로 열의 개수에는 특별한 제한이 없음
+
+<img src="../../assets/img/blog/2025-04-27-android-layout_09.png" style="margin:10px 0;">
+
+| 속성값         | 설명                                                                                                     |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| shrinkColumns  | 콤마로 구분된 열 인덱스 목록. TableLayout의 전체 너비가 화면보다 클 때, 지정된 열을 축소시켜 화면에 맞춤 |
+| stretchColumns | 콤마로 구분된 열 인덱스 목록. TableLayout의 너비가 화면보다 작을 때, 지정된 열을 확장시켜 화면에 맞춤    |
+
+```xml
+<TableLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+>
+  <TableRow>
+    <TextView
+      android:text="SUN"
+    />
+    <TextView
+      android:text="MON"
+    />
+    <TextView
+      android:text="TUE"
+    />
+  </TableRow>
+</TableLayout>
+```
+
+<img src="../../assets/img/blog/2025-04-27-android-layout_10.png" style="margin:10px 0 20px;">
+
+```xml
+<TableLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:stretchColumns="1"
+>
+  <TableRow>
+    <TextView
+      android:text="SUN"
+    />
+    <TextView
+      android:text="MON"
+    />
+    <TextView
+      android:text="TUE"
+    />
+  </TableRow>
+</TableLayout>
+```
+
+<img src="../../assets/img/blog/2025-04-27-android-layout_11.png" style="margin-top:10px;">
+
+## 레이아웃 중첩
+
+- 레이아웃은 View들을 담는 하나의 컨테이너(쟁반)이므로 View로부터 파생된 모든 ViewGroup과 View를 레이아웃 안에 포함할 수 있음
+- 레이아웃 내에 포함되는 ViewGroup에 다른 View들을 중첩하여 배치할 수 있음
+- 레이아웃 자체도 View의 파생 클래스이므로 레이아웃끼리 중첩하여 배치 가능
+- 레이아웃 중첩은 화면 디자인의 유지보수를 쉽게 하고 XML 코드의 가독성을 향상시킴
+
+```xml
+<LinearLayout>
+  <TextView />
+  <TableLayout>
+    <TableRow>
+      <TextView/>
+      <TextView/>
+      <TextView/>
+    </TableRow>
+    <TableRow>
+      <TextView/>
+      <TextView/>
+      <TextView/>
+    </TableRow>
+  </TableLayout>
+  <LinearLayout>
+    <TextView />
+    <TextView />
+    <TextView />
+  </LinearLayout>
+</LinearLayout>
+```
+
+<img src="../../assets/img/blog/2025-04-27-android-layout_12.png" style="margin-top:10px;">
