@@ -36,7 +36,7 @@ Queue<Integer> list = new LinkedList<>();
 Map<String, Integer> list = new HashMap<>();
 ```
 
-### Collection<E> 인터페이스
+### Collection`<E>` 인터페이스
 
 - Set, List, Queue에서 공통으로 지원해야 하는 기능을 정의
 
@@ -53,7 +53,7 @@ Map<String, Integer> list = new HashMap<>();
 | 메소드                                    | 설명                                                                |
 | ----------------------------------------- | ------------------------------------------------------------------- |
 | boolean add(E e)                          | 주어진 요소를 현재 컬렉션에 추가. 성공적으로 추가되면 true를 리턴함 |
-| boolean addAll(Collection<? extends E> c) | 주어진 컬렉션의 모든 요소를 현재 컬렉션에 추가ㅌㅌ                  |
+| boolean addAll(Collection<? extends E> c) | 주어진 컬렉션의 모든 요소를 현재 컬렉션에 추가                      |
 | boolean remove(Object o)                  | 주어진 요소를 컬렉션에서 제거                                       |
 | boolean removeAll(Collection<?> c)        | 주어진 컬렉션에 포함된 모든 요소를 현재 컬렉션에서 제거             |
 | boolean retainAll(Collection<?> c)        | 현재 컬렉션의 요소 중, 주어진 컬렉션에 있는 요소만 남김             |
@@ -93,14 +93,14 @@ set.clear();
 System.out.println(set.size()); //0
 ```
 
-### ArrayList<E> 클래스
+### ArrayList`<E>` 클래스
 
 - List 인터페이스를 구현한 클래스
 - 크기 조절이 가능한 배열로 구현
 - 같은 자료가 중복될 수 있으며, 입력된 순서대로 관리됨
 - 특정 위치의 자료를 참조하기 위해 첨자를 사용할 수 있음
 
-### Iterator<E> 인터페이스
+### Iterator`<E>` 인터페이스
 
 - 컬렉션에 저장된 원소를 차례대로 다룰 수 있음
 - `hasNext()`, `next()` 메소드 제공
@@ -140,7 +140,7 @@ while (s != null) {
 }
 ```
 
-## Map<K, V> 인터페이스
+## Map`<K, V>` 인터페이스
 
 - `<key, value>`로 이루어진 원소로 구성되는 컬렉션을 다루기 위한 인터페이스
 - key는 중복되지 않으며, 하나의 key에 하나의 value만 대응됨
