@@ -1,8 +1,8 @@
 ---
 title: "input에 flex-shrink가 적용되지 않아요"
 date: 2025-06-13T11:00:00+09:00
-categories: [Network]
-tags: [network]
+categories: [CSS]
+tags: [css]
 ---
 
 {:toc .large-only}
