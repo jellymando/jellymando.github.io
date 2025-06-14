@@ -20,7 +20,7 @@ tags: [android]
 | 속성값           | 설명                                                      |
 | ---------------- | --------------------------------------------------------- |
 | match_parent     | View가 위치한 레이아웃의 크기에 맞춰 최대한의 크기로 출력 |
-| wrap_content     | View가 출력한느 내용물의 크기에 맞춰 최소한의 크기로 출력 |
+| wrap_content     | View가 출력하는 내용물의 크기에 맞춰 최소한의 크기로 출력 |
 | 직접 값(literal) | 입략한 값에 따라 크기가 결정되어 출력                     |
 
 <img src="../../assets/img/blog/2025-04-27-android-layout_01.png" style="margin-top:10px;">
