@@ -16,7 +16,7 @@ tags: [보안]
 - 따옴표, 더블 하이픈(SQL문의 주석)을 삽입하는 방법 등이 있음
 - 예) 로그인 페이지에서 ID와 비밀번호 부분에 SQL문을 넣어 인증을 우회
 
-<img src="../../assets/img/blog/computer_security/2025-06-14-computer-security_web&mobile_01.png" />
+<img src="../../assets/img/blog/computer_security/2025-06-14-computer-security_web+mobile_01.png" />
 
 #### 방어 방법
 
@@ -32,8 +32,8 @@ tags: [보안]
 - 저장된 XSS: 페이지에 악성 스크립트를 포함시켜 웹 클라이언트가 접근하면 실행되게 함
 - 반사된 XSS: 악성 스크립트가 포함된 URL 전송하여 웹 서버에서 오류 처리로 웹 클라이언트에게 되돌아오게 함
 
-<img src="../../assets/img/blog/computer_security/2025-06-14-computer-security_web&mobile_02.png" style="margin-top:5px;"/>
-<img src="../../assets/img/blog/computer_security/2025-06-14-computer-security_web&mobile_03.png" style="margin-top:10px;"/>
+<img src="../../assets/img/blog/computer_security/2025-06-14-computer-security_web+mobile_02.png" style="margin-top:5px;"/>
+<img src="../../assets/img/blog/computer_security/2025-06-14-computer-security_web+mobile_03.png" style="margin-top:10px;"/>
 
 #### 방어 방법
 
