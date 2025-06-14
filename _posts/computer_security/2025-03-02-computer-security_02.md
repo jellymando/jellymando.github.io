@@ -23,11 +23,11 @@ tags: [보안]
 - 송신자는 메시지를 보낼 때 MAC을 함께 전송
 - 수신자는 받은 메시지의 변조 여부를 MAC을 이용해 확인
 
-<img src="../../assets/img/blog/2025-03-02-computer-security-02_01.png" style="margin-top:10px;">
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security-02_01.png" style="margin-top:10px;">
 
 #### MAC 인증 과정
 
-<img src="../../assets/img/blog/2025-03-02-computer-security-02_02.png" style="margin:10px 0 15px;">
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security-02_02.png" style="margin:10px 0 15px;">
 
 - 송신자는 비밀키와 MAC 알고리즘을 이용하여 메시지 M으로부터 MAC을 생성한다.
 - 수신자는 송신자와 똑같은 비밀키와 MAC 알고리즘으로 MAC을 생성한다.
@@ -50,14 +50,14 @@ tags: [보안]
 - 해시함수에 기반
 - 비밀키를 메시지에 덧붙인 후 해시함수를 적용
 
-<img src="../../assets/img/blog/2025-03-02-computer-security-02_03.png" style="margin-top:10px;">
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security-02_03.png" style="margin-top:10px;">
 
 #### CMAC (Cipher-based MAC)
 
 - 블록암호에 기반
 - CBC 모드를 메시지에 적용
 
-<img src="../../assets/img/blog/2025-03-02-computer-security-02_04.png" style="margin-top:10px;">
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security-02_04.png" style="margin-top:10px;">
 
 ## 사용자 인증
 
@@ -72,7 +72,7 @@ tags: [보안]
 - 해시함수를 통해 비밀번호를 **해시코드**로 저장하여 시스템에 저장된 비밀번호가 유출되는 것에 대비
   - 해시코드를 탈취당해도 원본 비밀번호를 알 수 없으므로 로그인 불가
 
-<img src="../../assets/img/blog/2025-03-02-computer-security-02_05.png" style="margin-top:10px;">
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security-02_05.png" style="margin-top:10px;">
 
 ### 생체인식 방식
 
