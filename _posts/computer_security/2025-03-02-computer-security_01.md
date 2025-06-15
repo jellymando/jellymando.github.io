@@ -52,6 +52,17 @@ tags: [보안]
 
 <img src="../../assets/img/blog/computer_security/2025-03-02-computer-security_02.png" style="margin-top:10px;">
 
+### 대칭키 암호의 키 관리
+
+- 송수신자 사이에 비밀키를 안전하게 공유하는 방법
+- **디피-헬먼 키 교환(DHKE)** 프로토콜 사용
+  - 이산대수 문제에 기반하여 비밀키 공유
+  - 큰 소수 p와 양의 정수 g를 이용
+  - 제3자가 송수신자 간에 공유되는 값들을 알아내더라도 비밀키를 알아내기 어려움
+  - 중간자 변조 공격에 취약: 상대에 대한 인증 필요
+
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security_15.png" style="margin-top:5px;">
+
 ### 공개키 암호
 
 - 암호화와 복호화에 서로 다른 두 개의 키를 사용하는 방식
@@ -62,6 +73,15 @@ tags: [보안]
 - 대표적인 알고리즘: RSA, ECC, ElGamal 등
 
 <img src="../../assets/img/blog/computer_security/2025-03-02-computer-security_03.png" style="margin-top:10px;">
+
+### 공개키 암호의 키 관리
+
+- 송수신자 사이에 공개키를 안전하게 공유하는 방법
+- 공개키를 신뢰받는 인증기관에서 관리
+  - 공개키에 인증기관의 서명을 붙인 인증서로 변환하여 관리함
+  - 인증서는 인증기관의 공개키로 검증 가능
+
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security_16.png" style="margin-top:10px;">
 
 ## 블록 암호
 
@@ -236,6 +256,16 @@ tags: [보안]
 - 유한체상에서 정의된 타원곡선 군에서의 이산대수 문제에 기반
 - RSA, ElGamal 등과 동일한 수준의 보안성을 제공하면서도 키의 길이는 짧음
 - 이산대수 문제에 기반을 둔 ElGamal 암호 알고리즘 등을 변환하여 타원곡선 암호 알고리즘으로 적용
+
+## 공개키 기반 구조(PKI)
+
+- Public Key Infrastructure
+- X.509에 기초해서 인증서를 생성, 분배, 인증, 폐지하는 체계
+- 사용자, 인증기관, 등록기관, 디렉터리로 구성됨
+- 인증서, 상호인증서 쌍, 인증서 취소목록(CRL) 관리
+- PKI에서 신뢰는 인증경로를 통해 전달되고, 인증경로는 계층적 구성과 네트워크 구성이 있음
+
+<img src="../../assets/img/blog/computer_security/2025-03-02-computer-security_17.png" style="margin-bottom:10px;">
 
 ## 전자봉투의 암호화/복호화
 
