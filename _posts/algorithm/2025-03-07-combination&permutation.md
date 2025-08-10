@@ -1,5 +1,6 @@
 ---
 title: "[알고리즘] 조합과 순열로 경우의 수 구하기"
+date: 2025-03-07T00:00:00+09:00
 categories: [Algorithm]
 tags: [algorithm, 조합, 순열]
 ---

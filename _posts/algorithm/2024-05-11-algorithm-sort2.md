@@ -1,5 +1,6 @@
 ---
 title: "[알고리즘] 정렬 알고리즘2 - 분할 정복"
+date: 2024-05-11T17:00:00+09:00
 categories: [Algorithm]
 tags: [algorithm]
 ---
