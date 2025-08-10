@@ -23,13 +23,17 @@ tags: [algorithm]
 
 ```js
 function selectionSort(arr) {
+  if(arr.length <= 1) return arr;
+
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
+
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[minIndex]) {
         minIndex = j;
       }
     }
+
     if (minIndex !== i) {
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
     }
@@ -61,17 +65,21 @@ function selectionSort(arr) {
 
 ```js
 function bubbleSort(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    let sorted = true; //이미 정렬된 상태라고 가정
+  if(arr.length <= 1) return arr;
 
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-        sorted = false; //swap 발생 = 미정렬 상태
+  for (let i = 0; i < arr.length - 1; i++) {
+      let isSorted = true; //이미 정렬된 상태라고 가정
+
+      for (let j = 0; j < arr.length - 1 - i; j++) {
+          if (arr[j+1] < arr[j]) {
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+              isSorted = false;
+          }
       }
-      if (sorted) break; // 이미 정렬된 상태이므로 종료
-    }
+
+      if (isSorted) break; // 이미 정렬된 상태이므로 종료
   }
+
   return arr;
 }
 ```
