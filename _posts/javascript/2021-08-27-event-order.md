@@ -32,10 +32,14 @@ tags: [javascript, 이벤트 루프]
 ### 메모리 구조 예시
 
 ```js
+// stores `Animal()` function on memory address 0x003000
+// Animal has 0x003000 as value in stack
 function Animal() {}
+
 // stores `new Animal()` instance on memory address 0x001232
 // tiger has 0x001232 as value in stack
 const tiger = new Animal();
+
 // stores `new Object()` instance on memory address 0x000001
 // `lion` has 0x000001 as value on stack
 let lion = {
@@ -60,6 +64,20 @@ tiger와 lion은 참조형 타입이다.
 <img src="../../assets/img/blog/javascript/2021-08-27-event-order_02_2.png">
 
 <br/>
+
+#### 힙 영역에 저장되는 것들:
+
+- 0x003000: Animal 함수 객체
+  - 함수 코드
+  - prototype 프로퍼티
+  - 기타 함수 메타데이터
+- 0x001232: tiger 인스턴스 객체
+  - [[Prototype]]: Animal.prototype 참조
+- 0x000001: lion 객체
+  - strength: "Very Strong"
+  - [[Prototype]]: Object.prototype 참조
+- 0x004000: Animal.prototype 객체
+- 0x005000: Object.prototype 객체
 
 ## 동작 구조
 
