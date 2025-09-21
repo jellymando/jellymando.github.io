@@ -28,7 +28,9 @@ tags: [nextjs, error]
 
 <img src="../../assets/img/blog/2024-11-18-nextjs-streaming_01.png">
 
-스트리밍 기법을 통해 사용자는 서버의 느린 데이터 페치가 완료될 때까지 기다리지 않고 페이지의 일부를 보고 상호작용 할 수 있다.
+스트리밍 기법을 통해 사용자는 서버의 데이터 fetch가 완료될 때까지 기다리지 않고 페이지의 일부를 보고 상호작용 할 수 있다.
+
+정적 컨텐츠와 fallback UI를 미리 렌더링하고, Suspense 안의 동적 컨텐츠는 사용자가 해당 페이지에 접근할 때 **스트리밍**된다.
 
 <img src="../../assets/img/blog/2024-11-18-nextjs-streaming_02.png">
 
@@ -36,7 +38,7 @@ tags: [nextjs, error]
 
 ### 스트리밍의 원리
 
-- 서버에서는 html 파일을 점진적으로 로드하는데, 데이터를 페치하는 동안 노출할 fallback UI와 데이터 페치가 완료된 후 데이터를 노출할 곳을 미리 표시한 placeholder를 먼저 전송한다.
+- 서버에서는 html 파일을 점진적으로 로드하는데, 데이터를 fetch하는 동안 노출할 fallback UI와 데이터 fetch가 완료된 후 데이터를 노출할 곳을 미리 표시한 **placeholder**를 먼저 전송한다.
   - (이 때 placeholder는 비어 있다.)
 
 ```jsp
@@ -57,12 +59,32 @@ tags: [nextjs, error]
 - 이후 데이터 페칭이 완료되면 서버는 후속 데이터 청크를 전송한다.
 
 ```html
+<!-- placeholder 엘리먼트 -->
 <div hidden id="S:0">
   <p>Hello, World!</p>
 </div>
+
+<!-- 스트리밍 데이터 삽입 스크립트 -->
 <script>
-  $RC = function (b, c, e) {
-    ...
+  self.__next_f.push([
+    1,
+    '56:[{"id":"K4jizwE5rHA","slug":"bridge-view-with-city-buildings-in-the-distance-K4jizwE5rHA","alternative_slugs":...]'
+  ]);
+</script>
+<script>
+  $RC = function (b, a) {
+    if ((a = document.getElementById(a)))
+      (b = document.getElementById(b))
+        ? ((b.previousSibling.data = "$~"),
+          $RB.push(b, a),
+          2 === $RB.length &&
+            ((b = "number" !== typeof $RT ? 0 : $RT),
+            (a = performance.now()),
+            setTimeout(
+              $RV.bind(null, $RB),
+              2300 > a && 2e3 < a ? 2300 - a : b + 300 - a
+            )))
+        : a.parentNode.removeChild(a);
   };
   $RC("B:0", "S:0");
 </script>
@@ -79,12 +101,22 @@ tags: [nextjs, error]
 ## 부분 사전 렌더링
 
 - NextJS 14 버전부터 도입된 정적 렌더링과 동적 렌더링을 결합할 수 있는 렌더링 모델
-- 동적 컨텐츠에 `<Suspense>` 컴포넌트를 사용하여 구현
-- 정적 컨텐츠는 사전 렌더링하고, 동적 콘텐츠는 스트리밍으로 렌더링
+- `<Suspense>`로 래핑된 동적 구성 요소를 **병렬로 스트리밍**하는 기법
 - 실험적 기능이며 아직 프로덕션은 지원X
   - 개발 모드에서는 데이터를 페칭하는 동안 html 문서에 fallback UI가 내려오지만, 빌드 모드에서는 동적 렌더링까지 완료된 후 html 문서가 전송되는 것 같음
 
 <img src="../../assets/img/blog/2024-11-18-nextjs-streaming_03.png">
+
+### 부분 사전 렌더링(PPR) 활성화
+
+```js
+// next.config.js
+const nextConfig: NextConfig = {
+  experimental: {
+    ppr: "incremental"
+  }
+};
+```
 
 ### 부분 사전 렌더링 과정
 
