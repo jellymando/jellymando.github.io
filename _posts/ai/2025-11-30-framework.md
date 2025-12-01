@@ -225,7 +225,7 @@ for k in range(len(y)):
   - `tf.keras.layers.Dense(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros')`
     - units: 출력의 수(뉴런의 수)
     - activation: 사용할 활성함수
-    - use_bias: 바이어스 사용 여부
+    - use_bias: 바이어스 사용 여부 (default: True)
     - kernel_initializer, bias_initializer: 가중치 및 바이어스의 초기화
 
 ```python
