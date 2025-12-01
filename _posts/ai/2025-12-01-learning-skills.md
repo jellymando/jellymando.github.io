@@ -50,6 +50,7 @@ tags: [ai]
 - 극소점 근처에 도달한 상태에서도 파라미터가 계속 변화
   - 최적의 파라미터로 수렴하지 않을 수 있음
   - 에폭이 진행됨에 따라 점차 학습률을 줄이는 **동적 학습률**을 활용할 수 있다.
+- 모멘텀을 적용하면 이전 업데이트 양을 일정 비율 반영하여 파라미터를 업데이트
 
 <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_05.png" style="margin-top:10px">
 <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_06.png" style="margin:10px 0">
@@ -129,7 +130,7 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
 - 스킵 연결
   - <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_13.png">
 - 가중치의 적절한 초기화
-- 배치 정규화
+- 배치 정규화: 데이터 집합의 평균과 분산을 조정
 
 ### 경사 폭발 문제
 
@@ -142,7 +143,7 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
 
 - 배치 정규화
 - 경사 절단
-- 규제
+- 규제: 모델의 복잡도가 필요 이상으로 높아지지 않도록 함
 - 최적화 알고리즘의 개선 (Adma, RMSprop 등)
 
 ### 과적합 문제
@@ -150,11 +151,16 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
 - 특정 학습 데이터 집합에 지나치게 의존적으로 학습되는 현상
 - 일반화 오류 발생
 
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_23.png" style="margin-top:10px">
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_24.png" style="margin-top:10px">
+
 #### 개선 방법
 
-- 드롭아웃
-- 규제
+- 드롭아웃: 모델을 학습하는 동안 적절한 확률에 따라 뉴런을 무작위로 선택하여 일시적으로 제거
+- 규제: 모델의 복잡도를 낮추어 더 단순한 모델로 만들기 위한 처리 절차
 - 데이터 증강 (데이터를 가공하여 늘리는 것)
+- 훈련의 조기 종료: 훈련용 집합에 대한 손실은 감소하고 있지만 검증용 집합에 대한 손실이 증가하기 시작하면 조기 종료
+  - <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_25.png">
 
 ## 가중치의 초기화
 
@@ -193,3 +199,38 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
     - 평균이 0, 표준편차가 σ인 정규분포로 초기값 선택
     - <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_18.png">
     - `layers.Dense(10, activation='relu', kener_initializer='he_normal')`
+
+## 최적화기의 개선
+
+### 모멘텀
+
+- 이전 업데이트 양을 일정 비율 반영하여 파라미터를 업데이트하는 방법
+
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_19.png" style="margin-top:10px">
+
+### 네스테로프 가속 경사(NAG)
+
+- 경사의 계산 지점을 모멘텀에 해당되는 만큼 이동한 위치에서 함으로써 파라미터 변화의 방향을 개선한 것
+
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_20.png" style="margin-top:10px">
+
+### Adagrad
+
+- Adaptive Gradient
+- 학습률을 **적응적**으로 적용하기 위한 최적화 방법
+- 변화가 큰 파라미터의 학습률은 작게, 변화가 작은 파라미터의 학습률은 크게 함으로써 파라미터의 변화가 극소점을 향해 진행되게 함
+
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_21.png" style="margin-top:10px">
+
+### RMSProp
+
+- Root Mean Square Propagation
+- Adagrad에서 학습률이 지나치게 작아지는 문제를 방지함
+
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_22.png" style="margin-top:10px">
+
+### Adam
+
+- Adaptive Momentum estimation
+- 모멘텀과 RMSProp을 결합한 최적화 알고리즘
+- 1차 모멘트와 2차 모멘트를 모두 고려하여 파라미터를 업데이트
