@@ -65,7 +65,7 @@ tags: [ai]
 - 확률적 경사 하강법(SGD)에 비해 파라미터 업데이트의 불규칙성이 완화되어 최적값에 가깝게 파라미터 값이 결정될 수 있음
 - 훈련을 위한 행렬 연산을 최적화함으로써 계산 성능을 높일 수 있음
   - 특히 GPU를 사용하는 경우 미니배치 단위의 처리를 하면 행렬 연산의 최적화에 유리함
-  - 미니배치의 크기가 작은 것이 비해 큰 것이 성능 향상에 유리함
+  - 미니배치의 크기가 작은 것에 비해 큰 것이 성능 향상에 유리함
 
 <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_07.png" style="margin-top:10px">
 <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_08.png" style="margin:10px 0">
@@ -144,7 +144,7 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
 - 배치 정규화
 - 경사 절단
 - 규제: 모델의 복잡도가 필요 이상으로 높아지지 않도록 함
-- 최적화 알고리즘의 개선 (Adma, RMSprop 등)
+- 최적화 알고리즘의 개선 (Adam, RMSprop 등)
 
 ### 과적합 문제
 
@@ -152,7 +152,7 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
 - 일반화 오류 발생
 
 <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_23.png" style="margin-top:10px">
-<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_24.png" style="margin-top:10px">
+<img src="../../assets/img/blog/ai/2025-12-01-learning-skills_24.png" style="margin-top:30px">
 
 #### 개선 방법
 
@@ -166,7 +166,8 @@ bp_model_tf.compile(optimizer=optimizers.SGD(lr_fn, momentum=0.9),
 
 ### 사전 학습에 의한 가중치 초기화
 
-- Geoffrey Hinton이 연구한 **심층 신뢰망**을 사전 학습하여 연결가중치 초기화 방법
+- Geoffrey Hinton에 의해 연구된 방법
+- 심층 신뢰망을 사전 학습하여 연결가중치를 초기화
 - 랜덤 값이 아닌 적절한 방식으로 연결가중치를 초기화
 
 <img src="../../assets/img/blog/ai/2025-12-01-learning-skills_14.png" style="margin-top:10px">
